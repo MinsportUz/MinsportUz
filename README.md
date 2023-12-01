@@ -1,2 +1,2 @@
 # MinsportUz
-Readme
+This is Minsport uz Readme 
