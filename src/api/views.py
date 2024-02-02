@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework import serializers, viewsets
 from admin_panel.model import territorial
 

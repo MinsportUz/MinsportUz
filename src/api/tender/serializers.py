@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from admin_panel.model import tender
 
 
@@ -26,14 +27,6 @@ class AdmTypeSerializer(serializers.ModelSerializer):
 
 
 class AdmTenderSerializer(serializers.ModelSerializer):
-    title_uz = serializers.CharField()
-    title_ru = serializers.CharField()
-    title_en = serializers.CharField()
-
-    organizer_uz = serializers.CharField()
-    organizer_ru = serializers.CharField()
-    organizer_en = serializers.CharField()
-
     class Meta:
         model = tender.Tender
         fields = [
