@@ -1,0 +1,365 @@
+{% extends 'back/_base.html' %}
+{% load static i18n templatetags %}
+
+{% block mainbread %}
+    <ul class="nav navbar-nav bookmark-icons">
+        <div class="d-flex main-bread">
+            <h5 class="content-header-title float-left pr-1 mb-0">{% trans 'Barcha menyular' %}</h5>
+            <div class="breadcrumb-wrapper">
+                <ol class="breadcrumb p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'index-admin' %}"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#">{% trans 'Menyular' %}</a>
+                    </li>
+                    <li class="breadcrumb-item active">{% trans 'Yangi menyu' %}
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </ul>
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue-ctk-date-time-picker.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue2-editor.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/katex.min.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/theme-sugar.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/monokai-sublime.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.snow.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.imageUploader.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/main-editor.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/vendors/css/ui/prism.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/css/plugins/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond-plugin-image-preview.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/forms/select/select2.min.css' %}">
+{% endblock %}
+
+{% block body %}
+    {% include 'back/parts/menu.html' %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content" id="app">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- app invoice View Page -->
+                <form action="{% url 'menu:menu-create' %}" method="post">{% csrf_token %}
+                    <section class="invoice-edit-wrapper">
+                        <div class="row">
+                            <!-- invoice view page -->
+                            <div class="col-xl-8 col-md-8 col-12 mt-4">
+                                <div class="w-100">
+
+                                    <section id="accordion-icon-wrapper">
+                                        <div class="accordion collapse-icon accordion-icon-rotate" id="accordionWrapa2" data-toggle-hover="true">
+                                            <vue-nestable
+                                                    v-model="nestableItems"
+                                                    :max-depth="2"
+                                                    key-prop="id"
+                                                    :hooks="{
+                                                        'beforeMove': beforeMove
+                                                    }"
+{#                                                    hooks#}
+                                                    children-prop="child"
+                                                    class-prop="class">
+
+                                                <template slot-scope="{ item }">
+                                                    <div class="card collapse-header open">
+                                                        <div :id="'heading' + item.id" class="card-header" data-toggle="collapse"
+                                                             :data-target="'#accordion' + item.id" aria-expanded="false"
+                                                             :aria-controls="'accordion' + item.id" role="tablist">
+                                                        <span class="collapse-title custom-drag">
+                                                          <vue-nestable-handle :item="item">
+                                                            <i class="bx bx-grid-vertical"></i>
+                                                            </vue-nestable-handle>
+                                                            <template v-if="item.title_uz">
+                                                                <span class="align-middle">{% verbatim %}{{ item.title_uz }}{% endverbatim %} <code
+                                                                    class="ml-1">/{% verbatim %}{{ item.url }}{% endverbatim %}</code></span>
+                                                            </template>
+                                                            <template v-else>
+                                                                <span class="align-middle">Menyu nomi yo'q</span>
+                                                            </template>
+                                                        </span>
+                                                        </div>
+                                                        <div :id="'accordion' + item.id" role="tabpanel" data-parent="#accordionWrapa2"
+                                                            :aria-labelledby="'heading' + item.id" class="collapse">
+                                                        <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="input-group mb-1">
+                                            <div class="input-group-prepend">
+                                      <span class="input-group-text"><i
+                                          class="flag-icon flag-icon-uz mr-1"></i> O‘zbekcha</span>
+                                            </div>
+                                            <input v-model="item.title_uz" type="text" class="form-control"
+                                                   placeholder="Menyu nomi" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="input-group mb-1">
+                                            <div class="input-group-prepend">
+                                      <span class="input-group-text"><i
+                                          class="flag-icon flag-icon-ru mr-1"></i> Русский</span>
+                                            </div>
+                                            <input v-model="item.title_ru" type="text" class="form-control"
+                                                   placeholder="Названия меню" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="input-group mb-1">
+                                            <div class="input-group-prepend">
+                                      <span class="input-group-text"><i
+                                          class="flag-icon flag-icon-gb mr-1"></i> English</span>
+                                            </div>
+                                            <input v-model="item.title_en" type="text" class="form-control"
+                                                   placeholder="Menu name" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">{{ host }}</span>
+                                            </div>
+                                            <input v-model="item.url" type="text" class="form-control"
+                                                   placeholder="URL" aria-describedby="basic-addon1">
+                                        </div>
+                                        <button type="button" class="btn btn-light-danger mt-2 mr-1"
+                                                @click.prevent="deleteMenu(item.id)"><i class="bx bxs-trash p-0"></i>
+                                            <span class="ml-25">O'chirish</span></button>
+
+                                        <div class="custom-control custom-switch custom-control-inline" style="top: 18px">
+                                                <input name="footer" type="checkbox" class="custom-control-input"
+                                                       v-model="item.footer"
+                                                       :checked="checked(item.footer)"
+                                                       :id="'footer' + item.id">
+                                                <label class="custom-control-label mr-1" :for="'footer' + item.id">
+                                                    <span class="switch-icon-left"><i class="bx bx-check"></i></span>
+                                                    <span class="switch-icon-right"><i class="bx bx-x"></i></span>
+                                                </label>
+                                                <span>
+                                          <label :for="'footer' + item.id">
+                                            {% trans 'Footer' %}
+                                          </label></span>
+                                            </div>
+
+                                        <div class="custom-control custom-switch custom-control-inline" style="top: 18px">
+                                                <input name="is_static" type="checkbox" class="custom-control-input"
+                                                       v-model="item.is_static"
+                                                       :checked="checked(item.is_static)"
+                                                       :id="'static' + item.id">
+                                                <label class="custom-control-label mr-1" :for="'static' + item.id">
+                                                    <span class="switch-icon-left"><i class="bx bx-check"></i></span>
+                                                    <span class="switch-icon-right"><i class="bx bx-x"></i></span>
+                                                </label>
+                                                <span>
+                                          <label :for="'static' + item.id">
+                                            {% trans 'Statik sahifa' %}
+                                          </label></span>
+                                            </div>
+                                    </div>
+                                </div>
+                                                        </div>
+                                                    </div>
+                        <!-- Handler -->
+
+                                                </template>
+                                            </vue-nestable>
+                                        </div>
+
+                                        <div v-for="(item, index) in nestableItems">
+                                            <input type="hidden" :name="`item.title_uz`" :value="item.title_uz">
+                                            <input type="hidden" :name="`item.title_ru`" :value="item.title_ru">
+                                            <input type="hidden" :name="`item.title_en`" :value="item.title_en">
+                                            <input type="hidden" :name="`item.order`" :value="index + 1">
+                                            <input type="hidden" :name="`item.url`" :value="item.url">
+                                            <input type="hidden" :name="`item.footer`" :value="item.footer">
+
+                                                <div v-for="(item2, index2) in item.child" v-if="item.child">
+                                                    <input type="hidden" :name="`item.child.title_uz`" :value="item2.title_uz">
+                                                    <input type="hidden" :name="`item.child.title_ru`" :value="item2.title_ru">
+                                                    <input type="hidden" :name="`item.child.title_en`" :value="item2.title_en">
+                                                    <input type="hidden" :name="`item.child.order`" :value="index2 + 1">
+                                                    <input type="hidden" :name="`item.child.url`" :value="item2.url">
+                                                    <input type="hidden" :name="`item.child.footer`" :value="item2.footer">
+                                                    <input type="hidden" :name="`item.child.is_static`" :value="item2.is_static">
+                </div>
+                                        </div>
+                                        <div class="footmenu d-flex">
+                <button type="button" class="btn btn-light-primary mr-1 mb-1" @click.prevent="addNewMenu">
+                    <i class="bx bx-plus"></i>
+                    <span class="align-middle ml-25">Yangi menyu</span>
+                </button>
+                <button type="button" class="btn btn-success glow mr-1 mb-1 ml-auto" @click.prevent="saveMenu">
+                    <i class="bx bx-check"></i>
+                    <span class="align-middle ml-25">Saqlash</span>
+                </button>
+            </div>
+                                    </section>
+                                </div>
+
+
+
+                            </div>
+                            <!-- invoice action  -->
+                        </div>
+                    </section>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'back/app-assets/vendors/js/filepond-plugin-image-preview.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/filepond.js' %}"></script>
+    <script src="{% static 'back/app-assets/js/vue.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/vue-ctk-date-time-picker.umd.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/katex.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/highlight.min.js' %}"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+    <!-- END: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/js/scripts/forms/select/form-select2.min.js' %}"></script>
+
+    <!-- END: Vue Nestables-->
+    <script src="https://cdn.jsdelivr.net/npm/vue-nestable@2.6.0/dist/index.iife.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification"></script>
+    <script type="text/javascript">
+
+    {#Vue.use(vueNestable);#}
+
+    const {VueNestable, VueNestableHandle} = vueNestable
+    {#const {VueNestableHandle, VueNestable} = vueNestableHandle#}
+
+    Vue.component('vue-nestable', VueNestable)
+    Vue.component('vue-nestable-handle', VueNestableHandle)
+    {#Vue.use(VueNestableHandle)#}
+
+    Vue.use(VueToast, {
+        position: 'top',
+        queue: false,
+        duration: 1000,
+    });
+
+        var app = new Vue({
+            el: '#app',
+            {#props: [#}
+            {#    'items',#}
+            {#],#}
+            data: {
+                move: true,
+                nestableItems: [],
+                api: '{{ api|safe }}',
+                post: '{{ post|safe }}',
+                host: '{{ host|safe }}',
+                delete: '{{ delete|safe }}',
+                message: 'Hello!',
+                {#headers : {"X-CSRFTOKEN": "sdfsdfo123h12i3h213ikjb21jk"},#}
+                headers : {"X-CSRFTOKEN": '{% csrf_token %}'},
+                value: null,
+                myFiles: null,
+                videotrue: false
+            },
+
+            header: {
+
+            },
+
+            mounted() {
+                {#axios.defaults.xsrfCookieName = 'csrftoken',#}
+                {#axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"#}
+                {#axios.defaults.headers.post['X-CSRF-Token'] = {% csrf_token %};#}
+
+
+
+                axios
+                .get(this.api)
+                .then(response => {
+                    console.log(response.data)
+                    this.nestableItems = response.data
+                })
+            },
+            methods: {
+                checked(value){
+                    return value === true;
+                },
+                OrderUpdate(value){
+                    return value + 1
+                },
+
+                beforeMove() {
+                    return true
+                },
+                deleteMenu(keyitem) {
+                    let parentIndex = this.nestableItems.findIndex(v => v.id === keyitem)
+                    if(parentIndex != -1) {
+                        this.nestableItems.splice(parentIndex, 1)
+                    } else {
+                        this.nestableItems.forEach((el, i) => {
+                            if(el.child) {
+                                let index = el.child.findIndex(v => v.id === keyitem)
+
+                                if(index != -1) {
+                                    this.nestableItems[i].child.splice(index, 1)
+                                }
+                            }
+                        })
+                    }
+
+
+                    axios.defaults.headers.common['X-CSRFTOKEN'] = $('meta[name="csrf-token"]').attr('value');
+                    axios
+                        .post(this.delete, {'id': keyitem})
+
+                },
+                addNewMenu() {
+                console.log(321132213213321213321)
+                let newId = Math.floor(100000 + Math.random() * 900000);
+                let newMenu = {
+                    id: newId,
+                    url: '#',
+                    title_uz: 'Menyu',
+                    title_ru: 'Меню',
+                    title_en: 'Menu',
+                    footer: false,
+                    is_static: false,
+                    order: 0,
+                    child: [],
+                };
+                this.nestableItems.push(newMenu);
+            },
+
+                saveMenu(){
+                    this.nestableItems.forEach((item, index) => {
+                        item.order = index + 1
+                        if (item.child){
+                            item.child.forEach((child, index2) => {
+                                child.order = index2 + 1
+                            })
+                        }
+
+                    });
+                    axios.defaults.headers.common['X-CSRFTOKEN'] = $('meta[name="csrf-token"]').attr('value');
+                    axios
+
+                    .post(this.post, {'payload': this.nestableItems})
+                    .then(res => {
+                        if (res.status  === 201) this.$toast.success(res.data);
+                        else this.$toast.error(res.data);
+                })
+
+                }
+
+
+
+
+            },
+
+
+        });
+    </script>
+{% endblock %}

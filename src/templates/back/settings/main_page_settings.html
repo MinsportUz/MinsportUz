@@ -1,0 +1,596 @@
+{% extends 'back/_base.html' %}
+{% load static i18n templatetags %}
+{% block mainbread %}
+    <ul class="nav navbar-nav bookmark-icons">
+        <div class="d-flex main-bread">
+            <h5 class="content-header-title float-left pr-1 mb-0">{% trans 'Asosiy' %}</h5>
+            <div class="breadcrumb-wrapper">
+                <ol class="breadcrumb p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'index-admin' %}"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active">{% trans 'Bosh sahifa' %}
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </ul>
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue-ctk-date-time-picker.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue2-editor.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/katex.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/monokai-sublime.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.snow.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.imageUploader.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/main-editor.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/vendors/css/ui/prism.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/css/plugins/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond-plugin-image-preview.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/forms/select/select2.min.css' %}">
+{% endblock %}
+
+{% block body %}
+    {% include 'back/parts/menu.html' %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content" id="app">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- app invoice View Page -->
+                <form action="{% url 'settings:general' %}" method="post"
+                      enctype="multipart/form-data">{% csrf_token %}
+                    <section class="invoice-edit-wrapper">
+                        <div class="row">
+                            <!-- invoice view page -->
+                            <div class="col-xl-8 col-md-8 col-12">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="uzbek-tab" data-toggle="pill" href="#uzbek"
+                                           aria-expanded="true"><i class="flag-icon flag-icon-uz mr-50"></i>
+                                            O‘zbekcha</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="russian-tab" data-toggle="pill" href="#russian"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-ru mr-50"></i> Русский
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="english-tab" data-toggle="pill" href="#english"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-gb mr-50"></i> English
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content main-editor">
+                                    <div class="tab-pane active" id="uzbek" role="tabpanel" aria-labelledby="home-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[UZ] Bosh
+                                                    sarlavha</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row ">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text"
+                                                                       class="form-control"
+                                                                       placeholder="{% trans 'Bosh sarlavha' %}"
+                                                                       name="logo_title_uz"
+                                                                       v-model="logo_title_uz">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row ">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <label>{% trans 'Mobil ilova sarlavhasi' %}</label>
+                                                                <input type="text"
+                                                                       class="form-control"
+                                                                       placeholder="{% trans 'Mobil ilova uchun sarlavhani kiriting' %}"
+                                                                       name="mobile_title_uz"
+                                                                       v-model="mobile_title_uz">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Batafsil' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="5"
+                                                                          placeholder="{% trans 'Mobil ilova haqida batafsil yozing' %}"
+                                                                          name="mobile_description_uz"
+                                                                          v-model="mobile_description_uz">
+
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="russian" role="tabpanel" aria-labelledby="russian-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[RU]
+                                                    Заглавие</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row ">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text"
+                                                                       class="form-control"
+                                                                       placeholder="{% trans 'Bosh sarlavha' %}"
+                                                                       name="logo_title_ru"
+                                                                       v-model="logo_title_ru">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row ">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <label>{% trans 'Mobil ilova sarlavhasi' %}</label>
+                                                                <input type="text"
+                                                                       class="form-control"
+                                                                       placeholder="{% trans 'Mobil ilova uchun sarlavhani kiriting' %}"
+                                                                       name="mobile_title_ru"
+                                                                       v-model="mobile_title_ru">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Batafsil' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="5"
+                                                                          placeholder="{% trans 'Mobil ilova haqida batafsil yozing' %}"
+                                                                          name="mobile_description_ru"
+                                                                          v-model="mobile_description_ru">
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="english" role="tabpanel" aria-labelledby="english-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[EN] Main
+                                                    title</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row ">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text"
+                                                                       class="form-control"
+                                                                       placeholder="{% trans 'Bosh sarlavha' %}"
+                                                                       name="logo_title_en"
+                                                                       v-model="logo_title_en">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row ">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <label>{% trans 'Mobil ilova sarlavhasi' %}</label>
+                                                                <input type="text"
+                                                                       class="form-control"
+                                                                       placeholder="{% trans 'Mobil ilova uchun sarlavhani kiriting' %}"
+                                                                       name="mobile_title_en"
+                                                                       v-model="mobile_title_en">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Batafsil' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="5"
+                                                                          placeholder="{% trans 'Mobil ilova haqida batafsil yozing' %}"
+                                                                          name="mobile_description_en"
+                                                                          v-model="mobile_description_en">
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body mx-25">
+                                            <!-- invoice address and contact -->
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Ishonch telefoni' %}</label>
+                                                        <input type="text" class="form-control"
+                                                               v-model="phone_number"
+                                                               name="phone_number"
+                                                               placeholder="{% trans 'Telefon raqamni kiriting' %}">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'E-Link' %}</label>
+                                                        <input type="url" class="form-control"
+                                                               v-model="e_link"
+                                                               name="e_link"
+                                                               placeholder="{% trans 'E-Link' %}">
+                                                    </fieldset>
+
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Android havolasi' %}</label>
+                                                        <input type="url" class="form-control"
+                                                               v-model="mobile_android"
+                                                               name="mobile_android"
+                                                               placeholder="Link">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'IOS havolasi' %}</label>
+                                                        <input type="url" class="form-control"
+                                                               name="mobile_ios"
+                                                               v-model="mobile_ios"
+                                                               placeholder="Link">
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body mx-25">
+                                            <!-- invoice address and contact -->
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Android ilova reklamasi' %}</label>
+                                                        <input type="url" class="form-control"
+                                                               name="home_ad_android"
+                                                               v-model="home_ad_android"
+                                                               placeholder="{% trans 'Android ilova reklamasi linki' %}">
+                                                    </fieldset>
+
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'IOS ilova reklamasi' %}</label>
+                                                        <input type="url" class="form-control"
+                                                               name="home_ad_ios"
+                                                               v-model="home_ad_ios"
+                                                               placeholder="{% trans 'IOS ilova reklamasi linki' %}">
+                                                    </fieldset>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- invoice action  -->
+                            <div class="col-xl-4 col-md-4 col-12 pt-4">
+                                <div class="card invoice-action-wrapper shadow-none border">
+                                    <div class="card-body">
+                                        <div class="invoice-action-btn mb-1">
+                                            <button type="submit" class="btn btn-primary btn-block invoice-send-btn">
+                                                <i class="bx bxs-save"></i>
+                                                <span>{% trans 'Yangilash' %}</span>
+                                            </button>
+                                        </div>
+                                        <div class="invoice-action-btn mb-1">
+                                            <div class="save">
+                                                <a href="{% url 'index-admin' %}"
+                                                   class="btn btn-light-danger btn-block">
+                                                    <span class="text-nowrap">{% trans 'O‘chirish' %}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">{% trans 'Menyu belgisi' %}</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            {% if site.menu_icon %}
+                                                <a href="{{ site.menu_icon.url }}">{{ site.menu_icon.name }}</a>
+                                            {% endif %}
+                                            <input type="file" name="menu_icon">
+                                        </div>
+
+                                        <div class="m-1">
+                                            <div class="tab-pane" id="profile-just">
+                                                <fieldset class="form-group">
+                                                        <textarea class="form-control"
+                                                                  name="menu_icon_link"
+                                                                  v-model="menu_icon_link"
+                                                                  id="basicTextarea" rows="2"
+                                                                  placeholder="URL"></textarea>
+                                                </fieldset>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">{% trans 'Mobil ilova rasmi' %}</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            {% if site.mobile_image %}
+                                                <a href="{{ site.mobile_image.url }}">{{ site.mobile_image.name }}</a>
+                                            {% endif %}
+                                            <input type="file" name="mobile_image">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">{% trans 'Mobil ilova posteri' %}</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            {% if site.mobile_poster %}
+                                                <a href="{{ site.mobile_poster.url }}">{{ site.mobile_poster.name }}</a>
+                                            {% endif %}
+                                            <input type="file" name="mobile_poster">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">{% trans 'Bosh sahifa reklamasi' %}</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            {% if site.home_ad %}
+                                                <a href="{{ site.home_ad.url }}">{{ site.home_ad.name }}</a>
+                                            {% endif %}
+                                            <input type="file" name="home_ad">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">{% trans 'Reklama rasmi' %}</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            {% if site.poster %}
+                                                <a href="{{ site.poster.url }}">{{ site.poster.name }}</a>
+                                            {% endif %}
+                                            <input type="file" name="poster">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">{% trans 'Poster' %}</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            {% if site.poster %}
+                                                <a href="{{ site.poster.url }}">{{ site.poster.name }}</a>
+                                            {% endif %}
+                                            <input type="file" name="poster">
+                                        </div>
+
+                                        <div class="m-1">
+                                            <div class="tab-pane" id="profile-just">
+                                                <fieldset class="form-group">
+                                                        <textarea class="form-control" name="poster_url"
+                                                                  id="basicTextarea" rows="3"
+                                                                  placeholder="URL">{{ site.poster_url }}</textarea>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'back/app-assets/vendors/js/filepond-plugin-image-preview.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/filepond.js' %}"></script>
+    <script src="{% static 'back/app-assets/js/vue.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/vue-ctk-date-time-picker.umd.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/katex.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/highlight.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/quill.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/quill.imageUploader.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/vue-filepond.min.js' %}"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+    <!-- END: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/js/scripts/forms/select/form-select2.min.js' %}"></script>
+
+    <script type="text/javascript">
+        Vue.component('vue-ctk-date-time-picker', window['vue-ctk-date-time-picker']);
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                FilePond: vueFilePond.default(FilePondPluginImagePreview)
+            },
+            data: {
+                logo_title_uz: '{{ site.logo_title_uz|escapejs }}',
+                logo_title_ru: '{{ site.logo_title_ru|escapejs }}',
+                logo_title_en: '{{ site.logo_title_en|escapejs }}',
+
+                mobile_title_uz: '{{ site.mobile_title_uz|escapejs }}',
+                mobile_title_ru: '{{ site.mobile_title_ru|escapejs }}',
+                mobile_title_en: '{{ site.mobile_title_en|escapejs }}',
+
+                mobile_description_uz: '{{ site.mobile_description_uz|escapejs }}',
+                mobile_description_ru: '{{ site.mobile_description_ru|escapejs }}',
+                mobile_description_en: '{{ site.mobile_description_en|escapejs }}',
+
+                phone_number: '{{ site.phone_number|escapejs }}',
+                e_link: '{{ site.e_link|escapejs }}',
+                mobile_android: '{{ site.mobile_android|escapejs }}',
+                mobile_ios: '{{ site.mobile_ios|escapejs }}',
+                home_ad_android: '{{ site.home_ad_android|escapejs }}',
+                home_ad_ios: '{{ site.home_ad_ios|escapejs }}',
+                poster_url: '{{ site.poster_url|escapejs }}',
+                menu_icon_link: '{{ site.menu_icon_link|escapejs }}',
+
+
+                message: 'Hello!',
+                value: null,
+                myFiles: null,
+                videotrue: false
+            },
+            methods: {
+                handleFilePondInit: function () {
+                    console.log('FilePond has initialized');
+
+                    // example of instance method call on pond reference
+                    this.$refs.pond.getFiles();
+                }
+            },
+        });
+        Quill.register("modules/imageUploader", ImageUploader);
+        var quill = new Quill('#editor-container', {
+            modules: {
+                formula: true,
+                syntax: true,
+                toolbar: '#toolbar-container',
+                imageUploader: {
+                    upload: file => {
+                        return new Promise((resolve, reject) => {
+                            const formData = new FormData();
+                            formData.append("image", file);
+
+                            fetch(
+                                "https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22",
+                                {
+                                    method: "POST",
+                                    body: formData
+                                }
+                            )
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result);
+                                    resolve(result.data.url);
+                                })
+                                .catch(error => {
+                                    reject("Yuklashda xatolik");
+                                    console.error("Xato:", error);
+                                });
+                        });
+                    }
+                }
+            },
+
+            placeholder: 'Maqola haqida batafsil...',
+            theme: 'snow'
+        });
+        var quill = new Quill('#russian-editor', {
+            modules: {
+                formula: true,
+                syntax: true,
+                toolbar: '#toolbar-russian-container',
+                imageUploader: {
+                    upload: file => {
+                        return new Promise((resolve, reject) => {
+                            const formData = new FormData();
+                            formData.append("image", file);
+
+                            fetch(
+                                "https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22",
+                                {
+                                    method: "POST",
+                                    body: formData
+                                }
+                            )
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result);
+                                    resolve(result.data.url);
+                                })
+                                .catch(error => {
+                                    reject("Ошибка при загрузке");
+                                    console.error("Ошибка:", error);
+                                });
+                        });
+                    }
+                }
+            },
+
+            placeholder: 'Подробно...',
+            theme: 'snow'
+        });
+        var quill = new Quill('#english-editor', {
+            modules: {
+                formula: true,
+                syntax: true,
+                toolbar: '#toolbar-english-container',
+                imageUploader: {
+                    upload: file => {
+                        return new Promise((resolve, reject) => {
+                            const formData = new FormData();
+                            formData.append("image", file);
+
+                            fetch(
+                                "https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22",
+                                {
+                                    method: "POST",
+                                    body: formData
+                                }
+                            )
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result);
+                                    resolve(result.data.url);
+                                })
+                                .catch(error => {
+                                    reject("Upload failed");
+                                    console.error("Error:", error);
+                                });
+                        });
+                    }
+                }
+            },
+
+            placeholder: 'More about this post...',
+            theme: 'snow'
+        });
+    </script>
+
+{% endblock %}

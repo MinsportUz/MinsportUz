@@ -1,0 +1,439 @@
+{% extends 'back/_base.html' %}
+{% load static i18n %}
+{% block mainbread %}
+    <ul class="nav navbar-nav bookmark-icons">
+        <div class="d-flex main-bread">
+            <h5 class="content-header-title float-left pr-1 mb-0">{% trans "So'rovnomalar" %}</h5>
+            <div class="breadcrumb-wrapper">
+                <ol class="breadcrumb p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'index-admin' %}"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="{% url 'quizz:quizz-list' %}">{% trans "Barcha so'rovnomalar" %}</a>
+                    </li>
+                    <li class="breadcrumb-item active">{% trans "Yangi so'rovnoma" %}
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </ul>
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue-ctk-date-time-picker.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue2-editor.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/theme-sugar.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/katex.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/monokai-sublime.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.snow.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.imageUploader.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/main-editor.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/vendors/css/ui/prism.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/css/plugins/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond-plugin-image-preview.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/forms/select/select2.min.css' %}">
+{% endblock %}
+
+{% block body %}
+    {% include 'back/parts/menu.html' %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content" id="app">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- app invoice View Page -->
+                <form action="{% url 'link:link-create' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <section class="invoice-edit-wrapper">
+                        <div class="row">
+                            <!-- invoice view page -->
+                            <div class="col-xl-8 col-md-8 col-12">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="uzbek-tab" data-toggle="pill" href="#uzbek"
+                                           aria-expanded="true"><i class="flag-icon flag-icon-uz mr-50"></i>
+                                            O‘zbekcha</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="russian-tab" data-toggle="pill" href="#russian"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-ru mr-50"></i> Русский
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="english-tab" data-toggle="pill" href="#english"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-gb mr-50"></i> English
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content main-editor">
+                                    <div class="tab-pane active" id="uzbek" role="tabpanel" aria-labelledby="home-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[UZ] So'rovnoma
+                                                    nomi</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-1 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" v-model="title_uz"
+                                                                       class="form-control" required
+                                                                       placeholder="{% trans "So'rovnoma nomini yozing" %}"
+                                                                       name="title_uz">
+                                                            </fieldset>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="russian" role="tabpanel" aria-labelledby="russian-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[RU] Название вопроса </h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-1 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" v-model="title_ru"
+                                                                       class="form-control"
+                                                                       placeholder="{% trans "So'rovnoma nomini yozing" %}"
+                                                                       name="title_ru">
+                                                            </fieldset>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="english" role="tabpanel" aria-labelledby="english-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[EN] Question
+                                                    title</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-1 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" v-model="title_en"
+                                                                       class="form-control"
+                                                                       placeholder="{% trans "So'rovnoma nomini yozing" %}"
+                                                                       name="title_en">
+                                                            </fieldset>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <div class="w-100">
+
+                                    <section id="accordion-icon-wrapper">
+                                        <div class="accordion collapse-icon accordion-icon-rotate" id="accordionWrapa2" data-toggle-hover="true">
+                                            <vue-nestable
+                                                    v-model="nestableItems"
+                                                    :max-depth="1"
+                                                    key-prop="id"
+                                                    children-prop="child"
+                                                    class-prop="class">
+
+                                                <template slot-scope="{ item }">
+                                                    <div class="card collapse-header open">
+                                                        <div :id="'heading' + item.id" class="card-header" data-toggle="collapse"
+                                                             :data-target="'#accordion' + item.id" aria-expanded="false"
+                                                             :aria-controls="'accordion' + item.id" role="tablist">
+                                                        <span class="collapse-title custom-drag">
+                                                            <template v-if="item.title_uz">
+                                                                <span class="align-middle">{% verbatim %}{{ item.title_uz }}{% endverbatim %}</span>
+                                                            </template>
+                                                            <template v-else>
+                                                                <span class="align-middle">Javob nomi yo'q</span>
+                                                            </template>
+                                                        </span>
+                                                        </div>
+                                                        <div :id="'accordion' + item.id" role="tabpanel" data-parent="#accordionWrapa2"
+                                                            :aria-labelledby="'heading' + item.id" class="collapse">
+                                                        <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="input-group mb-1">
+                                            <div class="input-group-prepend">
+                                      <span class="input-group-text"><i
+                                          class="flag-icon flag-icon-uz mr-1"></i> O‘zbekcha</span>
+                                            </div>
+                                            <input v-model="item.title_uz" type="text" class="form-control"
+                                                   placeholder="Javob nomi" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="input-group mb-1">
+                                            <div class="input-group-prepend">
+                                      <span class="input-group-text"><i
+                                          class="flag-icon flag-icon-ru mr-1"></i> Русский</span>
+                                            </div>
+                                            <input v-model="item.title_ru" type="text" class="form-control"
+                                                   placeholder="Название ответа" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="input-group mb-1">
+                                            <div class="input-group-prepend">
+                                      <span class="input-group-text"><i
+                                          class="flag-icon flag-icon-gb mr-1"></i> English</span>
+                                            </div>
+                                            <input v-model="item.title_en" type="text" class="form-control"
+                                                   placeholder="Answer name" aria-describedby="basic-addon1">
+                                        </div>
+                                        <button type="button" class="btn btn-light-danger mt-2 mr-1"
+                                                @click.prevent="deleteMenu(item.id)"><i class="bx bxs-trash p-0"></i>
+                                            <span class="ml-25">O'chirish</span></button>
+
+
+                                    </div>
+                                </div>
+                                                        </div>
+                                                    </div>
+                        <!-- Handler -->
+
+                                                </template>
+                                            </vue-nestable>
+                                        </div>
+
+                                        <div v-for="(item, index) in nestableItems">
+                                            <input type="hidden" :name="`item.title_uz`" :value="item.title_uz">
+                                            <input type="hidden" :name="`item.title_ru`" :value="item.title_ru">
+                                            <input type="hidden" :name="`item.title_en`" :value="item.title_en">
+                                        </div>
+                                        <div class="footmenu d-flex">
+                <button type="button" class="btn btn-light-primary mr-1 mb-1" @click.prevent="addNewMenu">
+                    <i class="bx bx-plus"></i>
+                    <span class="align-middle ml-25">Yangi menyu</span>
+                </button>
+                <button type="button" class="btn btn-success glow mr-1 mb-1 ml-auto" @click.prevent="saveMenu">
+                    <i class="bx bx-check"></i>
+                    <span class="align-middle ml-25">Saqlash</span>
+                </button>
+            </div>
+                                    </section>
+                                </div>
+
+                            </div>
+
+
+                            <!-- invoice action  -->
+                            <div class="col-xl-4 col-md-4 col-12 pt-4">
+                                <div class="card invoice-action-wrapper shadow-none border">
+                                    <div class="card-body">
+                                        <fieldset>
+                                            <div class="custom-control custom-switch custom-control-inline mb-1">
+                                                <input name="is_published" type="checkbox" class="custom-control-input"
+                                                       v-model="is_published"
+                                                       id="ispublished">
+                                                <label class="custom-control-label mr-1" for="ispublished">
+                                                    <span class="switch-icon-left"><i class="bx bx-check"></i></span>
+                                                    <span class="switch-icon-right"><i class="bx bx-x"></i></span>
+                                                </label>
+                                                <span>
+                                          <label for="ispublished">
+                                            {% trans 'Faol' %}
+                                          </label></span>
+                                            </div>
+
+                                            <div class="custom-control custom-switch custom-control-inline mb-1">
+                                                <input name="main_page" type="checkbox" class="custom-control-input"
+                                                        v-model="main_page"
+                                                       id="main_page">
+                                                <label class="custom-control-label mr-1" for="main_page">
+                                                    <span class="switch-icon-left"><i class="bx bx-check"></i></span>
+                                                    <span class="switch-icon-right"><i class="bx bx-x"></i></span>
+                                                </label>
+                                                <span>
+                                          <label for="main_page">
+                                            {% trans 'Asosiy sahifa' %}
+                                          </label></span>
+                                            </div>
+                                        </fieldset>
+
+                                        <div class="invoice-action-btn">
+                                            <div class="save">
+                                                <a href="{% url 'quizz:quizz-list' %}"
+                                                        class="btn btn-light-danger btn-block">
+                                                    <span class="text-nowrap">{% trans 'O‘chirish' %}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'back/app-assets/vendors/js/filepond-plugin-image-preview.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/filepond.js' %}"></script>
+    <script src="{% static 'back/app-assets/js/vue.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/vue-ctk-date-time-picker.umd.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/katex.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/highlight.min.js' %}"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+    <!-- END: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/js/scripts/forms/select/form-select2.min.js' %}"></script>
+
+    <!-- END: Vue Nestables-->
+    <script src="https://cdn.jsdelivr.net/npm/vue-nestable@2.6.0/dist/index.iife.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification"></script>
+
+    <script type="text/javascript">
+
+    {#Vue.use(vueNestable);#}
+
+    const {VueNestable, VueNestableHandle} = vueNestable
+
+
+
+    Vue.component('vue-nestable', VueNestable)
+    Vue.use(VueToast, {
+        position: 'top',
+        queue: false,
+        duration: 1000,
+    });
+
+        var app = new Vue({
+            el: '#app',
+            {#props: [#}
+            {#    'items',#}
+            {#],#}
+            data: {
+                move: true,
+                nestableItems: [],
+                title_uz: '{{ object.title_uz|safe|escapejs }}',
+                title_ru: '{{ object.title_ru|safe|escapejs }}',
+                title_en: '{{ object.title_en|safe|escapejs }}',
+
+                api: '{{ api|safe|escapejs }}',
+                post: '{{ post|safe|escapejs }}',
+                host: '{{ host|safe|escapejs }}',
+                delete: '{{ delete|safe|escapejs }}',
+
+                is_published: true,
+                main_page: false,
+
+                message: 'Hello!',
+                {#headers : {"X-CSRFTOKEN": "sdfsdfo123h12i3h213ikjb21jk"},#}
+                headers : {"X-CSRFTOKEN": '{% csrf_token %}'},
+                value: null,
+                myFiles: null,
+                videotrue: false
+            },
+
+            header: {
+
+            },
+
+            methods: {
+                checked(value){
+                    return value === true;
+                },
+                OrderUpdate(value){
+                    return value + 1
+                },
+
+                beforeMove() {
+                    return true
+                },
+                deleteMenu(keyitem) {
+                    let parentIndex = this.nestableItems.findIndex(v => v.id === keyitem)
+                    if(parentIndex != -1) {
+                        this.nestableItems.splice(parentIndex, 1)
+                    } else {
+                        this.nestableItems.forEach((el, i) => {
+                            if(el.child) {
+                                let index = el.child.findIndex(v => v.id === keyitem)
+
+                                if(index != -1) {
+                                    this.nestableItems[i].child.splice(index, 1)
+                                }
+                            }
+                        })
+                    }
+
+
+                    axios.defaults.headers.common['X-CSRFTOKEN'] = $('meta[name="csrf-token"]').attr('value');
+                    axios
+                        .post(this.delete, {'id': keyitem})
+
+                },
+                addNewMenu() {
+                let newId = Math.floor(100000 + Math.random() * 900000);
+                let newMenu = {
+                    id: newId,
+                    title_uz: 'Javob',
+                    title_ru: 'Ответ',
+                    title_en: 'Answer',
+                };
+                this.nestableItems.push(newMenu);
+            },
+
+                saveMenu(){
+                    payload = {
+                        'quizz': {
+                            'title_uz': this.title_uz,
+                            'title_ru': this.title_ru,
+                            'title_en': this.title_en,
+                            'is_published': this.is_published,
+                            'main_page': this.main_page,
+                        },
+                        'question': this.nestableItems
+                    }
+
+                    axios.defaults.headers.common['X-CSRFTOKEN'] = $('meta[name="csrf-token"]').attr('value');
+                    axios
+                    .post(this.api, {'payload': payload})
+                    .then(res => {
+                        if (res.status  === 201) this.$toast.success(res.data);
+                        else this.$toast.error(res.data);
+                })
+
+                }
+
+
+
+
+            },
+
+
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,689 @@
+{% extends 'back/_base.html' %}
+{% load static i18n templatetags %}
+{% block mainbread %}
+    <ul class="nav navbar-nav bookmark-icons">
+        <div class="d-flex main-bread">
+            <h5 class="content-header-title float-left pr-1 mb-0">{% trans 'Asosiy' %}</h5>
+            <div class="breadcrumb-wrapper">
+                <ol class="breadcrumb p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'index-admin' %}"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active">{% trans 'Bog`lanish' %}
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </ul>
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue-ctk-date-time-picker.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue2-editor.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/katex.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/monokai-sublime.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.snow.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.imageUploader.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/main-editor.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/vendors/css/ui/prism.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/css/plugins/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond-plugin-image-preview.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/forms/select/select2.min.css' %}">
+{% endblock %}
+
+{% block body %}
+    {% include 'back/parts/menu.html' %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content" id="app">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- app invoice View Page -->
+                <form action="{% url 'settings:contact' %}" method="post"
+                      enctype="multipart/form-data">{% csrf_token %}
+                    <section class="invoice-edit-wrapper">
+                        <div class="row">
+                            <!-- invoice view page -->
+                            <div class="col-xl-8 col-md-8 col-12">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="uzbek-tab" data-toggle="pill" href="#uzbek"
+                                           aria-expanded="true"><i class="flag-icon flag-icon-uz mr-50"></i>
+                                            O‘zbekcha</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="russian-tab" data-toggle="pill" href="#russian"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-ru mr-50"></i> Русский
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="english-tab" data-toggle="pill" href="#english"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-gb mr-50"></i> English
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content main-editor">
+                                    <div class="tab-pane active" id="uzbek" role="tabpanel" aria-labelledby="home-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[UZ]
+                                                    Manzil</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <textarea type="text" rows="3"
+                                                                          class="form-control"
+                                                                          placeholder="{% trans 'Manzil' %}"
+                                                                          required
+                                                                          name="address_uz"
+                                                                          v-model="address_uz">
+
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Ish kunlari' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="3"
+                                                                          placeholder="{% trans 'Dushanba - Shanba' %}"
+                                                                          name="working_days_uz"
+                                                                          required
+                                                                          v-model="working_days_uz">
+
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Avtobus bekati' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="3"
+                                                                          placeholder="{% trans 'Avtobus bekati' %}"
+                                                                          name="bus_station_uz"
+                                                                          v-model="bus_station_uz">
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Metro bekatlari' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="3"
+                                                                          placeholder="{% trans 'Metro bekatlari' %}"
+                                                                          name="metro_station_uz"
+                                                                          v-model="metro_station_uz">
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Eslatma' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="10"
+                                                                          required
+                                                                          placeholder="{% trans 'Qabul uchun eslatma' %}"
+                                                                          name="notice_uz"
+                                                                          v-model="notice_uz">
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="russian" role="tabpanel" aria-labelledby="russian-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[RU] Адрес</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <textarea type="text" rows="3"
+                                                                          class="form-control"
+                                                                          placeholder="{% trans 'Manzil' %}"
+                                                                          name="address_ru"
+                                                                          v-model="address_ru">
+
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Ish kunlari' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="3"
+                                                                          placeholder="{% trans 'Dushanba - Shanba' %}"
+                                                                          name="working_days_ru"
+                                                                          v-model="working_days_ru">
+
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Avtobus bekati' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="3"
+                                                                          placeholder="{% trans 'Avtobus bekati' %}"
+                                                                          name="bus_station_ru"
+                                                                          v-model="bus_station_ru">
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Metro bekatlari' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="3"
+                                                                          placeholder="{% trans 'Metro bekatlari' %}"
+                                                                          name="metro_station_ru"
+                                                                          v-model="metro_station_ru">
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Eslatma' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="10"
+                                                                          placeholder="{% trans 'Qabul uchun eslatma' %}"
+                                                                          name="notice_ru"
+                                                                          v-model="notice_ru">
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="english" role="tabpanel" aria-labelledby="english-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[EN]
+                                                    Address</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <textarea type="text" rows="3"
+                                                                          class="form-control"
+                                                                          placeholder="{% trans 'Manzil' %}"
+                                                                          name="address_en"
+                                                                          v-model="address_en">
+
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Ish kunlari' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="3"
+                                                                          placeholder="{% trans 'Dushanba - Shanba' %}"
+                                                                          name="working_days_en"
+                                                                          v-model="working_days_en">
+
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Avtobus bekati' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="3"
+                                                                          placeholder="{% trans 'Avtobus bekati' %}"
+                                                                          name="bus_station_en"
+                                                                          v-model="bus_station_en">
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Metro bekatlari' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="3"
+                                                                          placeholder="{% trans 'Metro bekatlari' %}"
+                                                                          name="metro_station_en"
+                                                                          v-model="metro_station_en">
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">{% trans 'Eslatma' %}</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="10"
+                                                                          placeholder="{% trans 'Qabul uchun eslatma' %}"
+                                                                          name="notice_en"
+                                                                          v-model="notice_en">
+                                                                </textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body mx-25">
+                                            <!-- invoice address and contact -->
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Facebook</label>
+                                                        <input type="url" class="form-control"
+                                                               name="facebook"
+                                                               v-model="facebook"
+                                                               placeholder="URL">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Instagram</label>
+                                                        <input type="url" class="form-control"
+                                                               name="instagram"
+                                                               v-model="instagram"
+                                                               placeholder="URL">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Telegram</label>
+                                                        <input type="url" class="form-control"
+                                                               name="telegram"
+                                                               v-model="telegram"
+                                                               placeholder="URL">
+                                                    </fieldset>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body mx-25">
+                                            <!-- invoice address and contact -->
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Twitter</label>
+                                                        <input type="url" class="form-control"
+                                                               name="twitter"
+                                                               v-model="twitter"
+                                                               placeholder="URL">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">YouTube</label>
+                                                        <input type="url" class="form-control"
+                                                               name="youtube"
+                                                               v-model="youtube"
+                                                               placeholder="URL">
+                                                    </fieldset>
+
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Email' %}</label>
+                                                        <input type="email" class="form-control" required
+                                                               name="email"
+                                                               v-model="email"
+                                                               placeholder="info@lenta.uz"
+                                                               value="{{ contact_settings.email }}">
+                                                    </fieldset>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </div>
+                            <!-- invoice action  -->
+                            <div class="col-xl-4 col-md-4 col-12 pt-4">
+                                <div class="card invoice-action-wrapper shadow-none border">
+                                    <div class="card-body">
+                                        <div class="invoice-action-btn mb-1">
+                                            <button type="submit" class="btn btn-primary btn-block invoice-send-btn">
+                                                <i class="bx bxs-save"></i>
+                                                <span>{% trans 'Yangilash' %}</span>
+                                            </button>
+                                        </div>
+                                        <div class="invoice-action-btn mb-1">
+                                            <div class="save">
+                                                <a href="{% url 'index-admin' %}"
+                                                        class="btn btn-light-danger btn-block">
+                                                    <span class="text-nowrap">{% trans 'O‘chirish' %}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body mx-25">
+                                            <!-- invoice address and contact -->
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Telefon raqami' %}</label>
+                                                        <input type="text" class="form-control" required
+                                                               name="phone_number"
+                                                               v-model="phone_number"
+                                                               placeholder="+998 (99) 123 45 67">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Ish soati' %}</label>
+                                                        <input type="text" class="form-control"
+                                                               name="working_hours"
+                                                               v-model="working_hours"
+                                                               placeholder="09-16:00">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Avtobuslar' %}</label>
+                                                        <input type="text" class="form-control"
+                                                               name="buses"
+                                                               v-model="buses"
+                                                               placeholder="№ 23, 56, 12">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Yo`nalishli taksilar' %}</label>
+                                                        <input type="text" class="form-control"
+                                                               name="mini_buses"
+                                                               v-model="mini_buses"
+                                                               placeholder="№ 67, 79">
+                                                    </fieldset>
+
+
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Tadbirlar uchun ijtimoiy tarmoq' %}</label>
+                                                        <input type="text" class="form-control"
+                                                               name="event_username"
+                                                               v-model="event_username"
+                                                               placeholder="@project_managers">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Tadbirlar uchun ijtimoiy tarmoq linki' %}</label>
+                                                        <input type="url" class="form-control"
+                                                               name="event_link"
+                                                               v-model="event_link"
+                                                               placeholder="URL">
+                                                    </fieldset>
+
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Yangiliklar uchun ijtimoiy tarmoq' %}</label>
+                                                        <input type="text" class="form-control"
+                                                               name="news_username"
+                                                               v-model="news_username"
+                                                               placeholder="@project_managers">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Yangiliklar uchun ijtimoiy tarmoq linki' %}</label>
+                                                        <input type="url" class="form-control"
+                                                               name="news_link"
+                                                               v-model="news_link"
+                                                               placeholder="URL">
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'back/app-assets/vendors/js/filepond-plugin-image-preview.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/filepond.js' %}"></script>
+    <script src="{% static 'back/app-assets/js/vue.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/vue-ctk-date-time-picker.umd.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/katex.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/highlight.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/quill.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/quill.imageUploader.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/vue-filepond.min.js' %}"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+    <!-- END: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/js/scripts/forms/select/form-select2.min.js' %}"></script>
+
+    <script type="text/javascript">
+        Vue.component('vue-ctk-date-time-picker', window['vue-ctk-date-time-picker']);
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                FilePond: vueFilePond.default(FilePondPluginImagePreview)
+            },
+            data: {
+                address_uz: '{{ contact.address_uz|escapejs }}',
+                address_ru: '{{ contact.address_ru|escapejs }}',
+                address_en: '{{ contact.address_en|escapejs }}',
+
+                bus_station_uz: '{{ contact.bus_station_uz|escapejs }}',
+                bus_station_ru: '{{ contact.bus_station_ru|escapejs }}',
+                bus_station_en: '{{ contact.bus_station_en|escapejs }}',
+
+                notice_uz: '{{ contact.notice_uz|escapejs }}',
+                notice_ru: '{{ contact.notice_ru|escapejs }}',
+                notice_en: '{{ contact.notice_en|escapejs }}',
+
+                metro_station_uz: '{{ contact.metro_station_uz|escapejs }}',
+                metro_station_ru: '{{ contact.metro_station_ru|escapejs }}',
+                metro_station_en: '{{ contact.metro_station_en|escapejs }}',
+
+                working_days_uz: '{{ contact.working_days_uz|escapejs }}',
+                working_days_ru: '{{ contact.working_days_ru|escapejs }}',
+                working_days_en: '{{ contact.working_days_en|escapejs }}',
+
+                working_hours: '{{ contact.working_hours|escapejs }}',
+                phone_number: '{{ contact.phone_number|escapejs }}',
+                email: '{{ contact.email|escapejs }}',
+                mini_buses: '{{ contact.mini_buses|escapejs }}',
+                buses: '{{ contact.buses|escapejs }}',
+                event_link: '{{ contact.event_link|escapejs }}',
+                event_username: '{{ contact.event_username|escapejs }}',
+                news_link: '{{ contact.news_link|escapejs }}',
+                news_username: '{{ contact.news_username|escapejs }}',
+
+                instagram: '{{ contact.instagram|escapejs }}',
+                youtube: '{{ contact.youtube|escapejs }}',
+                telegram: '{{ contact.telegram|escapejs }}',
+                facebook: '{{ contact.facebook|escapejs }}',
+                twitter: '{{ contact.twitter|escapejs }}',
+
+
+                message: 'Hello!',
+                value: null,
+                myFiles: null,
+                videotrue: false
+            },
+            methods: {
+                handleFilePondInit: function () {
+                    console.log('FilePond has initialized');
+
+                    // example of instance method call on pond reference
+                    this.$refs.pond.getFiles();
+                }
+            },
+        });
+        Quill.register("modules/imageUploader", ImageUploader);
+        var quill = new Quill('#editor-container', {
+            modules: {
+                formula: true,
+                syntax: true,
+                toolbar: '#toolbar-container',
+                imageUploader: {
+                    upload: file => {
+                        return new Promise((resolve, reject) => {
+                            const formData = new FormData();
+                            formData.append("image", file);
+
+                            fetch(
+                                "https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22",
+                                {
+                                    method: "POST",
+                                    body: formData
+                                }
+                            )
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result);
+                                    resolve(result.data.url);
+                                })
+                                .catch(error => {
+                                    reject("Yuklashda xatolik");
+                                    console.error("Xato:", error);
+                                });
+                        });
+                    }
+                }
+            },
+
+            placeholder: 'Maqola haqida batafsil...',
+            theme: 'snow'
+        });
+        var quill = new Quill('#russian-editor', {
+            modules: {
+                formula: true,
+                syntax: true,
+                toolbar: '#toolbar-russian-container',
+                imageUploader: {
+                    upload: file => {
+                        return new Promise((resolve, reject) => {
+                            const formData = new FormData();
+                            formData.append("image", file);
+
+                            fetch(
+                                "https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22",
+                                {
+                                    method: "POST",
+                                    body: formData
+                                }
+                            )
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result);
+                                    resolve(result.data.url);
+                                })
+                                .catch(error => {
+                                    reject("Ошибка при загрузке");
+                                    console.error("Ошибка:", error);
+                                });
+                        });
+                    }
+                }
+            },
+
+            placeholder: 'Подробно...',
+            theme: 'snow'
+        });
+        var quill = new Quill('#english-editor', {
+            modules: {
+                formula: true,
+                syntax: true,
+                toolbar: '#toolbar-english-container',
+                imageUploader: {
+                    upload: file => {
+                        return new Promise((resolve, reject) => {
+                            const formData = new FormData();
+                            formData.append("image", file);
+
+                            fetch(
+                                "https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22",
+                                {
+                                    method: "POST",
+                                    body: formData
+                                }
+                            )
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result);
+                                    resolve(result.data.url);
+                                })
+                                .catch(error => {
+                                    reject("Upload failed");
+                                    console.error("Error:", error);
+                                });
+                        });
+                    }
+                }
+            },
+
+            placeholder: 'More about this post...',
+            theme: 'snow'
+        });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'back/_base.html' %}
+{% load static i18n %}
+{% block mainbread %}
+    <ul class="nav navbar-nav bookmark-icons">
+        <div class="d-flex main-bread">
+            <h5 class="content-header-title float-left pr-1 mb-0">{% trans 'Saytdagi xatolar' %}</h5>
+            <div class="breadcrumb-wrapper">
+                <ol class="breadcrumb p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'index-admin' %}"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item"><a
+                            href="{% url 'typo:typo-list' %}">{% trans 'Barcha qayd etilganlar xatolar' %}</a>
+                    </li>
+                    <li class="breadcrumb-item active"><a href="#">{% trans 'Tahrirlash' %}</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </ul>
+{% endblock %}
+{% block body %}
+    {% include 'back/parts/menu.html' %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content" id="app">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- app invoice View Page -->
+                <form action="{% url 'typo:typo-update' object.id %}" method="post">{% csrf_token %}
+                    <section class="invoice-edit-wrapper">
+                        <div class="row">
+                            <!-- invoice view page -->
+                            <div class="col-xl-8 col-md-8 col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title"
+                                            style="text-transform: inherit;">{% trans 'Matni' %}</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body pb-1 mx-25">
+                                            <!-- invoice address and contact -->
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="form-group">
+                                                        <textarea type="text" autocomplete="off" rows="4"
+                                                                  class="form-control" disabled
+                                                                  name="text">{{ object.title|escapejs }}</textarea>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="form-group">
+                                                        <label>{% trans 'Izoh' %}</label>
+                                                        <textarea type="text" autocomplete="off" rows="10"
+                                                                  class="form-control" disabled
+                                                                  name="text">{{ object.comment|escapejs }}</textarea>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+
+                                                    <fieldset class="form-group">
+                                                        <label>{% trans 'Sahifa' %}</label>
+{#                                                        <input type="text"#}
+{#                                                               class="form-control" disabled autocomplete="off"#}
+{#                                                               placeholder="{% trans 'sahifa' %}"#}
+{#                                                               name="page" value="{{ object.page }}">#}
+                                                    <h6 class="mt-1"><a href="{{ object.page }}">{{ object.page }}</a></h6>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- invoice action  -->
+                            <div class="col-xl-4 col-md-4 col-12">
+                                <div class="card invoice-action-wrapper shadow-none border">
+                                    <div class="card-body">
+                                        <fieldset>
+                                            <div class="custom-control custom-switch custom-control-inline mb-1">
+                                                <input name="corrected" {% if object.corrected %}
+                                                       checked {% endif %}
+                                                       type="checkbox" class="custom-control-input"
+                                                       id="ispublished">
+                                                <label class="custom-control-label mr-1" for="ispublished">
+                                                    <span class="switch-icon-left"><i class="bx bx-check"></i></span>
+                                                    <span class="switch-icon-right"><i class="bx bx-x"></i></span>
+                                                </label>
+                                                <span>
+                                          <label for="ispublished">
+                                            {% trans 'To`girlangan' %}
+                                          </label></span>
+                                            </div>
+                                        </fieldset>
+                                        <div class="invoice-action-btn mb-1">
+                                            <button type="submit" class="btn btn-primary btn-block invoice-send-btn">
+                                                <i class="bx bxs-save"></i>
+                                                <span>{% trans 'Yangilash' %}</span>
+                                            </button>
+                                        </div>
+                                        <div class="invoice-action-btn mb-1">
+                                            <div class="save">
+                                                <a href="{% url 'typo:typo-list' %}"
+                                                   class="btn btn-light-danger btn-block">
+                                                    <span class="text-nowrap">{% trans 'O‘chirish' %}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

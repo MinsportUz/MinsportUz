@@ -1,0 +1,431 @@
+{% extends 'back/_base.html' %}
+{% load static i18n %}
+{% block mainbread %}
+    <ul class="nav navbar-nav bookmark-icons">
+        <div class="d-flex main-bread">
+            <h5 class="content-header-title float-left pr-1 mb-0">{% trans 'Hujjatlar' %}</h5>
+            <div class="breadcrumb-wrapper">
+                <ol class="breadcrumb p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'index-admin' %}"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="{% url 'docs:docs-list' %}">{% trans 'Barcha hujjatlar' %}</a>
+                    </li>
+                    <li class="breadcrumb-item active">{% trans 'Hujjatni tahrirlash' %}
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </ul>
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue-ctk-date-time-picker.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue2-editor.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/katex.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/monokai-sublime.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.snow.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.imageUploader.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/main-editor.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/vendors/css/ui/prism.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/css/plugins/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond-plugin-image-preview.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/forms/select/select2.min.css' %}">
+{% endblock %}
+
+{% block body %}
+    {% include 'back/parts/menu.html' %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content" id="app">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- app invoice View Page -->
+
+                <form action="{% url 'docs:docs-update' docs.id %}" method="POST"
+                      enctype="multipart/form-data">{% csrf_token %}
+                    <section class="invoice-edit-wrapper">
+                        <div class="row">
+                            <!-- invoice view page -->
+                            <div class="col-xl-8 col-md-8 col-12">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="uzbek-tab" data-toggle="pill" href="#uzbek"
+                                           aria-expanded="true"><i class="flag-icon flag-icon-uz mr-50"></i>
+                                            O‘zbekcha</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="russian-tab" data-toggle="pill" href="#russian"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-ru mr-50"></i> Русский
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="english-tab" data-toggle="pill" href="#english"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-gb mr-50"></i> English
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content main-editor">
+                                    <div class="tab-pane active" id="uzbek" role="tabpanel" aria-labelledby="home-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[UZ] Hujjat
+                                                    nomi</h4>
+{#                                                Add fields with their current values#}
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" value="{{ docs.title_uz }}"
+                                                                       class="form-control" name="title_uz" required
+                                                                       placeholder="Hujjat nomini kiriting">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">{% trans 'Kim tomonidan berilgan' %}</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" value="{{ docs.issued_by_uz }}"
+                                                                       class="form-control" name="issued_by_uz"
+                                                                       placeholder="{% trans 'Kim tomonidan berilgan' %}">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">{% trans 'Qaror nomi' %}</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" value="{{ docs.law_uz }}"
+                                                                       class="form-control" name="law_uz"
+                                                                       placeholder="{% trans 'Qaror nomi' %}">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="russian" role="tabpanel" aria-labelledby="russian-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[RU] Названия
+                                                    документа</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" value="{{ docs.title_ru }}"
+                                                                       class="form-control" name="title_ru"
+                                                                       placeholder="Названия документа">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">{% trans 'Kim tomonidan berilgan' %}</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" value="{{ docs.issued_by_ru }}"
+                                                                       class="form-control" name="issued_by_ru"
+                                                                       placeholder="{% trans 'Kim tomonidan berilgan' %}">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">{% trans 'Qaror nomi' %}</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" value="{{ docs.law_ru }}"
+                                                                       class="form-control" name="law_ru"
+                                                                       placeholder="{% trans 'Qaror nomi' %}">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="english" role="tabpanel" aria-labelledby="english-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[EN] Document
+                                                    title</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" value="{{ docs.title_en }}"
+                                                                       class="form-control" name="title_en"
+                                                                       placeholder="Enter the title">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">{% trans 'Kim tomonidan berilgan' %}</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" value="{{ docs.issued_by_en }}"
+                                                                       class="form-control" name="issued_by_en"
+                                                                       placeholder="{% trans 'Kim tomonidan berilgan' %}">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">{% trans 'Qaror nomi' %}</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" value="{{ docs.law_en }}"
+                                                                       class="form-control" name="law_en"
+                                                                       placeholder="{% trans 'Qaror nomi' %}">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- invoice action  -->
+                            <div class="col-xl-4 col-md-4 col-12 mt-4">
+                                <div class="card invoice-action-wrapper shadow-none border">
+                                    <div class="card-body">
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <vue-ctk-date-time-picker label="{% trans 'Sana' %}"
+                                            time-format="H:mm"                    v-model="ispublished"></vue-ctk-date-time-picker>
+                                            <input type="hidden" v-model="ispublished"
+                                                   value="{{ docs.date | date:"Y-m-d H:i" }}"
+                                                   name="date">
+                                        </fieldset>
+                                        <fieldset>
+                                            <div class="custom-control custom-switch custom-control-inline mb-1">
+                                                <input name="is_published" {% if docs.is_published %}
+                                                       checked {% endif %}
+                                                       type="checkbox" class="custom-control-input"
+                                                       id="ispublished">
+                                                <label class="custom-control-label mr-1" for="ispublished">
+                                                    <span class="switch-icon-left"><i class="bx bx-check"></i></span>
+                                                    <span class="switch-icon-right"><i class="bx bx-x"></i></span>
+                                                </label>
+                                                <span>
+                                          <label for="ispublished">
+                                            {% trans 'Faol' %}
+                                          </label></span>
+                                            </div>
+                                        </fieldset>
+                                        <div class="invoice-action-btn mb-1">
+                                            <button type="submit" class="btn btn-primary btn-block invoice-send-btn">
+                                                <i class="bx bxs-save"></i>
+                                                <span>{% trans 'Yangilash' %}</span>
+                                            </button>
+                                        </div>
+                                        <div class="invoice-action-btn mb-1">
+                                            <div class="save">
+                                                <a href="{% url 'docs:docs-list' %}" class="btn btn-light-danger btn-block">
+                                                    <span class="text-nowrap">{% trans 'O‘chirish' %}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">{% trans 'Hududiy boshqarma' %}</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body bolimlar">
+                                            <div class="form-group">
+                                                <select class="form-control ishjoyi" name="doc_type" required>
+{#                                                <option disabled selected value></option>#}
+                                                    {% for doc_type in doc_types %}
+                                                        <option value="{{ doc_type.id }}"
+                                                                {% if doc.doc_type == doc_type %}selected{% endif %}>{{ doc_type.title }}</option>
+                                                    {% endfor %}
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'back/app-assets/vendors/js/filepond-plugin-image-preview.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/filepond.js' %}"></script>
+    <script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>
+    <script src="{% static 'back/app-assets/js/vue.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/vue-ctk-date-time-picker.umd.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/katex.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/highlight.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/quill.imageUploader.min.js' %}"></script>
+    <!-- Quill JS Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.6/dist/vue-quill-editor.js"></script>
+    <!-- Include stylesheet -->
+    <link href="https://cdn.quilljs.com/1.3.4/quill.core.css" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.4/quill.snow.css" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.4/quill.bubble.css" rel="stylesheet">
+    <script src="{% static 'back/app-assets/vendors/js/vue-filepond.min.js' %}"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+    <!-- END: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/js/scripts/forms/select/form-select2.min.js' %}"></script>
+
+    <script type="text/javascript">
+        Vue.component('vue-ctk-date-time-picker', window['vue-ctk-date-time-picker']);
+
+        Vue.use(VueQuillEditor);
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                FilePond: vueFilePond.default(FilePondPluginImagePreview)
+            },
+            data: {
+                title_uz: '',
+                title_ru: '',
+                title_en: '',
+                message: 'Hello!',
+                value: null,
+                ispublished: '{{ docs.date | date:"Y-m-d H:i" }}',
+                myFiles: null,
+                videotrue: false,
+                editorOption: {
+                    theme: 'snow'
+                }
+            },
+            methods: {
+                handleFilePondInit: function () {
+                    console.log('FilePond has initialized');
+                    this.$refs.pond.getFiles();
+                },
+                onEditorBlur(quill) {
+                    console.log('editor blur!', quill)
+                },
+                onEditorFocus(quill) {
+                    console.log('editor focus!', quill)
+                },
+                onEditorReady(quill) {
+                    console.log('editor ready!', quill)
+                }
+            },
+            computed: {
+                editor() {
+                    return this.$refs.quillEditor.quill
+                },
+                stringit() {
+                    return (args) => {
+                        return JSON.stringify(args)
+                    }
+                }
+            },
+
+        });
+
+        $(document).ready(function () {
+            $('.multiple-tags').select2({
+                width: '100%',
+                tags: true,
+                placeholder: 'Kalit so‘zlarni kiriting'
+            });
+
+        });
+    </script>
+
+{% endblock %}

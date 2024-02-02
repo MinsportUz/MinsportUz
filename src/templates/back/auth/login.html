@@ -1,0 +1,101 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Wave CMS</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+          rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/vendors/css/vendors.min.css' %}">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/css/bootstrap-extended.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/css/colors.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/css/components.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/css/themes/dark-layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/css/themes/semi-dark-layout.css' %}">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/css/core/menu/menu-types/vertical-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/css/pages/authentication.css' %}">
+    <!-- END: Page CSS-->
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+<body>
+<!-- BEGIN: Content-->
+<div class="col-12">
+    <div class="row">
+        <div class="col-md-6" style="height: 100vh;">
+            <div class="row">
+                <div class="container d-flex justify-content-center left-auth">
+                    <img src="{% static 'back/app-assets/images/logo/wavecms-w.jpg' %}" srcset="{% static 'back/app-assets/images/logo/wavecms-w.jpg' %} 2x" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" style="height: 100vh;">
+            <div class="row">
+                <div class="container d-flex justify-content-center right-auth">
+                    <form action="{% url 'login' %}" method="post">{% csrf_token %}
+                        <div class="form-group mb-50">
+                            <label class="text-bold-600"
+                                   for="exampleInputEmail1">Login</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                   placeholder="username" name="username"></div>
+                        <div class="form-group">
+                            <label class="text-bold-600"
+                                   for="exampleInputPassword1">Parol</label>
+                            <input type="password" class="form-control" name="password"
+                                   id="exampleInputPassword1" placeholder="parol">
+                        </div>
+                        {% if error_nouser %}
+                            <div style="color: red" class="text-center mb-1">{% trans 'Bunday foydalanuvchi mavjud emas' %}</div>
+                        {% endif %}
+                        <button type="submit"
+                                class="btn btn-primary glow w-100 position-relative">{% trans 'Kirish' %}<i
+                                id="icon-arrow" class="bx bx-right-arrow-alt"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- BEGIN: Vendor JS-->
+<script src="{% static 'back/app-assets/vendors/js/vendors.min.js' %}"></script>
+<script src="{% static 'back/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js' %}"></script>
+<script src="{% static 'back/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js' %}"></script>
+<script src="{% static 'back/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js' %}"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="{% static 'back/app-assets/js/scripts/configs/vertical-menu-light.js' %}"></script>
+<script src="{% static 'back/app-assets/js/core/app-menu.js' %}"></script>
+<script src="{% static 'back/app-assets/js/core/app.js' %}"></script>
+<script src="{% static 'back/app-assets/js/scripts/components.js' %}"></script>
+<script src="{% static 'back/app-assets/js/scripts/footer.js' %}"></script>
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<!-- END: Page JS-->
+
+</body>
+<!-- END: Body-->
+
+</html>

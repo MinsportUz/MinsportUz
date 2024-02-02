@@ -1,0 +1,3226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-26 11:57+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: admin_panel/app/auth/views.py:48
+msgid "Parolingiz muvaffaqiyatli yangilandi."
+msgstr "Parolingiz muvaffaqiyatli yangilandi."
+
+#: admin_panel/app/menu/views.py:64 admin_panel/app/quizz/views.py:64
+#: admin_panel/app/quizz/views.py:117
+msgid "Muvaffaqiyatli saqlandi"
+msgstr "Muvaffaqiyat tarixi"
+
+#: admin_panel/app/menu/views.py:66 admin_panel/app/quizz/views.py:66
+#: admin_panel/app/quizz/views.py:119
+msgid "Xatolik yuz berdi"
+msgstr ""
+
+#: admin_panel/app/user/views.py:37 admin_panel/app/user/views.py:103
+msgid "Bunday foydalanuvchi avval ro'yxatdan o'tgan"
+msgstr ""
+
+#: admin_panel/model/contact.py:9
+msgid "in process"
+msgstr "bajarilmoqda"
+
+#: admin_panel/model/contact.py:10
+msgid "reviewed"
+msgstr "ko‘rib chiqilgan"
+
+#: admin_panel/model/contact.py:11
+msgid "rejected"
+msgstr "rad etilgan"
+
+#: admin_panel/model/external.py:6
+msgid "news"
+msgstr ""
+
+#: admin_panel/model/external.py:7
+msgid "event"
+msgstr ""
+
+#: minsport/settings.py:176
+msgid "Uzbek"
+msgstr "O‘zbekcha"
+
+#: minsport/settings.py:177
+msgid "English"
+msgstr "Inglizcha"
+
+#: minsport/settings.py:178
+msgid "Russian"
+msgstr "Ruscha"
+
+#: minsport/settings.py:179
+msgid "Ozbek"
+msgstr "O‘zbekcha"
+
+#: templates/back/_base.html:137
+msgid "Profilni tahrirlash"
+msgstr "Profilni tahrirlash"
+
+#: templates/back/_base.html:140
+msgid "Chiqish"
+msgstr "Chiqish"
+
+#: templates/back/_base.html:163
+msgid "Ma'lumotni o'chirishni tasdiqlaysizmi?"
+msgstr "Ma’lumotni o‘chirishni tasdiqlaysizmi?"
+
+#: templates/back/_base.html:169
+msgid "Yo'q"
+msgstr "Yo‘q"
+
+#: templates/back/_base.html:175
+msgid "Ha"
+msgstr "Ha"
+
+#: templates/back/about/about_ministry.html:6
+#: templates/back/about/about_ministry.html:84
+#: templates/back/about/about_ministry.html:125
+#: templates/back/about/about_ministry.html:160
+#: templates/back/about/stat_list.html:6 templates/back/parts/menu.html:27
+msgid "Vazirlik haqida"
+msgstr "Vazirlik haqida"
+
+#: templates/back/about/about_ministry.html:11
+msgid "O`zgartirish"
+msgstr "O‘zgartirish"
+
+#: templates/back/about/about_ministry.html:194
+#: templates/back/about/goal_update.html:180
+#: templates/back/about/stat_update.html:173
+#: templates/back/about/structure_update.html:205
+#: templates/back/auth/profile.html:119
+#: templates/back/blog/blog_author_update.html:244
+#: templates/back/blog/blog_category_update.html:163
+#: templates/back/blog/blog_hashtag_update.html:148
+#: templates/back/blog/blog_update.html:269
+#: templates/back/contact/contact_update.html:109
+#: templates/back/contact/feedback_update.html:121
+#: templates/back/docs/doc_type_update.html:163
+#: templates/back/docs/doc_update.html:322
+#: templates/back/event/event_update.html:343
+#: templates/back/menu/menu_update.html:170
+#: templates/back/press_service/photo_gallery_update.html:175
+#: templates/back/service/service_update.html:176
+#: templates/back/settings/contact_settings.html:407
+#: templates/back/settings/footer_link/footer_link_update.html:162
+#: templates/back/settings/main_page_settings.html:295
+#: templates/back/sport/doc_update.html:302
+#: templates/back/typo/typo_update.html:103
+msgid "Yangilash"
+msgstr "Yangilash"
+
+#: templates/back/about/about_ministry.html:201
+#: templates/back/about/goal_create.html:186
+#: templates/back/about/goal_update.html:186
+#: templates/back/about/stat_update.html:179
+#: templates/back/about/structure_update.html:211
+#: templates/back/auth/profile.html:126
+#: templates/back/blog/blog_author_create.html:245
+#: templates/back/blog/blog_author_update.html:250
+#: templates/back/blog/blog_category_create.html:169
+#: templates/back/blog/blog_category_update.html:170
+#: templates/back/blog/blog_create.html:267
+#: templates/back/blog/blog_hashtag_create.html:154
+#: templates/back/blog/blog_hashtag_update.html:154
+#: templates/back/blog/blog_update.html:275
+#: templates/back/contact/contact_update.html:116
+#: templates/back/contact/feedback_update.html:128
+#: templates/back/contact/reception_create.html:154
+#: templates/back/contact/reception_update.html:160
+#: templates/back/department/department_create.html:237
+#: templates/back/department/department_update.html:233
+#: templates/back/docs/doc_create.html:317
+#: templates/back/docs/doc_type_create.html:169
+#: templates/back/docs/doc_type_update.html:170
+#: templates/back/docs/doc_update.html:328
+#: templates/back/event/event_create.html:345
+#: templates/back/event/event_update.html:350
+#: templates/back/menu/menu_update.html:176
+#: templates/back/organization/organization_create.html:233
+#: templates/back/organization/organization_update.html:233
+#: templates/back/press_service/faq/create.html:210
+#: templates/back/press_service/faq/update.html:210
+#: templates/back/press_service/news/news_category_create.html:171
+#: templates/back/press_service/news/news_category_update.html:175
+#: templates/back/press_service/news/news_create.html:370
+#: templates/back/press_service/news/news_hashtag_create.html:161
+#: templates/back/press_service/news/news_hashtag_update.html:161
+#: templates/back/press_service/news/news_update.html:380
+#: templates/back/press_service/photo_gallery_create.html:181
+#: templates/back/press_service/photo_gallery_update.html:181
+#: templates/back/press_service/press/article_create.html:136
+#: templates/back/press_service/press/article_update.html:138
+#: templates/back/press_service/press/press_create.html:104
+#: templates/back/press_service/press/press_update.html:104
+#: templates/back/press_service/video_gallery_create.html:244
+#: templates/back/press_service/video_gallery_update.html:247
+#: templates/back/quizz/quizz_create.html:279
+#: templates/back/quizz/quizz_update.html:273
+#: templates/back/service/service_create.html:182
+#: templates/back/service/service_update.html:183
+#: templates/back/settings/contact_settings.html:414
+#: templates/back/settings/footer_link/footer_link_create.html:167
+#: templates/back/settings/footer_link/footer_link_update.html:168
+#: templates/back/settings/main_page_settings.html:302
+#: templates/back/sport/champion_create.html:347
+#: templates/back/sport/champion_update.html:347
+#: templates/back/sport/doc_update.html:308
+#: templates/back/sport/sport_type_create.html:170
+#: templates/back/sport/sport_type_update.html:170
+#: templates/back/sport/stadion_create.html:405
+#: templates/back/sport/stadion_update.html:420
+#: templates/back/staff/staff_create.html:345
+#: templates/back/staff/staff_update.html:371
+#: templates/back/static_page/static_page_create.html:269
+#: templates/back/static_page/static_page_update.html:277
+#: templates/back/tender/tender_create.html:235
+#: templates/back/tender/tender_update.html:239
+#: templates/back/territorial/region/region_create.html:179
+#: templates/back/territorial/region/region_update.html:183
+#: templates/back/typo/typo_update.html:110
+#: templates/back/useful_link/useful_link_create.html:200
+#: templates/back/useful_link/useful_link_update.html:201
+#: templates/back/user/user_create.html:182
+#: templates/back/user/user_update.html:184
+#: templates/back/vacancy/vacancy_create.html:347
+#: templates/back/vacancy/vacancy_update.html:349
+msgid "O‘chirish"
+msgstr "O‘chirish"
+
+#: templates/back/about/about_ministry.html:210
+#: templates/back/blog/blog_author_create.html:253
+#: templates/back/blog/blog_author_update.html:258
+#: templates/back/blog/blog_create.html:275
+#: templates/back/blog/blog_update.html:283
+#: templates/back/event/event_create.html:391
+#: templates/back/event/event_update.html:398
+#: templates/back/press_service/news/news_create.html:414
+#: templates/back/press_service/news/news_update.html:430
+#: templates/back/press_service/photo_gallery_create.html:189
+#: templates/back/press_service/photo_gallery_update.html:189
+#: templates/back/press_service/video_gallery_create.html:252
+#: templates/back/press_service/video_gallery_update.html:255
+#: templates/back/staff/staff_create.html:392
+#: templates/back/staff/staff_update.html:424
+#: templates/back/user/user_create.html:211
+#: templates/back/user/user_update.html:217
+msgid "Asosiy rasm"
+msgstr "Asosiy rasm"
+
+#: templates/back/about/goal_create.html:6
+#: templates/back/about/goal_update.html:6
+#: templates/back/about/stat_create.html:6
+#: templates/back/about/stat_update.html:6
+#: templates/back/about/structure_create.html:6
+#: templates/back/about/structure_list.html:6
+msgid "Agentlik haqida"
+msgstr "Agentlik haqida"
+
+#: templates/back/about/goal_create.html:11
+#: templates/back/about/goal_update.html:11
+msgid "Maqsad va vazifalar"
+msgstr "Maqsad va vazifalar"
+
+#: templates/back/about/goal_create.html:180
+#: templates/back/blog/blog_author_create.html:239
+#: templates/back/blog/blog_category_create.html:162
+#: templates/back/blog/blog_create.html:261
+#: templates/back/blog/blog_hashtag_create.html:148
+#: templates/back/contact/reception_create.html:148
+#: templates/back/contact/reception_update.html:154
+#: templates/back/department/department_create.html:230
+#: templates/back/department/department_update.html:227
+#: templates/back/docs/doc_create.html:311
+#: templates/back/docs/doc_type_create.html:162
+#: templates/back/event/event_create.html:338
+#: templates/back/organization/organization_create.html:227
+#: templates/back/organization/organization_update.html:227
+#: templates/back/press_service/faq/create.html:204
+#: templates/back/press_service/faq/update.html:204
+#: templates/back/press_service/news/news_category_create.html:164
+#: templates/back/press_service/news/news_category_update.html:168
+#: templates/back/press_service/news/news_create.html:364
+#: templates/back/press_service/news/news_hashtag_create.html:155
+#: templates/back/press_service/news/news_hashtag_update.html:155
+#: templates/back/press_service/news/news_update.html:374
+#: templates/back/press_service/photo_gallery_create.html:175
+#: templates/back/press_service/press/article_create.html:130
+#: templates/back/press_service/press/article_update.html:132
+#: templates/back/press_service/press/press_create.html:98
+#: templates/back/press_service/press/press_update.html:98
+#: templates/back/press_service/video_gallery_create.html:238
+#: templates/back/press_service/video_gallery_update.html:241
+#: templates/back/quizz/quizz_update.html:228
+#: templates/back/service/service_create.html:175
+#: templates/back/settings/footer_link/footer_link_create.html:161
+#: templates/back/sport/champion_create.html:341
+#: templates/back/sport/champion_update.html:341
+#: templates/back/sport/sport_type_create.html:163
+#: templates/back/sport/sport_type_update.html:163
+#: templates/back/sport/stadion_create.html:399
+#: templates/back/sport/stadion_update.html:414
+#: templates/back/staff/staff_create.html:338
+#: templates/back/staff/staff_update.html:364
+#: templates/back/static_page/static_page_create.html:262
+#: templates/back/static_page/static_page_update.html:270
+#: templates/back/tender/tender_create.html:228
+#: templates/back/tender/tender_update.html:232
+#: templates/back/territorial/region/region_create.html:173
+#: templates/back/territorial/region/region_update.html:177
+#: templates/back/useful_link/useful_link_create.html:194
+#: templates/back/useful_link/useful_link_update.html:195
+#: templates/back/user/user_create.html:175
+#: templates/back/user/user_update.html:177
+#: templates/back/vacancy/vacancy_create.html:341
+#: templates/back/vacancy/vacancy_update.html:343
+msgid "Saqlash"
+msgstr "Saqlash"
+
+#: templates/back/about/stat_create.html:11
+#: templates/back/about/stat_list.html:11
+#: templates/back/about/stat_update.html:11 templates/back/index.html:26
+#: templates/back/parts/menu.html:33
+msgid "Statistika"
+msgstr "Statistika"
+
+#: templates/back/about/stat_create.html:13
+msgid "Yangi statistika"
+msgstr "Yangi statistika"
+
+#: templates/back/about/stat_create.html:146
+#: templates/back/about/stat_update.html:145
+#: templates/back/vacancy/vacancy_create.html:292
+#: templates/back/vacancy/vacancy_update.html:292
+msgid "Soni"
+msgstr "Soni"
+
+#: templates/back/about/stat_create.html:156
+#: templates/back/about/stat_update.html:157
+#: templates/back/territorial/region/region_create.html:158
+#: templates/back/territorial/region/region_update.html:160
+#: templates/back/vacancy/vacancy_create.html:304
+#: templates/back/vacancy/vacancy_update.html:304
+msgid "Raqam kiriting"
+msgstr "Raqamni kiriting"
+
+#: templates/back/about/stat_create.html:189
+#: templates/back/about/stat_update.html:188
+#: templates/back/press_service/press/press_create.html:112
+#: templates/back/press_service/press/press_update.html:112
+#: templates/back/service/service_create.html:190
+#: templates/back/service/service_update.html:191
+#: templates/back/useful_link/useful_link_create.html:208
+#: templates/back/useful_link/useful_link_update.html:209
+msgid "Belgi"
+msgstr "Belgi"
+
+#: templates/back/about/stat_create.html:202
+#: templates/back/about/stat_update.html:203
+msgid "Rangi"
+msgstr ""
+
+#: templates/back/about/stat_list.html:46
+#: templates/back/about/stat_list.html:59
+#: templates/back/about/structure_list.html:46
+#: templates/back/about/structure_list.html:58
+#: templates/back/blog/blog_author_list.html:46
+#: templates/back/blog/blog_author_list.html:59
+#: templates/back/blog/blog_category_list.html:46
+#: templates/back/blog/blog_category_list.html:59
+#: templates/back/blog/blog_hashtag_list.html:46
+#: templates/back/blog/blog_hashtag_list.html:58
+#: templates/back/blog/blog_list.html:47 templates/back/blog/blog_list.html:59
+#: templates/back/contact/contact_list.html:47
+#: templates/back/contact/contact_list.html:59
+#: templates/back/department/department_list.html:46
+#: templates/back/department/department_list.html:58
+#: templates/back/docs/doc_list.html:47 templates/back/docs/doc_list.html:59
+#: templates/back/docs/doc_type_list.html:46
+#: templates/back/docs/doc_type_list.html:59
+#: templates/back/event/event_list.html:46
+#: templates/back/event/event_list.html:58
+#: templates/back/menu/menu_list.html:46 templates/back/menu/menu_list.html:58
+#: templates/back/organization/organization_list.html:46
+#: templates/back/organization/organization_list.html:58
+#: templates/back/press_service/faq/list.html:46
+#: templates/back/press_service/faq/list.html:58
+#: templates/back/press_service/news/news_category_list.html:46
+#: templates/back/press_service/news/news_category_list.html:58
+#: templates/back/press_service/news/news_hashtag_list.html:46
+#: templates/back/press_service/news/news_hashtag_list.html:58
+#: templates/back/press_service/news/news_list.html:51
+#: templates/back/press_service/news/news_list.html:63
+#: templates/back/press_service/photo_gallery_list.html:47
+#: templates/back/press_service/photo_gallery_list.html:59
+#: templates/back/press_service/video_gallery_list.html:47
+#: templates/back/press_service/video_gallery_list.html:59
+#: templates/back/quizz/quizz_list.html:46
+#: templates/back/quizz/quizz_list.html:58
+#: templates/back/service/service_list.html:46
+#: templates/back/service/service_list.html:58
+#: templates/back/settings/footer_link/footer_link_list.html:46
+#: templates/back/settings/footer_link/footer_link_list.html:58
+#: templates/back/sport/champion_list.html:47
+#: templates/back/sport/champion_list.html:59
+#: templates/back/sport/sport_type_list.html:46
+#: templates/back/sport/sport_type_list.html:59
+#: templates/back/sport/stadion_list.html:47
+#: templates/back/sport/stadion_list.html:59
+#: templates/back/staff/staff_central_list.html:46
+#: templates/back/staff/staff_central_list.html:58
+#: templates/back/staff/staff_department_list.html:46
+#: templates/back/staff/staff_department_list.html:58
+#: templates/back/staff/staff_list.html:46
+#: templates/back/staff/staff_list.html:58
+#: templates/back/staff/staff_organization_list.html:46
+#: templates/back/staff/staff_organization_list.html:58
+#: templates/back/static_page/static_page_list.html:46
+#: templates/back/static_page/static_page_list.html:58
+#: templates/back/tender/tender_list.html:46
+#: templates/back/tender/tender_list.html:58
+#: templates/back/territorial/region/region_list.html:46
+#: templates/back/territorial/region/region_list.html:58
+#: templates/back/typo/typo_list.html:47 templates/back/typo/typo_list.html:59
+#: templates/back/useful_link/useful_link_list.html:46
+#: templates/back/useful_link/useful_link_list.html:58
+#: templates/back/vacancy/vacancy_list.html:47
+#: templates/back/vacancy/vacancy_list.html:59
+msgid "Izlash"
+msgstr "Izlash"
+
+#: templates/back/about/stat_list.html:71
+#: templates/back/about/structure_list.html:69
+#: templates/back/blog/blog_author_list.html:71
+#: templates/back/blog/blog_category_list.html:71
+#: templates/back/blog/blog_hashtag_list.html:69
+#: templates/back/blog/blog_list.html:98
+#: templates/back/contact/reception_list.html:43
+#: templates/back/department/department_list.html:69
+#: templates/back/docs/doc_list.html:98
+#: templates/back/docs/doc_type_list.html:71
+#: templates/back/event/event_list.html:69
+#: templates/back/menu/menu_list.html:69
+#: templates/back/organization/organization_list.html:69
+#: templates/back/parts/menu.html:75 templates/back/parts/menu.html:86
+#: templates/back/parts/menu.html:97 templates/back/parts/menu.html:124
+#: templates/back/parts/menu.html:156 templates/back/parts/menu.html:166
+#: templates/back/parts/menu.html:178 templates/back/parts/menu.html:188
+#: templates/back/press_service/faq/list.html:69
+#: templates/back/press_service/news/news_category_list.html:69
+#: templates/back/press_service/news/news_hashtag_list.html:69
+#: templates/back/press_service/news/news_list.html:76
+#: templates/back/press_service/photo_gallery_list.html:70
+#: templates/back/press_service/press/article_list.html:43
+#: templates/back/press_service/press/press_list.html:43
+#: templates/back/press_service/video_gallery_list.html:70
+#: templates/back/quizz/quizz_list.html:69
+#: templates/back/service/service_list.html:69
+#: templates/back/settings/footer_link/footer_link_list.html:69
+#: templates/back/sport/champion_list.html:71
+#: templates/back/sport/sport_type_list.html:71
+#: templates/back/sport/stadion_list.html:98
+#: templates/back/staff/staff_central_list.html:69
+#: templates/back/staff/staff_department_list.html:69
+#: templates/back/staff/staff_list.html:69
+#: templates/back/staff/staff_organization_list.html:69
+#: templates/back/static_page/static_page_list.html:69
+#: templates/back/tender/tender_list.html:69
+#: templates/back/territorial/region/region_list.html:69
+#: templates/back/useful_link/useful_link_list.html:69
+#: templates/back/user/user_list.html:43
+#: templates/back/vacancy/vacancy_list.html:70
+msgid "Yangi qo‘shish"
+msgstr "Yangi qo‘shish"
+
+#: templates/back/about/stat_list.html:88
+#: templates/back/about/structure_list.html:86
+#: templates/back/blog/blog_author_list.html:88
+#: templates/back/blog/blog_category_list.html:88
+#: templates/back/blog/blog_hashtag_list.html:86
+#: templates/back/blog/blog_list.html:115
+#: templates/back/contact/reception_list.html:60
+#: templates/back/department/department_list.html:86
+#: templates/back/docs/doc_list.html:115
+#: templates/back/docs/doc_type_list.html:88
+#: templates/back/event/event_list.html:86
+#: templates/back/menu/menu_list.html:86
+#: templates/back/organization/organization_list.html:86
+#: templates/back/press_service/news/news_category_list.html:86
+#: templates/back/press_service/news/news_hashtag_list.html:86
+#: templates/back/press_service/news/news_list.html:94
+#: templates/back/press_service/photo_gallery_list.html:87
+#: templates/back/press_service/press/article_list.html:60
+#: templates/back/press_service/press/press_list.html:60
+#: templates/back/press_service/video_gallery_list.html:87
+#: templates/back/quizz/quizz_list.html:86
+#: templates/back/service/service_list.html:86
+#: templates/back/settings/footer_link/footer_link_list.html:86
+#: templates/back/sport/champion_list.html:88
+#: templates/back/sport/sport_type_list.html:88
+#: templates/back/sport/stadion_list.html:115
+#: templates/back/staff/staff_central_list.html:86
+#: templates/back/staff/staff_department_list.html:86
+#: templates/back/staff/staff_list.html:86
+#: templates/back/staff/staff_organization_list.html:86
+#: templates/back/static_page/static_page_list.html:86
+#: templates/back/tender/tender_list.html:86
+#: templates/back/territorial/region/region_list.html:86
+#: templates/back/useful_link/useful_link_list.html:86
+#: templates/back/vacancy/vacancy_list.html:87
+msgid "nomi"
+msgstr "nomi"
+
+#: templates/back/about/stat_list.html:89
+msgid "soni"
+msgstr "soni"
+
+#: templates/back/about/stat_list.html:90
+#: templates/back/about/structure_list.html:87
+#: templates/back/blog/blog_author_list.html:90
+#: templates/back/blog/blog_category_list.html:89
+#: templates/back/blog/blog_hashtag_list.html:87
+#: templates/back/blog/blog_list.html:117
+#: templates/back/department/department_list.html:87
+#: templates/back/docs/doc_list.html:117
+#: templates/back/docs/doc_type_list.html:89
+#: templates/back/event/event_list.html:88
+#: templates/back/menu/menu_list.html:87
+#: templates/back/organization/organization_list.html:87
+#: templates/back/press_service/faq/list.html:87
+#: templates/back/press_service/news/news_category_list.html:87
+#: templates/back/press_service/news/news_hashtag_list.html:87
+#: templates/back/press_service/news/news_list.html:96
+#: templates/back/press_service/photo_gallery_list.html:89
+#: templates/back/press_service/video_gallery_list.html:89
+#: templates/back/quizz/quizz_list.html:89
+#: templates/back/service/service_list.html:87
+#: templates/back/settings/footer_link/footer_link_list.html:87
+#: templates/back/sport/champion_list.html:90
+#: templates/back/sport/sport_type_list.html:89
+#: templates/back/sport/stadion_list.html:117
+#: templates/back/staff/staff_central_list.html:87
+#: templates/back/staff/staff_department_list.html:87
+#: templates/back/staff/staff_list.html:87
+#: templates/back/staff/staff_organization_list.html:87
+#: templates/back/static_page/static_page_list.html:87
+#: templates/back/tender/tender_list.html:88
+#: templates/back/territorial/region/region_list.html:87
+#: templates/back/useful_link/useful_link_list.html:87
+#: templates/back/vacancy/vacancy_list.html:89
+msgid "tili"
+msgstr "tili"
+
+#: templates/back/about/stat_list.html:91
+#: templates/back/about/structure_list.html:88
+#: templates/back/blog/blog_author_list.html:91
+#: templates/back/blog/blog_category_list.html:91
+#: templates/back/blog/blog_hashtag_list.html:89
+#: templates/back/blog/blog_list.html:120
+#: templates/back/contact/contact_list.html:89
+#: templates/back/contact/feedback_list.html:62
+#: templates/back/contact/reception_list.html:63
+#: templates/back/department/department_list.html:90
+#: templates/back/docs/doc_list.html:120
+#: templates/back/docs/doc_type_list.html:91
+#: templates/back/event/event_list.html:91
+#: templates/back/menu/menu_list.html:91
+#: templates/back/organization/organization_list.html:90
+#: templates/back/press_service/faq/list.html:89
+#: templates/back/press_service/news/news_category_list.html:89
+#: templates/back/press_service/news/news_hashtag_list.html:89
+#: templates/back/press_service/news/news_list.html:99
+#: templates/back/press_service/photo_gallery_list.html:91
+#: templates/back/press_service/press/article_list.html:63
+#: templates/back/press_service/press/press_list.html:63
+#: templates/back/press_service/video_gallery_list.html:91
+#: templates/back/quizz/quizz_list.html:90
+#: templates/back/service/service_list.html:90
+#: templates/back/settings/footer_link/footer_link_list.html:89
+#: templates/back/sport/champion_list.html:93
+#: templates/back/sport/sport_type_list.html:91
+#: templates/back/sport/stadion_list.html:120
+#: templates/back/staff/staff_central_list.html:90
+#: templates/back/staff/staff_department_list.html:90
+#: templates/back/staff/staff_list.html:90
+#: templates/back/staff/staff_organization_list.html:90
+#: templates/back/static_page/static_page_list.html:90
+#: templates/back/tender/tender_list.html:91
+#: templates/back/territorial/region/region_list.html:89
+#: templates/back/typo/typo_list.html:87
+#: templates/back/useful_link/useful_link_list.html:89
+#: templates/back/user/user_list.html:65
+#: templates/back/vacancy/vacancy_list.html:92
+msgid "amallar"
+msgstr "amallar"
+
+#: templates/back/about/stat_list.html:108
+#: templates/back/about/structure_list.html:100
+#: templates/back/blog/blog_author_list.html:106
+#: templates/back/blog/blog_category_list.html:103
+#: templates/back/blog/blog_hashtag_list.html:101
+#: templates/back/blog/blog_list.html:135
+#: templates/back/department/department_list.html:102
+#: templates/back/docs/doc_list.html:135
+#: templates/back/docs/doc_type_list.html:103
+#: templates/back/event/event_list.html:105
+#: templates/back/menu/menu_list.html:103
+#: templates/back/organization/organization_list.html:102
+#: templates/back/press_service/faq/list.html:101
+#: templates/back/press_service/news/news_category_list.html:101
+#: templates/back/press_service/news/news_hashtag_list.html:101
+#: templates/back/press_service/news/news_list.html:114
+#: templates/back/press_service/photo_gallery_list.html:107
+#: templates/back/press_service/video_gallery_list.html:106
+#: templates/back/quizz/quizz_list.html:116
+#: templates/back/service/service_list.html:102
+#: templates/back/settings/footer_link/footer_link_list.html:101
+#: templates/back/sport/champion_list.html:108
+#: templates/back/sport/sport_type_list.html:103
+#: templates/back/sport/stadion_list.html:135
+#: templates/back/staff/staff_central_list.html:102
+#: templates/back/staff/staff_department_list.html:102
+#: templates/back/staff/staff_list.html:102
+#: templates/back/staff/staff_organization_list.html:102
+#: templates/back/static_page/static_page_list.html:103
+#: templates/back/tender/tender_list.html:105
+#: templates/back/territorial/region/region_list.html:101
+#: templates/back/useful_link/useful_link_list.html:101
+#: templates/back/vacancy/vacancy_list.html:107
+msgid "Ingliz tilida mavjud"
+msgstr "Ingliz tilida mavjud"
+
+#: templates/back/about/stat_list.html:114
+#: templates/back/about/structure_list.html:106
+#: templates/back/blog/blog_author_list.html:112
+#: templates/back/blog/blog_category_list.html:109
+#: templates/back/blog/blog_hashtag_list.html:107
+#: templates/back/blog/blog_list.html:141
+#: templates/back/department/department_list.html:108
+#: templates/back/docs/doc_list.html:141
+#: templates/back/docs/doc_type_list.html:109
+#: templates/back/event/event_list.html:111
+#: templates/back/menu/menu_list.html:109
+#: templates/back/organization/organization_list.html:108
+#: templates/back/press_service/faq/list.html:107
+#: templates/back/press_service/news/news_category_list.html:107
+#: templates/back/press_service/news/news_hashtag_list.html:107
+#: templates/back/press_service/news/news_list.html:120
+#: templates/back/press_service/photo_gallery_list.html:113
+#: templates/back/press_service/video_gallery_list.html:112
+#: templates/back/quizz/quizz_list.html:122
+#: templates/back/service/service_list.html:108
+#: templates/back/settings/footer_link/footer_link_list.html:107
+#: templates/back/sport/champion_list.html:114
+#: templates/back/sport/sport_type_list.html:109
+#: templates/back/sport/stadion_list.html:141
+#: templates/back/staff/staff_central_list.html:108
+#: templates/back/staff/staff_department_list.html:108
+#: templates/back/staff/staff_list.html:108
+#: templates/back/staff/staff_organization_list.html:108
+#: templates/back/static_page/static_page_list.html:109
+#: templates/back/tender/tender_list.html:111
+#: templates/back/territorial/region/region_list.html:107
+#: templates/back/useful_link/useful_link_list.html:107
+#: templates/back/vacancy/vacancy_list.html:113
+msgid "Ingliz tilida mavjud emas"
+msgstr "Ingliz tilida mavjud emas"
+
+#: templates/back/about/stat_list.html:120
+#: templates/back/about/structure_list.html:112
+#: templates/back/blog/blog_author_list.html:118
+#: templates/back/blog/blog_category_list.html:115
+#: templates/back/blog/blog_hashtag_list.html:113
+#: templates/back/blog/blog_list.html:147
+#: templates/back/department/department_list.html:114
+#: templates/back/docs/doc_list.html:147
+#: templates/back/docs/doc_type_list.html:115
+#: templates/back/event/event_list.html:117
+#: templates/back/menu/menu_list.html:115
+#: templates/back/organization/organization_list.html:114
+#: templates/back/press_service/faq/list.html:113
+#: templates/back/press_service/news/news_category_list.html:113
+#: templates/back/press_service/news/news_hashtag_list.html:113
+#: templates/back/press_service/news/news_list.html:126
+#: templates/back/press_service/photo_gallery_list.html:119
+#: templates/back/press_service/video_gallery_list.html:118
+#: templates/back/quizz/quizz_list.html:128
+#: templates/back/service/service_list.html:114
+#: templates/back/settings/footer_link/footer_link_list.html:113
+#: templates/back/sport/champion_list.html:120
+#: templates/back/sport/sport_type_list.html:115
+#: templates/back/sport/stadion_list.html:147
+#: templates/back/staff/staff_central_list.html:114
+#: templates/back/staff/staff_department_list.html:114
+#: templates/back/staff/staff_list.html:114
+#: templates/back/staff/staff_organization_list.html:114
+#: templates/back/static_page/static_page_list.html:115
+#: templates/back/tender/tender_list.html:117
+#: templates/back/territorial/region/region_list.html:113
+#: templates/back/useful_link/useful_link_list.html:113
+#: templates/back/vacancy/vacancy_list.html:119
+msgid "Rus tilida mavjud"
+msgstr "Rus tilida mavjud"
+
+#: templates/back/about/stat_list.html:126
+#: templates/back/about/structure_list.html:118
+#: templates/back/blog/blog_author_list.html:124
+#: templates/back/blog/blog_category_list.html:121
+#: templates/back/blog/blog_hashtag_list.html:119
+#: templates/back/blog/blog_list.html:153
+#: templates/back/department/department_list.html:120
+#: templates/back/docs/doc_list.html:153
+#: templates/back/docs/doc_type_list.html:121
+#: templates/back/event/event_list.html:123
+#: templates/back/menu/menu_list.html:121
+#: templates/back/organization/organization_list.html:120
+#: templates/back/press_service/faq/list.html:119
+#: templates/back/press_service/news/news_category_list.html:119
+#: templates/back/press_service/news/news_hashtag_list.html:119
+#: templates/back/press_service/news/news_list.html:132
+#: templates/back/press_service/photo_gallery_list.html:125
+#: templates/back/press_service/video_gallery_list.html:124
+#: templates/back/quizz/quizz_list.html:134
+#: templates/back/service/service_list.html:120
+#: templates/back/settings/footer_link/footer_link_list.html:119
+#: templates/back/sport/champion_list.html:126
+#: templates/back/sport/sport_type_list.html:121
+#: templates/back/sport/stadion_list.html:153
+#: templates/back/staff/staff_central_list.html:120
+#: templates/back/staff/staff_department_list.html:120
+#: templates/back/staff/staff_list.html:120
+#: templates/back/staff/staff_organization_list.html:120
+#: templates/back/static_page/static_page_list.html:121
+#: templates/back/tender/tender_list.html:123
+#: templates/back/territorial/region/region_list.html:119
+#: templates/back/useful_link/useful_link_list.html:119
+#: templates/back/vacancy/vacancy_list.html:125
+msgid "Rus tilida mavjud emas"
+msgstr "Rus tilida mavjud emas"
+
+#: templates/back/about/stat_list.html:132
+#: templates/back/about/structure_list.html:124
+#: templates/back/blog/blog_author_list.html:130
+#: templates/back/blog/blog_category_list.html:127
+#: templates/back/blog/blog_hashtag_list.html:125
+#: templates/back/blog/blog_list.html:159
+#: templates/back/department/department_list.html:126
+#: templates/back/docs/doc_list.html:159
+#: templates/back/docs/doc_type_list.html:127
+#: templates/back/event/event_list.html:129
+#: templates/back/menu/menu_list.html:127
+#: templates/back/organization/organization_list.html:126
+#: templates/back/press_service/faq/list.html:125
+#: templates/back/press_service/news/news_category_list.html:125
+#: templates/back/press_service/news/news_hashtag_list.html:125
+#: templates/back/press_service/news/news_list.html:138
+#: templates/back/press_service/photo_gallery_list.html:131
+#: templates/back/press_service/video_gallery_list.html:130
+#: templates/back/quizz/quizz_list.html:140
+#: templates/back/service/service_list.html:126
+#: templates/back/settings/footer_link/footer_link_list.html:125
+#: templates/back/sport/champion_list.html:132
+#: templates/back/sport/sport_type_list.html:127
+#: templates/back/sport/stadion_list.html:159
+#: templates/back/staff/staff_central_list.html:126
+#: templates/back/staff/staff_department_list.html:126
+#: templates/back/staff/staff_list.html:126
+#: templates/back/staff/staff_organization_list.html:126
+#: templates/back/static_page/static_page_list.html:127
+#: templates/back/tender/tender_list.html:129
+#: templates/back/territorial/region/region_list.html:125
+#: templates/back/useful_link/useful_link_list.html:125
+#: templates/back/vacancy/vacancy_list.html:131
+msgid "O`zbek tilida mavjud"
+msgstr "O‘zbek tilida mavjud"
+
+#: templates/back/about/stat_list.html:138
+#: templates/back/about/structure_list.html:130
+#: templates/back/blog/blog_author_list.html:136
+#: templates/back/blog/blog_category_list.html:133
+#: templates/back/blog/blog_hashtag_list.html:131
+#: templates/back/blog/blog_list.html:165
+#: templates/back/department/department_list.html:132
+#: templates/back/docs/doc_list.html:165
+#: templates/back/docs/doc_type_list.html:133
+#: templates/back/event/event_list.html:135
+#: templates/back/menu/menu_list.html:133
+#: templates/back/organization/organization_list.html:132
+#: templates/back/press_service/faq/list.html:131
+#: templates/back/press_service/news/news_category_list.html:131
+#: templates/back/press_service/news/news_hashtag_list.html:131
+#: templates/back/press_service/news/news_list.html:144
+#: templates/back/press_service/photo_gallery_list.html:137
+#: templates/back/press_service/video_gallery_list.html:136
+#: templates/back/quizz/quizz_list.html:146
+#: templates/back/service/service_list.html:132
+#: templates/back/settings/footer_link/footer_link_list.html:131
+#: templates/back/sport/champion_list.html:138
+#: templates/back/sport/sport_type_list.html:133
+#: templates/back/sport/stadion_list.html:165
+#: templates/back/staff/staff_central_list.html:132
+#: templates/back/staff/staff_department_list.html:132
+#: templates/back/staff/staff_list.html:132
+#: templates/back/staff/staff_organization_list.html:132
+#: templates/back/static_page/static_page_list.html:133
+#: templates/back/tender/tender_list.html:135
+#: templates/back/territorial/region/region_list.html:131
+#: templates/back/useful_link/useful_link_list.html:131
+#: templates/back/vacancy/vacancy_list.html:137
+msgid "O`zbek tilida mavjud emas"
+msgstr "O‘zbek tilida mavjud emas"
+
+#: templates/back/about/stat_list.html:153
+#: templates/back/about/structure_list.html:144
+#: templates/back/blog/blog_author_list.html:150
+#: templates/back/blog/blog_category_list.html:148
+#: templates/back/blog/blog_hashtag_list.html:148
+#: templates/back/blog/blog_list.html:187
+#: templates/back/contact/reception_list.html:84
+#: templates/back/department/department_list.html:148
+#: templates/back/docs/doc_list.html:185
+#: templates/back/docs/doc_type_list.html:148
+#: templates/back/event/event_list.html:151
+#: templates/back/menu/menu_list.html:160
+#: templates/back/organization/organization_list.html:148
+#: templates/back/press_service/faq/list.html:148
+#: templates/back/press_service/news/news_category_list.html:146
+#: templates/back/press_service/news/news_hashtag_list.html:148
+#: templates/back/press_service/news/news_list.html:171
+#: templates/back/press_service/photo_gallery_list.html:153
+#: templates/back/press_service/press/article_list.html:86
+#: templates/back/press_service/press/press_list.html:87
+#: templates/back/press_service/video_gallery_list.html:152
+#: templates/back/quizz/quizz_list.html:161
+#: templates/back/service/service_list.html:152
+#: templates/back/settings/footer_link/footer_link_list.html:149
+#: templates/back/sport/champion_list.html:154
+#: templates/back/sport/sport_type_list.html:148
+#: templates/back/sport/stadion_list.html:181
+#: templates/back/staff/staff_central_list.html:152
+#: templates/back/staff/staff_department_list.html:152
+#: templates/back/staff/staff_list.html:152
+#: templates/back/staff/staff_organization_list.html:152
+#: templates/back/static_page/static_page_list.html:153
+#: templates/back/tender/tender_list.html:151
+#: templates/back/territorial/region/region_list.html:146
+#: templates/back/useful_link/useful_link_list.html:149
+#: templates/back/user/user_list.html:89
+#: templates/back/vacancy/vacancy_list.html:153
+msgid "tahrirlash"
+msgstr "tahrirlash"
+
+#: templates/back/about/stat_list.html:158
+#: templates/back/about/structure_list.html:148
+#: templates/back/blog/blog_author_list.html:154
+#: templates/back/blog/blog_category_list.html:153
+#: templates/back/blog/blog_hashtag_list.html:152
+#: templates/back/blog/blog_list.html:191
+#: templates/back/contact/contact_list.html:123
+#: templates/back/contact/feedback_list.html:87
+#: templates/back/contact/reception_list.html:88
+#: templates/back/department/department_list.html:152
+#: templates/back/docs/doc_list.html:189
+#: templates/back/docs/doc_type_list.html:153
+#: templates/back/event/event_list.html:155
+#: templates/back/menu/menu_list.html:164
+#: templates/back/organization/organization_list.html:152
+#: templates/back/press_service/faq/list.html:152
+#: templates/back/press_service/news/news_category_list.html:150
+#: templates/back/press_service/news/news_hashtag_list.html:152
+#: templates/back/press_service/news/news_list.html:176
+#: templates/back/press_service/photo_gallery_list.html:157
+#: templates/back/press_service/press/article_list.html:90
+#: templates/back/press_service/press/press_list.html:91
+#: templates/back/press_service/video_gallery_list.html:156
+#: templates/back/quizz/quizz_list.html:165
+#: templates/back/service/service_list.html:156
+#: templates/back/settings/footer_link/footer_link_list.html:153
+#: templates/back/sport/champion_list.html:158
+#: templates/back/sport/sport_type_list.html:153
+#: templates/back/sport/stadion_list.html:185
+#: templates/back/staff/staff_central_list.html:156
+#: templates/back/staff/staff_department_list.html:156
+#: templates/back/staff/staff_list.html:156
+#: templates/back/staff/staff_organization_list.html:156
+#: templates/back/static_page/static_page_list.html:157
+#: templates/back/tender/tender_list.html:155
+#: templates/back/territorial/region/region_list.html:150
+#: templates/back/typo/typo_list.html:112
+#: templates/back/useful_link/useful_link_list.html:153
+#: templates/back/user/user_list.html:93
+#: templates/back/vacancy/vacancy_list.html:157
+msgid "o‘chirish"
+msgstr "o‘chirish"
+
+#: templates/back/about/stat_update.html:13
+msgid "Statistikani tahrirlash"
+msgstr "Statistikani tahrirlash"
+
+#: templates/back/about/structure_create.html:11
+#: templates/back/about/structure_list.html:11
+msgid "Tuzilmalar"
+msgstr "Tuzilmalar"
+
+#: templates/back/about/structure_create.html:13
+msgid "Yangi tuzilma"
+msgstr "Yangi tuzilma"
+
+#: templates/back/about/structure_update.html:6
+msgid "Vazrlik haqida"
+msgstr "Vazirlik haqida"
+
+#: templates/back/about/structure_update.html:11
+msgid "Tuzilmani tahrirlash"
+msgstr "Tuzilmani tahrirlash"
+
+#: templates/back/auth/login.html:64
+msgid "Bunday foydalanuvchi mavjud emas"
+msgstr "Bunday foydalanuvchi mavjud emas"
+
+#: templates/back/auth/login.html:67
+msgid "Kirish"
+msgstr "Kirish"
+
+#: templates/back/auth/profile.html:7
+msgid "Profil"
+msgstr "Profil"
+
+#: templates/back/auth/profile.html:12
+#: templates/back/contact/contact_update.html:15
+#: templates/back/contact/feedback_update.html:15
+#: templates/back/typo/typo_update.html:14
+msgid "Tahrirlash"
+msgstr "Tahrirlash"
+
+#: templates/back/auth/profile.html:54
+msgid "Foydalanuvchi"
+msgstr "Foydalanuvchi"
+
+#: templates/back/auth/profile.html:71 templates/back/auth/profile.html:74
+msgid "Amaldagi parol"
+msgstr "Amaldagi parol"
+
+#: templates/back/auth/profile.html:79
+msgid "Amaldagi parol xato kiritilgan"
+msgstr "Amaldagi parol xato kiritilgan"
+
+#: templates/back/auth/profile.html:87 templates/back/user/user_update.html:134
+msgid "Yangi parol"
+msgstr "Yangi parol"
+
+#: templates/back/auth/profile.html:90
+msgid "Yangi parolni kiriting"
+msgstr "Yangi parolni kiriting"
+
+#: templates/back/auth/profile.html:97
+msgid "Tasdiqlash"
+msgstr "Tasdiqlash"
+
+#: templates/back/auth/profile.html:100
+msgid "Yangi parolni qaytadan kiriting"
+msgstr "Yangi parolni qaytadan kiriting"
+
+#: templates/back/auth/profile.html:104
+msgid "Tasdiqlovchi parol xato kiritilgan"
+msgstr "Tasdiqlovchi parol xato kiritilgan"
+
+#: templates/back/blog/blog_author_create.html:6
+#: templates/back/blog/blog_author_list.html:6
+#: templates/back/blog/blog_author_update.html:6
+#: templates/back/blog/blog_category_create.html:6
+#: templates/back/blog/blog_category_list.html:6
+#: templates/back/blog/blog_category_update.html:6
+#: templates/back/blog/blog_create.html:6
+#: templates/back/blog/blog_hashtag_create.html:6
+#: templates/back/blog/blog_hashtag_list.html:6
+#: templates/back/blog/blog_hashtag_update.html:6
+#: templates/back/blog/blog_list.html:7 templates/back/blog/blog_update.html:6
+msgid "Bloglar"
+msgstr "Bloglar"
+
+#: templates/back/blog/blog_author_create.html:11
+#: templates/back/blog/blog_author_list.html:11
+#: templates/back/blog/blog_author_update.html:11
+msgid "Barcha mualliflar"
+msgstr "Barcha mualliflar"
+
+#: templates/back/blog/blog_author_create.html:13
+msgid "Yangi muallif"
+msgstr "Yangi muallif"
+
+#: templates/back/blog/blog_author_list.html:89
+msgid "kasbi yoki lavozimi"
+msgstr "kasbi yoki lavozimi"
+
+#: templates/back/blog/blog_author_update.html:13
+msgid "Muallifni tahrirlash"
+msgstr "Muallifni tahrirlash"
+
+#: templates/back/blog/blog_category_create.html:12
+#: templates/back/blog/blog_category_list.html:11
+#: templates/back/blog/blog_category_update.html:12
+#: templates/back/press_service/news/news_category_list.html:11
+msgid "Barcha bo`limlar"
+msgstr "Barcha bo‘limlar"
+
+#: templates/back/blog/blog_category_create.html:14
+#: templates/back/press_service/news/news_category_create.html:14
+msgid "Yangi bo‘lim"
+msgstr "Yangi bo‘lim"
+
+#: templates/back/blog/blog_category_create.html:147
+#: templates/back/blog/blog_category_update.html:147
+#: templates/back/docs/doc_type_create.html:147
+#: templates/back/docs/doc_type_update.html:147
+#: templates/back/menu/menu_update.html:153
+#: templates/back/press_service/news/news_category_create.html:149
+#: templates/back/press_service/news/news_category_update.html:149
+#: templates/back/service/service_create.html:145
+#: templates/back/service/service_update.html:146
+#: templates/back/staff/staff_create.html:426
+#: templates/back/staff/staff_update.html:464
+msgid "Tartibi"
+msgstr "Tartibi"
+
+#: templates/back/blog/blog_category_create.html:149
+#: templates/back/blog/blog_category_update.html:149
+#: templates/back/docs/doc_type_create.html:149
+#: templates/back/docs/doc_type_update.html:149
+#: templates/back/menu/menu_update.html:155
+#: templates/back/press_service/faq/create.html:223
+#: templates/back/press_service/faq/update.html:226
+#: templates/back/press_service/news/news_category_create.html:151
+#: templates/back/press_service/news/news_category_update.html:155
+#: templates/back/service/service_create.html:147
+#: templates/back/service/service_update.html:148
+#: templates/back/staff/staff_create.html:431
+#: templates/back/staff/staff_update.html:469
+msgid "Tartib raqamini kiriting"
+msgstr "Tartib raqamini kiriting"
+
+#: templates/back/blog/blog_category_list.html:90
+#: templates/back/docs/doc_type_list.html:90
+#: templates/back/menu/menu_list.html:90
+#: templates/back/press_service/news/news_category_list.html:88
+#: templates/back/service/service_list.html:88
+msgid "tartibi"
+msgstr "tartibi"
+
+#: templates/back/blog/blog_category_update.html:14
+msgid "Bo`limni tahrirlash"
+msgstr "Bo‘limni tahrirlash"
+
+#: templates/back/blog/blog_create.html:11
+#: templates/back/blog/blog_list.html:12
+#: templates/back/blog/blog_update.html:11
+msgid "Barcha blogpostlar"
+msgstr "Barcha blogpostlar"
+
+#: templates/back/blog/blog_create.html:13
+msgid "Yangi blogpost"
+msgstr "Yangi blogpost"
+
+#: templates/back/blog/blog_create.html:217
+#: templates/back/blog/blog_update.html:221
+#: templates/back/event/event_create.html:281
+#: templates/back/event/event_update.html:285
+#: templates/back/press_service/news/news_create.html:264
+#: templates/back/press_service/news/news_update.html:264
+msgid "Kalit so`zlar"
+msgstr "Kalit so‘zlar"
+
+#: templates/back/blog/blog_create.html:239
+#: templates/back/blog/blog_update.html:244
+#: templates/back/docs/doc_create.html:289
+#: templates/back/docs/doc_update.html:297
+#: templates/back/event/event_create.html:316
+#: templates/back/event/event_update.html:321
+#: templates/back/press_service/news/news_create.html:342
+#: templates/back/press_service/news/news_update.html:347
+#: templates/back/press_service/photo_gallery_create.html:153
+#: templates/back/press_service/photo_gallery_update.html:153
+#: templates/back/press_service/press/article_create.html:108
+#: templates/back/press_service/press/article_update.html:108
+#: templates/back/press_service/video_gallery_create.html:216
+#: templates/back/press_service/video_gallery_update.html:219
+#: templates/back/sport/doc_update.html:277
+#: templates/back/tender/tender_create.html:206
+#: templates/back/tender/tender_update.html:208
+#: templates/back/vacancy/vacancy_create.html:319
+#: templates/back/vacancy/vacancy_update.html:319
+msgid "Sana"
+msgstr "Sana"
+
+#: templates/back/blog/blog_create.html:254
+#: templates/back/blog/blog_update.html:262
+#: templates/back/contact/reception_create.html:141
+#: templates/back/contact/reception_update.html:147
+#: templates/back/docs/doc_create.html:304
+#: templates/back/docs/doc_update.html:315
+#: templates/back/event/event_create.html:331
+#: templates/back/event/event_update.html:336
+#: templates/back/press_service/news/news_create.html:357
+#: templates/back/press_service/news/news_update.html:367
+#: templates/back/press_service/photo_gallery_create.html:168
+#: templates/back/press_service/photo_gallery_update.html:168
+#: templates/back/press_service/press/article_create.html:123
+#: templates/back/press_service/press/article_update.html:125
+#: templates/back/press_service/video_gallery_create.html:231
+#: templates/back/press_service/video_gallery_update.html:234
+#: templates/back/quizz/quizz_create.html:256
+#: templates/back/quizz/quizz_list.html:102
+#: templates/back/quizz/quizz_update.html:250
+#: templates/back/sport/doc_update.html:295
+#: templates/back/static_page/static_page_create.html:255
+#: templates/back/static_page/static_page_update.html:263
+#: templates/back/tender/tender_create.html:221
+#: templates/back/tender/tender_update.html:225
+#: templates/back/vacancy/vacancy_create.html:334
+#: templates/back/vacancy/vacancy_update.html:336
+msgid "Faol"
+msgstr "Faol"
+
+#: templates/back/blog/blog_create.html:285
+#: templates/back/blog/blog_update.html:296
+#: templates/back/press_service/news/news_create.html:427
+#: templates/back/press_service/news/news_update.html:445
+#: templates/back/sport/champion_create.html:374
+#: templates/back/sport/champion_update.html:377
+msgid "Rasm"
+msgstr "Rasm"
+
+#: templates/back/blog/blog_create.html:295
+#: templates/back/blog/blog_update.html:309 templates/back/parts/menu.html:100
+#: templates/back/parts/menu.html:130
+msgid "Bo`limlar"
+msgstr "Bo‘limlar"
+
+#: templates/back/blog/blog_create.html:316
+#: templates/back/blog/blog_update.html:331
+msgid "Muallif"
+msgstr "Muallif"
+
+#: templates/back/blog/blog_create.html:322
+msgid "Muallifni tanlang"
+msgstr "Muallifni tanlang"
+
+#: templates/back/blog/blog_create.html:334
+#: templates/back/blog/blog_update.html:349
+#: templates/back/press_service/news/news_create.html:443
+#: templates/back/press_service/news/news_update.html:462
+msgid "Video"
+msgstr "Video"
+
+#: templates/back/blog/blog_hashtag_create.html:11
+#: templates/back/blog/blog_hashtag_list.html:11
+#: templates/back/blog/blog_hashtag_update.html:11
+#: templates/back/press_service/news/news_hashtag_create.html:11
+#: templates/back/press_service/news/news_hashtag_list.html:11
+#: templates/back/press_service/news/news_hashtag_update.html:11
+msgid "Barcha heshteglar"
+msgstr "Barcha heshteglar"
+
+#: templates/back/blog/blog_hashtag_create.html:13
+#: templates/back/press_service/news/news_hashtag_create.html:13
+msgid "Yangi heshteg"
+msgstr "Yangi heshteg"
+
+#: templates/back/blog/blog_hashtag_list.html:88
+#: templates/back/press_service/news/news_hashtag_list.html:88
+msgid "foydalanishlar soni"
+msgstr "foydalanishlar soni"
+
+#: templates/back/blog/blog_hashtag_update.html:13
+#: templates/back/press_service/news/news_hashtag_update.html:13
+msgid "Heshtegni tahrirlash"
+msgstr "Heshtegni tahrirlash"
+
+#: templates/back/blog/blog_list.html:116
+#: templates/back/press_service/news/news_list.html:95
+#: templates/back/press_service/photo_gallery_list.html:88
+#: templates/back/press_service/video_gallery_list.html:88
+msgid "nashr sanasi"
+msgstr "nashr sanasi"
+
+#: templates/back/blog/blog_list.html:118
+#: templates/back/press_service/news/news_list.html:97
+msgid "ko‘rishlar"
+msgstr "ko‘rishlar"
+
+#: templates/back/blog/blog_list.html:119
+#: templates/back/press_service/news/news_list.html:98
+msgid "bo‘lim"
+msgstr "bo‘lim"
+
+#: templates/back/blog/blog_update.html:13
+msgid "Blogpostni tahrirlash"
+msgstr "Blogpostni tahrirlash"
+
+#: templates/back/contact/contact_list.html:7
+#: templates/back/contact/contact_update.html:7
+#: templates/back/parts/menu.html:256
+msgid "Barcha murojaatlar"
+msgstr "Barcha murojaatlar"
+
+#: templates/back/contact/contact_list.html:12
+#: templates/back/contact/contact_update.html:13
+#: templates/back/parts/menu.html:252 templates/back/parts/menu.html:259
+msgid "Murojaatlar"
+msgstr "Murojaatlar"
+
+#: templates/back/contact/contact_list.html:84
+msgid "ID"
+msgstr ""
+
+#: templates/back/contact/contact_list.html:85
+#: templates/back/contact/feedback_list.html:59
+msgid "jo'natuvchi"
+msgstr "jo‘natuvchi"
+
+#: templates/back/contact/contact_list.html:86
+msgid "sana"
+msgstr "sanasi"
+
+#: templates/back/contact/contact_list.html:87
+#: templates/back/docs/doc_list.html:119
+#: templates/back/tender/tender_list.html:89
+msgid "turi"
+msgstr "turi"
+
+#: templates/back/contact/contact_list.html:88
+#: templates/back/contact/feedback_list.html:61
+msgid "status"
+msgstr "holat"
+
+#: templates/back/contact/contact_list.html:103
+msgid "Jarayonda"
+msgstr ""
+
+#: templates/back/contact/contact_list.html:105
+msgid "Ko'rildi"
+msgstr "Ko‘rishlar soni"
+
+#: templates/back/contact/contact_list.html:107
+msgid "Rad etildi"
+msgstr ""
+
+#: templates/back/contact/contact_list.html:119
+#: templates/back/contact/feedback_list.html:83
+#: templates/back/typo/typo_list.html:108
+msgid "ko`rish"
+msgstr "ko‘rish"
+
+#: templates/back/contact/contact_update.html:40
+#: templates/back/contact/feedback_update.html:40
+msgid "FISH"
+msgstr "F.I.Sh."
+
+#: templates/back/contact/contact_update.html:50
+#: templates/back/contact/feedback_update.html:50
+msgid "fish"
+msgstr "F.I.Sh."
+
+#: templates/back/contact/contact_update.html:58
+#: templates/back/contact/feedback_update.html:58
+#: templates/back/department/department_create.html:276
+#: templates/back/department/department_create.html:278
+#: templates/back/department/department_update.html:279
+#: templates/back/department/department_update.html:283
+#: templates/back/organization/organization_create.html:283
+#: templates/back/organization/organization_create.html:285
+#: templates/back/organization/organization_update.html:293
+#: templates/back/organization/organization_update.html:297
+#: templates/back/settings/contact_settings.html:376
+#: templates/back/staff/staff_create.html:418
+#: templates/back/staff/staff_update.html:454
+#: templates/back/user/user_create.html:99
+#: templates/back/user/user_create.html:104
+#: templates/back/user/user_update.html:99
+#: templates/back/user/user_update.html:105
+msgid "Email"
+msgstr ""
+
+#: templates/back/contact/contact_update.html:69
+#: templates/back/contact/feedback_update.html:81
+#: templates/back/typo/typo_update.html:39
+msgid "Matni"
+msgstr "Matni"
+
+#: templates/back/contact/contact_update.html:72
+#: templates/back/contact/feedback_update.html:84
+msgid "matni"
+msgstr "matni"
+
+#: templates/back/contact/contact_update.html:84
+#: templates/back/contact/feedback_update.html:96
+msgid "Status"
+msgstr "Holat"
+
+#: templates/back/contact/contact_update.html:128
+msgid "Biriktirilgan fayl"
+msgstr "Biriktirilgan fayl"
+
+#: templates/back/contact/feedback_list.html:7
+#: templates/back/contact/feedback_update.html:7
+msgid "Barcha fikrlar"
+msgstr "Barcha fikrlar"
+
+#: templates/back/contact/feedback_list.html:12
+#: templates/back/contact/feedback_update.html:13
+#: templates/back/parts/menu.html:261
+msgid "Fikrlar"
+msgstr "Fikrlar"
+
+#: templates/back/contact/feedback_list.html:58
+#: templates/back/typo/typo_list.html:84
+msgid "matn"
+msgstr "matn"
+
+#: templates/back/contact/feedback_list.html:60
+#: templates/back/typo/typo_list.html:86
+msgid "jo`natilgan sana"
+msgstr "jo‘natilgan sana"
+
+#: templates/back/contact/feedback_update.html:69
+msgid "Mavzu"
+msgstr "Mavzu"
+
+#: templates/back/contact/feedback_update.html:72
+msgid "mavzu"
+msgstr "mavzu"
+
+#: templates/back/contact/reception_create.html:6
+#: templates/back/contact/reception_list.html:6
+#: templates/back/contact/reception_update.html:6
+#: templates/back/parts/menu.html:211
+msgid "Qabulxona"
+msgstr "Qabulxona"
+
+#: templates/back/contact/reception_create.html:11
+#: templates/back/contact/reception_update.html:11
+msgid "Fuqaro qabuli ishchilari"
+msgstr "Fuqarolar qabuli xodimlari"
+
+#: templates/back/contact/reception_create.html:13
+#: templates/back/contact/reception_update.html:13
+msgid "Yangi qabul"
+msgstr "Yangi qabul"
+
+#: templates/back/contact/reception_create.html:57
+#: templates/back/contact/reception_update.html:57
+msgid "Qabul vaqti"
+msgstr "Qabul vaqti"
+
+#: templates/back/contact/reception_create.html:67
+#: templates/back/contact/reception_update.html:67
+msgid "Vaqtni kiriting"
+msgstr "Vaqtni kiriting"
+
+#: templates/back/contact/reception_create.html:79
+#: templates/back/contact/reception_update.html:81
+msgid "Kun"
+msgstr "Kun"
+
+#: templates/back/contact/reception_create.html:85
+#: templates/back/contact/reception_update.html:87
+msgid "Qabul kunini tanlang"
+msgstr "Qabul kunini tanlang"
+
+#: templates/back/contact/reception_create.html:100
+#: templates/back/contact/reception_update.html:106
+msgid "Hodim"
+msgstr "Xodim"
+
+#: templates/back/contact/reception_create.html:106
+#: templates/back/contact/reception_update.html:112
+msgid "Hodimni tanlang"
+msgstr "Xodimni tanlang"
+
+#: templates/back/contact/reception_list.html:11
+msgid "Barcha fuqaro qabullari"
+msgstr "Barcha fuqaro qabullari"
+
+#: templates/back/contact/reception_list.html:61
+msgid "kun"
+msgstr "kun"
+
+#: templates/back/contact/reception_list.html:62
+msgid "vaqt"
+msgstr "vaqt"
+
+#: templates/back/department/department_create.html:6
+#: templates/back/department/department_list.html:6
+#: templates/back/department/department_update.html:6
+#: templates/back/parts/menu.html:59
+msgid "Hududiy boshqarmalar"
+msgstr "Hududiy boshqarmalar"
+
+#: templates/back/department/department_create.html:12
+#: templates/back/department/department_list.html:11
+#: templates/back/department/department_update.html:11
+msgid "Barcha boshqarmalar"
+msgstr "Barcha boshqarmalar"
+
+#: templates/back/department/department_create.html:14
+msgid "Yangi boshqarma"
+msgstr "Yangi boshqarma"
+
+#: templates/back/department/department_create.html:245
+#: templates/back/department/department_update.html:241
+#: templates/back/event/event_create.html:353
+#: templates/back/organization/organization_create.html:252
+#: templates/back/organization/organization_update.html:256
+#: templates/back/sport/stadion_create.html:413
+#: templates/back/sport/stadion_update.html:428
+#: templates/back/tender/tender_create.html:243
+#: templates/back/tender/tender_update.html:247
+#: templates/back/user/user_create.html:190
+#: templates/back/user/user_update.html:192
+msgid "Xudud"
+msgstr "Hudud"
+
+#: templates/back/department/department_create.html:252
+#: templates/back/event/event_create.html:360
+#: templates/back/organization/organization_create.html:259
+#: templates/back/sport/stadion_create.html:420
+#: templates/back/sport/stadion_update.html:435
+#: templates/back/tender/tender_create.html:250
+#: templates/back/tender/tender_update.html:254
+#: templates/back/user/user_create.html:197
+#: templates/back/user/user_update.html:199
+msgid "Xududni tanlang"
+msgstr "Hududni tanlang"
+
+#: templates/back/department/department_create.html:270
+#: templates/back/department/department_create.html:272
+#: templates/back/department/department_update.html:270
+#: templates/back/department/department_update.html:275
+#: templates/back/organization/organization_create.html:277
+#: templates/back/organization/organization_create.html:279
+#: templates/back/organization/organization_update.html:285
+#: templates/back/organization/organization_update.html:290
+#: templates/back/parts/menu.html:225
+msgid "Vebsayt"
+msgstr "Veb sayt"
+
+#: templates/back/department/department_create.html:281
+#: templates/back/department/department_create.html:284
+#: templates/back/department/department_update.html:286
+#: templates/back/department/department_update.html:290
+#: templates/back/organization/organization_create.html:288
+#: templates/back/organization/organization_create.html:290
+#: templates/back/organization/organization_update.html:300
+#: templates/back/organization/organization_update.html:304
+msgid "Telefon raqam"
+msgstr "Telefon raqami"
+
+#: templates/back/department/department_list.html:88
+#: templates/back/organization/organization_list.html:88
+msgid "telefon raqami"
+msgstr "telefon raqami"
+
+#: templates/back/department/department_list.html:89
+#: templates/back/event/event_list.html:90
+#: templates/back/organization/organization_list.html:89
+#: templates/back/tender/tender_list.html:90
+#: templates/back/user/user_list.html:62
+msgid "hudud"
+msgstr "hudud"
+
+#: templates/back/department/department_update.html:13
+msgid "Boshqarmani tahrirlash"
+msgstr "Boshqarmani tahrirlash"
+
+#: templates/back/docs/doc_create.html:6 templates/back/docs/doc_list.html:7
+#: templates/back/docs/doc_update.html:6 templates/back/parts/menu.html:92
+#: templates/back/sport/doc_update.html:6
+msgid "Hujjatlar"
+msgstr "Hujjatlar"
+
+#: templates/back/docs/doc_create.html:11 templates/back/docs/doc_list.html:12
+#: templates/back/docs/doc_update.html:11 templates/back/parts/menu.html:94
+#: templates/back/sport/doc_update.html:11
+msgid "Barcha hujjatlar"
+msgstr "Barcha hujjatlar"
+
+#: templates/back/docs/doc_create.html:13
+msgid "Yangi hujjat"
+msgstr "Yangi hujjat"
+
+#: templates/back/docs/doc_create.html:96
+#: templates/back/docs/doc_create.html:105
+#: templates/back/docs/doc_create.html:154
+#: templates/back/docs/doc_create.html:163
+#: templates/back/docs/doc_create.html:220
+#: templates/back/docs/doc_create.html:229
+#: templates/back/docs/doc_update.html:97
+#: templates/back/docs/doc_update.html:106
+#: templates/back/docs/doc_update.html:162
+#: templates/back/docs/doc_update.html:171
+#: templates/back/docs/doc_update.html:227
+#: templates/back/docs/doc_update.html:236
+#: templates/back/sport/doc_update.html:97
+#: templates/back/sport/doc_update.html:106
+#: templates/back/sport/doc_update.html:162
+#: templates/back/sport/doc_update.html:171
+#: templates/back/sport/doc_update.html:227
+#: templates/back/sport/doc_update.html:236
+msgid "Kim tomonidan berilgan"
+msgstr "Kim tomonidan berilgan"
+
+#: templates/back/docs/doc_create.html:113
+#: templates/back/docs/doc_create.html:122
+#: templates/back/docs/doc_create.html:175
+#: templates/back/docs/doc_create.html:184
+#: templates/back/docs/doc_create.html:241
+#: templates/back/docs/doc_create.html:250
+#: templates/back/docs/doc_update.html:118
+#: templates/back/docs/doc_update.html:127
+#: templates/back/docs/doc_update.html:183
+#: templates/back/docs/doc_update.html:192
+#: templates/back/docs/doc_update.html:248
+#: templates/back/docs/doc_update.html:257
+#: templates/back/sport/doc_update.html:118
+#: templates/back/sport/doc_update.html:127
+#: templates/back/sport/doc_update.html:183
+#: templates/back/sport/doc_update.html:192
+#: templates/back/sport/doc_update.html:248
+#: templates/back/sport/doc_update.html:257
+msgid "Qaror nomi"
+msgstr "Qaror nomi"
+
+#: templates/back/docs/doc_create.html:271
+#: templates/back/docs/doc_update.html:279
+msgid "Fayl linki"
+msgstr ""
+
+#: templates/back/docs/doc_create.html:325
+#: templates/back/tender/tender_create.html:262
+#: templates/back/tender/tender_update.html:271
+msgid "Turi"
+msgstr "Turi"
+
+#: templates/back/docs/doc_create.html:332
+msgid "Hujjat turini tanlang"
+msgstr "Hujjat turini tanlang"
+
+#: templates/back/docs/doc_create.html:345
+#: templates/back/docs/doc_update.html:356
+#: templates/back/tender/tender_create.html:281
+#: templates/back/tender/tender_update.html:295
+msgid "Asosiy fayl"
+msgstr "Asosiy fayl"
+
+#: templates/back/docs/doc_list.html:116
+#: templates/back/event/event_list.html:87
+#: templates/back/sport/stadion_list.html:116
+#: templates/back/tender/tender_list.html:87
+#: templates/back/user/user_list.html:61
+#: templates/back/vacancy/vacancy_list.html:88
+msgid "sanasi"
+msgstr "sanasi"
+
+#: templates/back/docs/doc_list.html:118
+msgid "kim tomonidan berildi"
+msgstr "kim tomonidan berildi"
+
+#: templates/back/docs/doc_type_create.html:6
+#: templates/back/docs/doc_type_list.html:6
+#: templates/back/docs/doc_type_update.html:6
+msgid "Hujjat turlari"
+msgstr "Hujjat turlari"
+
+#: templates/back/docs/doc_type_create.html:12
+#: templates/back/docs/doc_type_list.html:11
+#: templates/back/docs/doc_type_update.html:12
+msgid "Barcha hujjat turlari"
+msgstr "Barcha hujjat turlari"
+
+#: templates/back/docs/doc_type_create.html:14
+msgid "Yangi hujjat turi"
+msgstr "Yangi hujjat turi"
+
+#: templates/back/docs/doc_type_update.html:14
+msgid "Hujjat turini tahrirlash"
+msgstr "Hujjat turini tahrirlash"
+
+#: templates/back/docs/doc_update.html:13
+#: templates/back/sport/doc_update.html:13
+msgid "Hujjatni tahrirlash"
+msgstr "Hujjatni tahrirlash"
+
+#: templates/back/docs/doc_update.html:336
+msgid "Hujjat turi"
+msgstr "Hujjat turlari"
+
+#: templates/back/event/event_create.html:6
+#: templates/back/event/event_list.html:6
+#: templates/back/event/event_update.html:6 templates/back/index.html:88
+#: templates/back/index.html:230 templates/back/parts/menu.html:152
+msgid "Tadbirlar"
+msgstr "Tadbirlar"
+
+#: templates/back/event/event_create.html:11
+#: templates/back/event/event_list.html:11
+#: templates/back/event/event_update.html:11 templates/back/parts/menu.html:154
+msgid "Barcha tadbirlar"
+msgstr "Barcha tadbirlar"
+
+#: templates/back/event/event_create.html:13
+msgid "Yangi tadbir"
+msgstr "Yangi tadbir"
+
+#: templates/back/event/event_create.html:87
+#: templates/back/event/event_create.html:156
+#: templates/back/event/event_create.html:221
+#: templates/back/event/event_update.html:87
+#: templates/back/event/event_update.html:154
+#: templates/back/event/event_update.html:223
+msgid "Tadbir nomini kiriting"
+msgstr "Tadbir nomini kiriting"
+
+#: templates/back/event/event_create.html:96
+#: templates/back/event/event_create.html:164
+#: templates/back/event/event_create.html:229
+#: templates/back/event/event_update.html:95
+#: templates/back/event/event_update.html:163
+#: templates/back/event/event_update.html:231
+#: templates/back/press_service/news/news_create.html:113
+#: templates/back/press_service/news/news_create.html:172
+#: templates/back/press_service/news/news_create.html:233
+#: templates/back/press_service/news/news_update.html:114
+#: templates/back/press_service/news/news_update.html:174
+#: templates/back/press_service/news/news_update.html:233
+#: templates/back/press_service/video_gallery_create.html:98
+#: templates/back/press_service/video_gallery_create.html:138
+#: templates/back/press_service/video_gallery_create.html:177
+#: templates/back/press_service/video_gallery_update.html:99
+#: templates/back/press_service/video_gallery_update.html:139
+#: templates/back/press_service/video_gallery_update.html:178
+#: templates/back/settings/main_page_settings.html:106
+#: templates/back/settings/main_page_settings.html:156
+#: templates/back/settings/main_page_settings.html:205
+#: templates/back/static_page/static_page_create.html:97
+#: templates/back/static_page/static_page_create.html:142
+#: templates/back/static_page/static_page_create.html:187
+#: templates/back/static_page/static_page_update.html:98
+#: templates/back/static_page/static_page_update.html:144
+#: templates/back/static_page/static_page_update.html:192
+#: templates/back/useful_link/useful_link_create.html:93
+#: templates/back/useful_link/useful_link_create.html:128
+#: templates/back/useful_link/useful_link_create.html:161
+#: templates/back/useful_link/useful_link_update.html:93
+#: templates/back/useful_link/useful_link_update.html:128
+#: templates/back/useful_link/useful_link_update.html:161
+msgid "Batafsil"
+msgstr "Batafsil"
+
+#: templates/back/event/event_create.html:121
+#: templates/back/event/event_create.html:188
+#: templates/back/event/event_create.html:253
+#: templates/back/event/event_update.html:119
+#: templates/back/event/event_update.html:188
+#: templates/back/event/event_update.html:255
+#: templates/back/settings/contact_settings.html:85
+#: templates/back/settings/contact_settings.html:169
+#: templates/back/settings/contact_settings.html:249
+#: templates/back/sport/stadion_create.html:135
+#: templates/back/sport/stadion_create.html:234
+#: templates/back/sport/stadion_create.html:332
+#: templates/back/sport/stadion_update.html:138
+#: templates/back/sport/stadion_update.html:240
+#: templates/back/sport/stadion_update.html:343
+msgid "Manzil"
+msgstr "Manzil"
+
+#: templates/back/event/event_create.html:131
+#: templates/back/event/event_create.html:198
+#: templates/back/event/event_create.html:263
+#: templates/back/event/event_update.html:130
+#: templates/back/event/event_update.html:199
+#: templates/back/event/event_update.html:266
+msgid "Bino"
+msgstr "Bino"
+
+#: templates/back/event/event_create.html:298
+#: templates/back/event/event_update.html:303
+msgid "Regsitratsiya linki"
+msgstr "Registratsiya linki"
+
+#: templates/back/event/event_create.html:372
+#: templates/back/event/event_update.html:378
+msgid "Sport turi"
+msgstr "Sport turi"
+
+#: templates/back/event/event_create.html:378
+msgid "Sportni tanlang"
+msgstr "Sportni tanlang"
+
+#: templates/back/event/event_list.html:89
+msgid "sport turi"
+msgstr "sport turi"
+
+#: templates/back/event/event_update.html:13
+msgid "Tadbirni tahrirlash"
+msgstr "Tadbirni tahrirlash"
+
+#: templates/back/event/event_update.html:358
+#: templates/back/press_service/news/news_create.html:313
+#: templates/back/press_service/news/news_update.html:319
+msgid "Hududni tanlang"
+msgstr "Hududni tanlang"
+
+#: templates/back/index.html:40 templates/back/index.html:146
+msgid "Yangiliklar"
+msgstr "Yangiliklar"
+
+#: templates/back/index.html:57 templates/back/parts/menu.html:162
+#: templates/back/tender/tender_create.html:6
+#: templates/back/tender/tender_list.html:6
+#: templates/back/tender/tender_update.html:6
+msgid "Tenderlar"
+msgstr "Tenderlar"
+
+#: templates/back/index.html:72 templates/back/parts/menu.html:142
+#: templates/back/press_service/photo_gallery_create.html:6
+#: templates/back/press_service/photo_gallery_list.html:7
+#: templates/back/press_service/photo_gallery_update.html:6
+#: templates/back/press_service/video_gallery_create.html:6
+#: templates/back/press_service/video_gallery_list.html:7
+#: templates/back/press_service/video_gallery_update.html:6
+msgid "Media"
+msgstr "Media"
+
+#: templates/back/index.html:103 templates/back/parts/menu.html:71
+msgid "Vakansiyalar"
+msgstr "Vakansiyalar"
+
+#: templates/back/index.html:118
+msgid "Hodimlar"
+msgstr "Xodimlar"
+
+#: templates/back/index.html:133
+msgid "So'nggi yangiliklar"
+msgstr "So‘nggi yangiliklar"
+
+#: templates/back/index.html:151 templates/back/index.html:233
+#: templates/back/index.html:280
+msgid "Barcha"
+msgstr "Barcha"
+
+#: templates/back/index.html:277
+msgid "Ommabop"
+msgstr ""
+
+#: templates/back/menu/menu_create.html:7 templates/back/menu/menu_list.html:6
+#: templates/back/menu/menu_update.html:6
+msgid "Barcha menyular"
+msgstr "Barcha menyular"
+
+#: templates/back/menu/menu_create.html:12
+#: templates/back/menu/menu_list.html:11
+#: templates/back/menu/menu_update.html:11
+msgid "Menyular"
+msgstr "Menyular"
+
+#: templates/back/menu/menu_create.html:14
+msgid "Yangi menyu"
+msgstr "Yangi menyu"
+
+#: templates/back/menu/menu_create.html:139
+msgid "Footer"
+msgstr "Footer"
+
+#: templates/back/menu/menu_create.html:154
+msgid "Statik sahifa"
+msgstr "Statik sahifa"
+
+#: templates/back/menu/menu_update.html:13
+msgid "Menyuni tahrirlash"
+msgstr "Menyuni tahrirlash"
+
+#: templates/back/menu/menu_update.html:148
+#: templates/back/settings/footer_link/footer_link_create.html:147
+#: templates/back/settings/footer_link/footer_link_update.html:148
+msgid "Urlni kiriting"
+msgstr "Urlni kiriting"
+
+#: templates/back/organization/organization_create.html:6
+#: templates/back/organization/organization_list.html:6
+#: templates/back/organization/organization_update.html:6
+#: templates/back/parts/menu.html:62
+msgid "Tizimdagi tashkilotlar"
+msgstr "Tizimdagi tashkilotlar"
+
+#: templates/back/organization/organization_create.html:11
+#: templates/back/organization/organization_list.html:11
+#: templates/back/organization/organization_update.html:11
+msgid "Barcha tashkilotlar"
+msgstr "Barcha tashkilotlar"
+
+#: templates/back/organization/organization_create.html:13
+msgid "Yangi tashkilotlar"
+msgstr "Yangi tashkilotlar"
+
+#: templates/back/organization/organization_create.html:241
+#: templates/back/organization/organization_update.html:242
+msgid "Tashkilot logosi"
+msgstr "Tashkilotchi nomi"
+
+#: templates/back/organization/organization_update.html:13
+msgid "Tashkilotni tahrirlash"
+msgstr "Tashkilotni tahrirlash"
+
+#: templates/back/parts/menu.html:20 templates/back/parts/menu.html:198
+#: templates/back/press_service/news/news_create.html:378
+#: templates/back/press_service/news/news_update.html:388
+#: templates/back/service/service_create.html:6
+#: templates/back/service/service_list.html:6
+#: templates/back/service/service_update.html:6
+#: templates/back/settings/contact_settings.html:6
+#: templates/back/settings/footer_link/footer_link_create.html:6
+#: templates/back/settings/footer_link/footer_link_list.html:6
+#: templates/back/settings/footer_link/footer_link_update.html:6
+#: templates/back/settings/main_page_settings.html:6
+#: templates/back/static_page/static_page_create.html:6
+#: templates/back/static_page/static_page_list.html:6
+#: templates/back/static_page/static_page_update.html:6
+msgid "Asosiy"
+msgstr "Asosiy"
+
+#: templates/back/parts/menu.html:24
+#: templates/back/staff/staff_central_list.html:6
+#: templates/back/staff/staff_create.html:6
+#: templates/back/staff/staff_department_list.html:6
+#: templates/back/staff/staff_list.html:6
+#: templates/back/staff/staff_organization_list.html:6
+#: templates/back/staff/staff_update.html:6
+msgid "Vazirlik"
+msgstr "Vazirlik"
+
+#: templates/back/parts/menu.html:30
+msgid "Tuzilma"
+msgstr "Tuzilma"
+
+#: templates/back/parts/menu.html:38
+msgid "Rahbariyat"
+msgstr "Rahbariyat"
+
+#: templates/back/parts/menu.html:41
+msgid "Vazirlik rahbariyat"
+msgstr "Vazirlik rahbariyat"
+
+#: templates/back/parts/menu.html:44
+msgid "Hududiy rahbarlar"
+msgstr "Hududiy rahbarlar"
+
+#: templates/back/parts/menu.html:47
+msgid "Tashkilot rahbarlar"
+msgstr "Tashkilot rahbarlari"
+
+#: templates/back/parts/menu.html:50
+#: templates/back/staff/staff_central_list.html:11
+#: templates/back/staff/staff_create.html:456
+#: templates/back/staff/staff_update.html:497
+msgid "Markaziy apparat"
+msgstr "Markaziy apparat"
+
+#: templates/back/parts/menu.html:56
+msgid "Tashkiliy tuzilma"
+msgstr "Tashkiliy tuzilma"
+
+#: templates/back/parts/menu.html:73
+msgid "Barcha vakansiyalar"
+msgstr "Barcha vakansiyalar"
+
+#: templates/back/parts/menu.html:82
+msgid "Xizmatlar"
+msgstr "Xizmatlar"
+
+#: templates/back/parts/menu.html:84
+#: templates/back/service/service_create.html:11
+#: templates/back/service/service_list.html:11
+#: templates/back/service/service_update.html:11
+msgid "Barcha xizmatlar"
+msgstr "Barcha xizmatlar"
+
+#: templates/back/parts/menu.html:107
+#: templates/back/sport/champion_create.html:355
+#: templates/back/sport/champion_update.html:355
+msgid "Sport"
+msgstr "Sport"
+
+#: templates/back/parts/menu.html:109
+#: templates/back/sport/stadion_create.html:7
+#: templates/back/sport/stadion_list.html:7
+#: templates/back/sport/stadion_update.html:7
+msgid "Stadionlar"
+msgstr "Stadionlar"
+
+#: templates/back/parts/menu.html:111
+#: templates/back/sport/champion_create.html:7
+#: templates/back/sport/champion_list.html:7
+#: templates/back/sport/champion_update.html:7
+msgid "Sovrindorlar"
+msgstr "Sovrindorlar"
+
+#: templates/back/parts/menu.html:113
+#: templates/back/sport/sport_type_create.html:6
+#: templates/back/sport/sport_type_list.html:6
+#: templates/back/sport/sport_type_update.html:6
+msgid "Sport turlari"
+msgstr "Sport turlari"
+
+#: templates/back/parts/menu.html:120
+#: templates/back/press_service/news/news_category_create.html:6
+#: templates/back/press_service/news/news_category_list.html:6
+#: templates/back/press_service/news/news_category_update.html:6
+#: templates/back/press_service/news/news_create.html:7
+#: templates/back/press_service/news/news_hashtag_create.html:6
+#: templates/back/press_service/news/news_hashtag_list.html:6
+#: templates/back/press_service/news/news_hashtag_update.html:6
+#: templates/back/press_service/news/news_list.html:8
+#: templates/back/press_service/news/news_update.html:7
+msgid "Matbuot xizmati"
+msgstr "Matbuot xizmati"
+
+#: templates/back/parts/menu.html:122
+#: templates/back/press_service/press/article_create.html:11
+#: templates/back/press_service/press/article_list.html:11
+#: templates/back/press_service/press/article_update.html:11
+msgid "Barcha maqolalar"
+msgstr "Barcha maqolalar"
+
+#: templates/back/parts/menu.html:126
+msgid "Heshteglar"
+msgstr "Heshteglar"
+
+#: templates/back/parts/menu.html:133
+#: templates/back/press_service/press/press_create.html:58
+#: templates/back/press_service/press/press_update.html:58
+msgid "Manba"
+msgstr "Manba"
+
+#: templates/back/parts/menu.html:136
+#: templates/back/press_service/press/article_create.html:6
+#: templates/back/press_service/press/article_list.html:6
+#: templates/back/press_service/press/article_update.html:6
+msgid "OAV maqolalari"
+msgstr "OAV maqolalari"
+
+#: templates/back/parts/menu.html:144
+msgid "Fotogalareya"
+msgstr "Fotogalareya"
+
+#: templates/back/parts/menu.html:146
+msgid "Videogalareya"
+msgstr "Videogalareya"
+
+#: templates/back/parts/menu.html:164
+#: templates/back/tender/tender_create.html:11
+#: templates/back/tender/tender_list.html:11
+#: templates/back/tender/tender_update.html:11
+msgid "Barcha tenderlar"
+msgstr "Barcha tenderlar"
+
+#: templates/back/parts/menu.html:174 templates/back/quizz/quizz_create.html:6
+#: templates/back/quizz/quizz_list.html:6
+#: templates/back/quizz/quizz_update.html:6
+msgid "So'rovnomalar"
+msgstr "So‘rovnomalar"
+
+#: templates/back/parts/menu.html:176
+msgid "Barcha so'rovnoma"
+msgstr "Barcha so‘rovnomalar"
+
+#: templates/back/parts/menu.html:184
+#: templates/back/useful_link/useful_link_create.html:178
+#: templates/back/useful_link/useful_link_update.html:178
+msgid "Havola"
+msgstr "Havola"
+
+#: templates/back/parts/menu.html:186
+#: templates/back/useful_link/useful_link_create.html:11
+#: templates/back/useful_link/useful_link_list.html:11
+#: templates/back/useful_link/useful_link_update.html:11
+msgid "Barcha havolalar"
+msgstr "Barcha havolalar"
+
+#: templates/back/parts/menu.html:194
+msgid "Sozlamalar"
+msgstr "Sozlamalar"
+
+#: templates/back/parts/menu.html:203
+#: templates/back/settings/main_page_settings.html:11
+msgid "Bosh sahifa"
+msgstr "Bosh sahifa"
+
+#: templates/back/parts/menu.html:207
+#: templates/back/settings/contact_settings.html:11
+msgid "Bog`lanish"
+msgstr "Bog‘lanish"
+
+#: templates/back/parts/menu.html:215
+#: templates/back/press_service/faq/create.html:6
+#: templates/back/press_service/faq/list.html:6
+#: templates/back/press_service/faq/update.html:6
+msgid "Savol-javob"
+msgstr "Savol-javob"
+
+#: templates/back/parts/menu.html:219 templates/back/user/user_create.html:6
+#: templates/back/user/user_list.html:6 templates/back/user/user_update.html:6
+msgid "Foydalanuvchilar"
+msgstr "Foydalanuvchilar"
+
+#: templates/back/parts/menu.html:228
+msgid "Sayt menyulari"
+msgstr "Sayt menyulari"
+
+#: templates/back/parts/menu.html:230
+msgid "Sahifalar"
+msgstr "Sahifalar"
+
+#: templates/back/parts/menu.html:236
+#: templates/back/territorial/region/region_create.html:6
+#: templates/back/territorial/region/region_list.html:6
+#: templates/back/territorial/region/region_update.html:6
+msgid "Hududlar"
+msgstr "Hududlar"
+
+#: templates/back/parts/menu.html:239
+msgid "Barchasi"
+msgstr "Barchasi"
+
+#: templates/back/parts/menu.html:241
+msgid "Yangi qo`shish"
+msgstr "Yangi qo‘shish"
+
+#: templates/back/parts/menu.html:247 templates/back/typo/typo_list.html:7
+#: templates/back/typo/typo_update.html:6
+msgid "Saytdagi xatolar"
+msgstr "Saytdagi xatolar"
+
+#: templates/back/parts/menu.html:250
+msgid "Barcha qayd etilganlar"
+msgstr "Barcha qayd etilganlar"
+
+#: templates/back/press_service/faq/create.html:11
+#: templates/back/press_service/faq/list.html:11
+#: templates/back/press_service/faq/update.html:11
+msgid "Barcha savol-javoblar"
+msgstr "Barcha savol-javoblar"
+
+#: templates/back/press_service/faq/create.html:13
+#: templates/back/press_service/faq/update.html:13
+msgid "Yangi savol-javob"
+msgstr "Yangi savol-javob"
+
+#: templates/back/press_service/faq/create.html:84
+#: templates/back/press_service/faq/create.html:125
+#: templates/back/press_service/faq/create.html:165
+#: templates/back/press_service/faq/update.html:84
+#: templates/back/press_service/faq/update.html:125
+#: templates/back/press_service/faq/update.html:165
+msgid "Savol"
+msgstr "Savol"
+
+#: templates/back/press_service/faq/create.html:88
+#: templates/back/press_service/faq/create.html:129
+#: templates/back/press_service/faq/create.html:169
+#: templates/back/press_service/faq/update.html:88
+#: templates/back/press_service/faq/update.html:129
+#: templates/back/press_service/faq/update.html:169
+msgid "Savolni kiriting"
+msgstr "Savolni kiriting"
+
+#: templates/back/press_service/faq/create.html:95
+#: templates/back/press_service/faq/create.html:99
+#: templates/back/press_service/faq/create.html:136
+#: templates/back/press_service/faq/create.html:140
+#: templates/back/press_service/faq/create.html:176
+#: templates/back/press_service/faq/create.html:180
+#: templates/back/press_service/faq/update.html:95
+#: templates/back/press_service/faq/update.html:99
+#: templates/back/press_service/faq/update.html:136
+#: templates/back/press_service/faq/update.html:140
+#: templates/back/press_service/faq/update.html:176
+#: templates/back/press_service/faq/update.html:180
+msgid "Javob"
+msgstr "Javob"
+
+#: templates/back/press_service/faq/create.html:221
+#: templates/back/press_service/faq/update.html:221
+msgid "Tartib"
+msgstr "Tartib"
+
+#: templates/back/press_service/faq/list.html:86
+msgid "savol"
+msgstr "savol"
+
+#: templates/back/press_service/faq/list.html:88
+msgid "tartib"
+msgstr "tartib"
+
+#: templates/back/press_service/news/news_category_create.html:12
+#: templates/back/press_service/news/news_category_update.html:12
+msgid "Barcha bo‘limlar"
+msgstr "Barcha bo‘limlar"
+
+#: templates/back/press_service/news/news_category_create.html:87
+#: templates/back/press_service/news/news_category_create.html:111
+#: templates/back/press_service/news/news_category_create.html:135
+#: templates/back/press_service/news/news_category_update.html:87
+#: templates/back/press_service/news/news_category_update.html:111
+#: templates/back/press_service/news/news_category_update.html:135
+msgid "Bo‘lim nomini kiriting"
+msgstr "Bo‘lim nomini kiriting"
+
+#: templates/back/press_service/news/news_category_update.html:14
+msgid "Bo‘limni tahrirlash"
+msgstr "Bo‘limni tahrirlash"
+
+#: templates/back/press_service/news/news_create.html:12
+#: templates/back/press_service/news/news_list.html:13
+#: templates/back/press_service/news/news_update.html:12
+msgid "Barcha yangiliklar"
+msgstr "Barcha yangiliklar"
+
+#: templates/back/press_service/news/news_create.html:14
+msgid "Yangi yangilik"
+msgstr "Yangi yangilik"
+
+#: templates/back/press_service/news/news_create.html:93
+#: templates/back/press_service/news/news_create.html:152
+#: templates/back/press_service/news/news_create.html:213
+#: templates/back/press_service/news/news_update.html:93
+#: templates/back/press_service/news/news_update.html:153
+#: templates/back/press_service/news/news_update.html:213
+#: templates/back/press_service/press/article_create.html:67
+#: templates/back/press_service/press/article_update.html:67
+#: templates/back/static_page/static_page_create.html:90
+#: templates/back/static_page/static_page_create.html:135
+#: templates/back/static_page/static_page_create.html:180
+#: templates/back/static_page/static_page_update.html:91
+#: templates/back/static_page/static_page_update.html:137
+#: templates/back/static_page/static_page_update.html:185
+msgid "Maqola nomini kiriting"
+msgstr "Maqola nomini kiriting"
+
+#: templates/back/press_service/news/news_create.html:100
+#: templates/back/press_service/news/news_create.html:159
+#: templates/back/press_service/news/news_create.html:221
+#: templates/back/press_service/news/news_update.html:101
+#: templates/back/press_service/news/news_update.html:161
+#: templates/back/press_service/news/news_update.html:221
+msgid "Qisqacha"
+msgstr "Qisqacha"
+
+#: templates/back/press_service/news/news_create.html:104
+#: templates/back/press_service/news/news_create.html:163
+#: templates/back/press_service/news/news_create.html:224
+#: templates/back/press_service/news/news_update.html:105
+#: templates/back/press_service/news/news_update.html:165
+#: templates/back/press_service/news/news_update.html:224
+msgid "Yangilik haqida qisqa"
+msgstr "Yangilik haqida qisqa"
+
+#: templates/back/press_service/news/news_create.html:285
+#: templates/back/press_service/news/news_update.html:287
+msgid "Bo'limlar"
+msgstr "Bo‘limlar"
+
+#: templates/back/press_service/news/news_create.html:291
+#: templates/back/press_service/news/news_update.html:293
+msgid "Bo'limni tanlang"
+msgstr "Bo‘limni tanlang"
+
+#: templates/back/press_service/news/news_create.html:306
+#: templates/back/press_service/news/news_update.html:312
+msgid "Hudud (ixtiyoriy)"
+msgstr ""
+
+#: templates/back/press_service/news/news_create.html:384
+#: templates/back/press_service/news/news_update.html:394
+msgid "Bosh sahifaga chiqarish"
+msgstr "Bosh sahifaga chiqarish"
+
+#: templates/back/press_service/news/news_create.html:399
+#: templates/back/press_service/news/news_update.html:412
+msgid "Muhim yangilik"
+msgstr "Muhim yangilik"
+
+#: templates/back/press_service/news/news_hashtag_create.html:88
+#: templates/back/press_service/news/news_hashtag_create.html:112
+#: templates/back/press_service/news/news_hashtag_create.html:137
+#: templates/back/press_service/news/news_hashtag_update.html:88
+#: templates/back/press_service/news/news_hashtag_update.html:112
+#: templates/back/press_service/news/news_hashtag_update.html:137
+msgid "Heshtegni kiriting"
+msgstr "Heshtegni kiriting"
+
+#: templates/back/press_service/news/news_update.html:14
+msgid "Yangilikni tahrirlash"
+msgstr "Yangilikni tahrirlash"
+
+#: templates/back/press_service/photo_gallery_create.html:11
+#: templates/back/press_service/photo_gallery_list.html:12
+#: templates/back/press_service/photo_gallery_update.html:11
+msgid "Barcha fotogalereyalar"
+msgstr "Barcha fotogalereyalar"
+
+#: templates/back/press_service/photo_gallery_create.html:13
+msgid "Yangi fotogalereya"
+msgstr "Yangi fotogalereya"
+
+#: templates/back/press_service/photo_gallery_create.html:89
+#: templates/back/press_service/photo_gallery_create.html:113
+#: templates/back/press_service/photo_gallery_create.html:137
+#: templates/back/press_service/photo_gallery_update.html:89
+#: templates/back/press_service/photo_gallery_update.html:113
+#: templates/back/press_service/photo_gallery_update.html:137
+msgid "Fotogalereya nomini kiriting"
+msgstr "Fotogalereya nomini kiriting"
+
+#: templates/back/press_service/photo_gallery_create.html:201
+#: templates/back/press_service/photo_gallery_update.html:204
+msgid "Rasmlar"
+msgstr "Rasmlar"
+
+#: templates/back/press_service/photo_gallery_list.html:90
+msgid "rasmlar soni"
+msgstr "rasmlar soni"
+
+#: templates/back/press_service/photo_gallery_update.html:13
+msgid "Fotogalereyani tahrirlash"
+msgstr "Fotogalereyani tahrirlash"
+
+#: templates/back/press_service/press/article_create.html:13
+msgid "Yangi maqola"
+msgstr "Yangi maqola"
+
+#: templates/back/press_service/press/article_create.html:58
+#: templates/back/press_service/press/article_update.html:58
+msgid "Maqola"
+msgstr "Maqola"
+
+#: templates/back/press_service/press/article_create.html:79
+#: templates/back/press_service/press/article_update.html:79
+msgid "Maqola linkini kiriting"
+msgstr "Maqola linkini kiriting"
+
+#: templates/back/press_service/press/article_create.html:91
+#: templates/back/press_service/press/article_update.html:91
+msgid "Maqola tili"
+msgstr "Maqola tili"
+
+#: templates/back/press_service/press/article_create.html:145
+#: templates/back/press_service/press/article_update.html:147
+#: templates/back/press_service/press/press_create.html:6
+#: templates/back/press_service/press/press_update.html:6
+msgid "Manbaa"
+msgstr "Manba"
+
+#: templates/back/press_service/press/article_create.html:151
+#: templates/back/press_service/press/article_update.html:153
+msgid "Manbaani tanlang"
+msgstr "Manbani tanlang"
+
+#: templates/back/press_service/press/article_list.html:61
+msgid "til"
+msgstr "til"
+
+#: templates/back/press_service/press/article_list.html:62
+#: templates/back/press_service/press/press_list.html:62
+msgid "link"
+msgstr "havola"
+
+#: templates/back/press_service/press/article_update.html:13
+msgid "Maqolani tahrirlash"
+msgstr "Maqolani tahrirlash"
+
+#: templates/back/press_service/press/press_create.html:11
+#: templates/back/press_service/press/press_update.html:11
+msgid "Barcha manbaalar"
+msgstr "Barcha manbalar"
+
+#: templates/back/press_service/press/press_create.html:13
+msgid "Yangi manbaa"
+msgstr "Yangi manba"
+
+#: templates/back/press_service/press/press_create.html:67
+#: templates/back/press_service/press/press_update.html:67
+msgid "Manba nomini kiriting"
+msgstr "Manba nomini kiriting"
+
+#: templates/back/press_service/press/press_create.html:79
+#: templates/back/press_service/press/press_update.html:79
+msgid "Manba linkini kiriting"
+msgstr "Manba havolasini kiriting"
+
+#: templates/back/press_service/press/press_list.html:6
+msgid "Manbaalar"
+msgstr "Manbalar"
+
+#: templates/back/press_service/press/press_list.html:11
+msgid "Barcha manbalar"
+msgstr "Barcha manbalar"
+
+#: templates/back/press_service/press/press_list.html:61
+#: templates/back/sport/sport_type_list.html:90
+msgid "yaratilgan sana"
+msgstr "yaratilgan sana"
+
+#: templates/back/press_service/press/press_update.html:13
+msgid "Manbani tahrirlash"
+msgstr "Manbani tahrirlash"
+
+#: templates/back/press_service/video_gallery_create.html:11
+#: templates/back/press_service/video_gallery_list.html:12
+#: templates/back/press_service/video_gallery_update.html:11
+msgid "Barcha videogalereyalar"
+msgstr "Barcha videogalereyalar"
+
+#: templates/back/press_service/video_gallery_create.html:13
+msgid "Yangi videogalereya"
+msgstr "Yangi videogalereya"
+
+#: templates/back/press_service/video_gallery_create.html:90
+#: templates/back/press_service/video_gallery_create.html:130
+#: templates/back/press_service/video_gallery_create.html:169
+#: templates/back/press_service/video_gallery_update.html:91
+#: templates/back/press_service/video_gallery_update.html:131
+#: templates/back/press_service/video_gallery_update.html:170
+msgid "Videogalereya nomini kiriting"
+msgstr "Videogalereya nomini kiriting"
+
+#: templates/back/press_service/video_gallery_create.html:102
+#: templates/back/press_service/video_gallery_create.html:141
+#: templates/back/press_service/video_gallery_create.html:180
+#: templates/back/press_service/video_gallery_update.html:103
+#: templates/back/press_service/video_gallery_update.html:142
+#: templates/back/press_service/video_gallery_update.html:181
+msgid "Videogalareya haqida yozing"
+msgstr "Videogalareya haqida yozing"
+
+#: templates/back/press_service/video_gallery_create.html:200
+#: templates/back/press_service/video_gallery_update.html:201
+msgid "Video havolasi"
+msgstr "Video havolasi"
+
+#: templates/back/press_service/video_gallery_create.html:203
+#: templates/back/press_service/video_gallery_update.html:206
+msgid "Video havolasi kiriting"
+msgstr "Video havolasini kiriting"
+
+#: templates/back/press_service/video_gallery_list.html:90
+msgid "Ko'rishlar soni"
+msgstr "Ko‘rishlar soni"
+
+#: templates/back/press_service/video_gallery_update.html:13
+msgid "Videogalereyani tahrirlash"
+msgstr "Videogalereyani tahrirlash"
+
+#: templates/back/quizz/quizz_create.html:11
+#: templates/back/quizz/quizz_list.html:11
+#: templates/back/quizz/quizz_update.html:11
+msgid "Barcha so'rovnomalar"
+msgstr "Barcha so‘rovnomalar"
+
+#: templates/back/quizz/quizz_create.html:13
+#: templates/back/quizz/quizz_update.html:13
+msgid "Yangi so'rovnoma"
+msgstr "Yangi so‘rovnoma"
+
+#: templates/back/quizz/quizz_create.html:87
+#: templates/back/quizz/quizz_create.html:112
+#: templates/back/quizz/quizz_create.html:136
+#: templates/back/quizz/quizz_update.html:87
+#: templates/back/quizz/quizz_update.html:112
+#: templates/back/quizz/quizz_update.html:136
+msgid "So'rovnoma nomini yozing"
+msgstr "So‘rovnoma nomini yozing"
+
+#: templates/back/quizz/quizz_create.html:270
+#: templates/back/quizz/quizz_update.html:264
+msgid "Asosiy sahifa"
+msgstr "Bosh sahifa"
+
+#: templates/back/quizz/quizz_list.html:87
+msgid "holati"
+msgstr "holati"
+
+#: templates/back/quizz/quizz_list.html:88
+msgid "javoblar"
+msgstr "javoblar"
+
+#: templates/back/quizz/quizz_list.html:104
+msgid "Faol emas"
+msgstr "Faol emas"
+
+#: templates/back/quizz/quizz_update.html:224
+msgid "Yangi javob"
+msgstr "Yangi savol-javob"
+
+#: templates/back/service/service_create.html:13
+msgid "Yangi xizmat"
+msgstr "Yangi xizmat"
+
+#: templates/back/service/service_create.html:157
+#: templates/back/service/service_update.html:158
+msgid "Manzili"
+msgstr "Manzili"
+
+#: templates/back/service/service_list.html:89
+#: templates/back/static_page/static_page_list.html:89
+msgid "yaratilgan sanasi"
+msgstr "yaratilgan sanasi"
+
+#: templates/back/service/service_update.html:13
+msgid "Xizmatni tahrirlash"
+msgstr "Xizmatni tahrirlash"
+
+#: templates/back/settings/contact_settings.html:97
+#: templates/back/settings/contact_settings.html:180
+#: templates/back/settings/contact_settings.html:260
+msgid "Ish kunlari"
+msgstr "Ish kunlari"
+
+#: templates/back/settings/contact_settings.html:100
+#: templates/back/settings/contact_settings.html:183
+#: templates/back/settings/contact_settings.html:263
+msgid "Dushanba - Shanba"
+msgstr "Dushanba - Shanba"
+
+#: templates/back/settings/contact_settings.html:112
+#: templates/back/settings/contact_settings.html:115
+#: templates/back/settings/contact_settings.html:194
+#: templates/back/settings/contact_settings.html:197
+#: templates/back/settings/contact_settings.html:274
+#: templates/back/settings/contact_settings.html:277
+msgid "Avtobus bekati"
+msgstr "Avtobus bekati"
+
+#: templates/back/settings/contact_settings.html:125
+#: templates/back/settings/contact_settings.html:128
+#: templates/back/settings/contact_settings.html:207
+#: templates/back/settings/contact_settings.html:210
+#: templates/back/settings/contact_settings.html:287
+#: templates/back/settings/contact_settings.html:290
+msgid "Metro bekatlari"
+msgstr "Metro bekatlari"
+
+#: templates/back/settings/contact_settings.html:139
+#: templates/back/settings/contact_settings.html:221
+#: templates/back/settings/contact_settings.html:301
+msgid "Eslatma"
+msgstr "Eslatma"
+
+#: templates/back/settings/contact_settings.html:143
+#: templates/back/settings/contact_settings.html:224
+#: templates/back/settings/contact_settings.html:304
+msgid "Qabul uchun eslatma"
+msgstr "Qabul uchun eslatma"
+
+#: templates/back/settings/contact_settings.html:428
+#: templates/back/staff/staff_create.html:411
+#: templates/back/staff/staff_update.html:445
+#: templates/back/territorial/region/region_create.html:148
+#: templates/back/territorial/region/region_update.html:148
+msgid "Telefon raqami"
+msgstr "Telefon raqami"
+
+#: templates/back/settings/contact_settings.html:435
+msgid "Ish soati"
+msgstr "Ish soati"
+
+#: templates/back/settings/contact_settings.html:442
+msgid "Avtobuslar"
+msgstr "Avtobuslar"
+
+#: templates/back/settings/contact_settings.html:449
+msgid "Yo`nalishli taksilar"
+msgstr "Yo‘nalishli taksilar"
+
+#: templates/back/settings/contact_settings.html:458
+msgid "Tadbirlar uchun ijtimoiy tarmoq"
+msgstr "Tadbirlar uchun ijtimoiy tarmoq"
+
+#: templates/back/settings/contact_settings.html:465
+msgid "Tadbirlar uchun ijtimoiy tarmoq linki"
+msgstr "Tadbirlar uchun ijtimoiy tarmoq havolasi"
+
+#: templates/back/settings/contact_settings.html:473
+msgid "Yangiliklar uchun ijtimoiy tarmoq"
+msgstr "Yangiliklar uchun ijtimoiy tarmoq"
+
+#: templates/back/settings/contact_settings.html:480
+msgid "Yangiliklar uchun ijtimoiy tarmoq linki"
+msgstr "Yangiliklar uchun ijtimoiy tarmoq linki"
+
+#: templates/back/settings/footer_link/footer_link_create.html:11
+#: templates/back/settings/footer_link/footer_link_list.html:11
+#: templates/back/settings/footer_link/footer_link_update.html:11
+msgid "Barcha footer havolalar"
+msgstr "Barcha footer havolalari"
+
+#: templates/back/settings/footer_link/footer_link_create.html:13
+#: templates/back/useful_link/useful_link_create.html:13
+msgid "Yangi havola"
+msgstr "Yangi havola"
+
+#: templates/back/settings/footer_link/footer_link_create.html:175
+#: templates/back/settings/footer_link/footer_link_update.html:176
+msgid "Icon"
+msgstr "Ikonka"
+
+#: templates/back/settings/footer_link/footer_link_update.html:13
+#: templates/back/useful_link/useful_link_update.html:13
+msgid "Havolani tahrirlash"
+msgstr "Havolani tahrirlash"
+
+#: templates/back/settings/main_page_settings.html:85
+#: templates/back/settings/main_page_settings.html:135
+#: templates/back/settings/main_page_settings.html:184
+msgid "Bosh sarlavha"
+msgstr "Bosh sarlavha"
+
+#: templates/back/settings/main_page_settings.html:94
+#: templates/back/settings/main_page_settings.html:144
+#: templates/back/settings/main_page_settings.html:193
+msgid "Mobil ilova sarlavhasi"
+msgstr "Mobil ilova sarlavhasi"
+
+#: templates/back/settings/main_page_settings.html:97
+#: templates/back/settings/main_page_settings.html:147
+#: templates/back/settings/main_page_settings.html:196
+msgid "Mobil ilova uchun sarlavhani kiriting"
+msgstr "Mobil ilova uchun sarlavhani kiriting"
+
+#: templates/back/settings/main_page_settings.html:109
+#: templates/back/settings/main_page_settings.html:159
+#: templates/back/settings/main_page_settings.html:208
+msgid "Mobil ilova haqida batafsil yozing"
+msgstr "Mobil ilova haqida batafsil yozing"
+
+#: templates/back/settings/main_page_settings.html:227
+msgid "Ishonch telefoni"
+msgstr "Ishonch telefoni"
+
+#: templates/back/settings/main_page_settings.html:231
+msgid "Telefon raqamni kiriting"
+msgstr "Telefon raqamini kiriting"
+
+#: templates/back/settings/main_page_settings.html:234
+#: templates/back/settings/main_page_settings.html:238
+msgid "E-Link"
+msgstr "Havola"
+
+#: templates/back/settings/main_page_settings.html:242
+msgid "Android havolasi"
+msgstr "Android havolasi"
+
+#: templates/back/settings/main_page_settings.html:249
+msgid "IOS havolasi"
+msgstr "IOS havolasi"
+
+#: templates/back/settings/main_page_settings.html:267
+msgid "Android ilova reklamasi"
+msgstr "Android ilova reklamasi"
+
+#: templates/back/settings/main_page_settings.html:271
+msgid "Android ilova reklamasi linki"
+msgstr "Android ilova reklamasi havolasi"
+
+#: templates/back/settings/main_page_settings.html:275
+msgid "IOS ilova reklamasi"
+msgstr "IOS ilova reklamasi"
+
+#: templates/back/settings/main_page_settings.html:279
+msgid "IOS ilova reklamasi linki"
+msgstr "IOS ilova reklamasi linki"
+
+#: templates/back/settings/main_page_settings.html:311
+msgid "Menyu belgisi"
+msgstr "Menyu belgisi"
+
+#: templates/back/settings/main_page_settings.html:340
+msgid "Mobil ilova rasmi"
+msgstr "Mobil ilova rasmi"
+
+#: templates/back/settings/main_page_settings.html:353
+msgid "Mobil ilova posteri"
+msgstr "Mobil ilova posteri"
+
+#: templates/back/settings/main_page_settings.html:366
+msgid "Bosh sahifa reklamasi"
+msgstr "Bosh sahifa reklamasi"
+
+#: templates/back/settings/main_page_settings.html:380
+msgid "Reklama rasmi"
+msgstr "Reklama rasmi"
+
+#: templates/back/settings/main_page_settings.html:393
+msgid "Poster"
+msgstr "Poster"
+
+#: templates/back/sport/champion_create.html:12
+#: templates/back/sport/champion_list.html:12
+#: templates/back/sport/champion_update.html:12
+msgid "Barcha sovrindorlar"
+msgstr "Barcha sovrindorlar"
+
+#: templates/back/sport/champion_create.html:14
+msgid "Yangi sovrindor"
+msgstr "Yangi sovrindor"
+
+#: templates/back/sport/champion_create.html:92
+#: templates/back/sport/champion_create.html:177
+#: templates/back/sport/champion_create.html:263
+#: templates/back/sport/champion_update.html:92
+#: templates/back/sport/champion_update.html:177
+#: templates/back/sport/champion_update.html:263
+msgid "Sovrindor nomini kiriting"
+msgstr "Sovrindor nomini kiriting"
+
+#: templates/back/sport/champion_create.html:100
+#: templates/back/sport/champion_create.html:185
+#: templates/back/sport/champion_create.html:271
+#: templates/back/sport/champion_update.html:100
+#: templates/back/sport/champion_update.html:185
+#: templates/back/sport/champion_update.html:271
+#: templates/back/sport/stadion_create.html:97
+#: templates/back/sport/stadion_create.html:197
+#: templates/back/sport/stadion_create.html:295
+#: templates/back/sport/stadion_update.html:99
+#: templates/back/sport/stadion_update.html:201
+#: templates/back/sport/stadion_update.html:305
+msgid "Qisqacha ma'lumot"
+msgstr "Qisqacha ma’lumot"
+
+#: templates/back/sport/champion_create.html:109
+#: templates/back/sport/champion_create.html:195
+#: templates/back/sport/champion_create.html:280
+#: templates/back/sport/champion_update.html:109
+#: templates/back/sport/champion_update.html:195
+#: templates/back/sport/champion_update.html:280
+msgid "Sovrindor haqida qisqacha"
+msgstr "Sovrindor haqida qisqacha"
+
+#: templates/back/sport/champion_create.html:120
+#: templates/back/sport/champion_create.html:205
+#: templates/back/sport/champion_create.html:290
+#: templates/back/sport/champion_update.html:120
+#: templates/back/sport/champion_update.html:205
+#: templates/back/sport/champion_update.html:290
+msgid "Musobaqa"
+msgstr "Musobaqa"
+
+#: templates/back/sport/champion_create.html:132
+#: templates/back/sport/champion_create.html:216
+#: templates/back/sport/champion_create.html:301
+#: templates/back/sport/champion_update.html:132
+#: templates/back/sport/champion_update.html:216
+#: templates/back/sport/champion_update.html:301
+msgid "Musobaqa nomi"
+msgstr "Musobaqa nomi"
+
+#: templates/back/sport/champion_create.html:140
+#: templates/back/sport/champion_create.html:224
+#: templates/back/sport/champion_create.html:309
+#: templates/back/sport/champion_update.html:140
+#: templates/back/sport/champion_update.html:224
+#: templates/back/sport/champion_update.html:309
+msgid "Mukofot"
+msgstr "Mukofot"
+
+#: templates/back/sport/champion_create.html:152
+#: templates/back/sport/champion_create.html:236
+#: templates/back/sport/champion_create.html:320
+#: templates/back/sport/champion_update.html:152
+#: templates/back/sport/champion_update.html:236
+#: templates/back/sport/champion_update.html:320
+msgid "Mukofot haqida yozing"
+msgstr "Mukofot haqida yozing"
+
+#: templates/back/sport/champion_create.html:361
+#: templates/back/sport/champion_update.html:361
+msgid "Sport turini tanlang"
+msgstr "Sport turini tanlang"
+
+#: templates/back/sport/champion_list.html:89
+msgid "sport"
+msgstr "sport"
+
+#: templates/back/sport/champion_list.html:91
+msgid "musobaqa"
+msgstr "musobaqa"
+
+#: templates/back/sport/champion_list.html:92
+msgid "sovrin"
+msgstr "sovrin"
+
+#: templates/back/sport/champion_update.html:14
+msgid "Sovrindor tahrirlash"
+msgstr "Sovrindorni tahrirlash"
+
+#: templates/back/sport/doc_update.html:316
+msgid "Hududiy boshqarma"
+msgstr "Hududiy boshqarma"
+
+#: templates/back/sport/sport_type_create.html:12
+#: templates/back/sport/sport_type_list.html:11
+#: templates/back/sport/sport_type_update.html:12
+msgid "Barcha sport turlari"
+msgstr "Barcha sport turlari"
+
+#: templates/back/sport/sport_type_create.html:14
+msgid "Yangi sport turi"
+msgstr "Yangi sport turi"
+
+#: templates/back/sport/sport_type_update.html:14
+msgid "Sport turini tahrirlash"
+msgstr "Sport turini tahrirlash"
+
+#: templates/back/sport/stadion_create.html:12
+#: templates/back/sport/stadion_list.html:12
+#: templates/back/sport/stadion_update.html:12
+msgid "Barcha stadionlar"
+msgstr "Barcha stadionlar"
+
+#: templates/back/sport/stadion_create.html:14
+msgid "Yangi stadion"
+msgstr "Yangi stadion"
+
+#: templates/back/sport/stadion_create.html:89
+#: templates/back/sport/stadion_create.html:187
+#: templates/back/sport/stadion_create.html:285
+#: templates/back/sport/stadion_update.html:91
+#: templates/back/sport/stadion_update.html:191
+#: templates/back/sport/stadion_update.html:295
+msgid "Stadion nomini kiriting"
+msgstr "Stadion nomini kiriting"
+
+#: templates/back/sport/stadion_create.html:106
+#: templates/back/sport/stadion_create.html:206
+#: templates/back/sport/stadion_create.html:304
+#: templates/back/sport/stadion_update.html:108
+#: templates/back/sport/stadion_update.html:211
+#: templates/back/sport/stadion_update.html:315
+msgid "Stadion haqida qisqacha"
+msgstr "Stadion haqida qisqacha"
+
+#: templates/back/sport/stadion_create.html:117
+#: templates/back/sport/stadion_create.html:127
+#: templates/back/sport/stadion_create.html:216
+#: templates/back/sport/stadion_create.html:226
+#: templates/back/sport/stadion_create.html:314
+#: templates/back/sport/stadion_create.html:324
+#: templates/back/sport/stadion_update.html:119
+#: templates/back/sport/stadion_update.html:130
+#: templates/back/sport/stadion_update.html:221
+#: templates/back/sport/stadion_update.html:232
+#: templates/back/sport/stadion_update.html:325
+#: templates/back/sport/stadion_update.html:335
+msgid "Mezbon jamoa"
+msgstr "Mezbon jamoa"
+
+#: templates/back/sport/stadion_create.html:145
+#: templates/back/sport/stadion_create.html:244
+#: templates/back/sport/stadion_create.html:342
+#: templates/back/sport/stadion_update.html:148
+#: templates/back/sport/stadion_update.html:251
+#: templates/back/sport/stadion_update.html:354
+msgid "Manzilni yozing"
+msgstr "Manzilni yozing"
+
+#: templates/back/sport/stadion_create.html:153
+#: templates/back/sport/stadion_create.html:252
+#: templates/back/sport/stadion_create.html:350
+#: templates/back/sport/stadion_update.html:156
+#: templates/back/sport/stadion_update.html:259
+#: templates/back/sport/stadion_update.html:362
+msgid "Ochilgan sana"
+msgstr "Ochilgan sana"
+
+#: templates/back/sport/stadion_create.html:164
+#: templates/back/sport/stadion_create.html:262
+#: templates/back/sport/stadion_create.html:360
+#: templates/back/sport/stadion_update.html:166
+#: templates/back/sport/stadion_update.html:270
+#: templates/back/sport/stadion_update.html:373
+msgid "Ochilgan sanani yozing"
+msgstr "Ochilgan sanani yozing"
+
+#: templates/back/sport/stadion_create.html:372
+#: templates/back/sport/stadion_update.html:385
+msgid "Muxlislar sig'imi"
+msgstr "Muxlislar sig‘imi"
+
+#: templates/back/sport/stadion_create.html:382
+#: templates/back/sport/stadion_update.html:395
+msgid "Muxlislar sig'imini kiriting"
+msgstr "Muxlislar sig‘imini kiriting"
+
+#: templates/back/sport/stadion_create.html:433
+#: templates/back/sport/stadion_update.html:451
+msgid "Stadion rasmi"
+msgstr "Stadion rasmi"
+
+#: templates/back/sport/stadion_list.html:118
+msgid "mezbon jamoa"
+msgstr "mezbon jamoa"
+
+#: templates/back/sport/stadion_list.html:119
+msgid "viloyat"
+msgstr "viloyat"
+
+#: templates/back/sport/stadion_update.html:14
+msgid "Stadionni tahrirlash"
+msgstr "Stadionni tahrirlash"
+
+#: templates/back/staff/staff_central_list.html:88
+#: templates/back/staff/staff_department_list.html:88
+#: templates/back/staff/staff_list.html:88
+#: templates/back/staff/staff_organization_list.html:88
+msgid "lavozimi"
+msgstr "lavozimi"
+
+#: templates/back/staff/staff_create.html:11
+#: templates/back/staff/staff_list.html:11
+msgid "Vazirlik rahbariyati"
+msgstr "Vazirlik rahbariyati"
+
+#: templates/back/staff/staff_create.html:13
+msgid "Yangi xodim"
+msgstr "Yangi xodim"
+
+#: templates/back/staff/staff_create.html:353
+#: templates/back/staff/staff_update.html:379
+msgid "Ish joyi yoki boshqarma"
+msgstr "Ish joyi yoki boshqarma"
+
+#: templates/back/staff/staff_create.html:359
+#: templates/back/staff/staff_update.html:385
+msgid "Boshqarmani tanlang"
+msgstr "Boshqarmani tanlang"
+
+#: templates/back/staff/staff_create.html:373
+#: templates/back/staff/staff_update.html:402
+msgid "Tashkilot"
+msgstr "Tashkilot"
+
+#: templates/back/staff/staff_create.html:379
+#: templates/back/staff/staff_update.html:408
+msgid "Tashkilotni tanlang"
+msgstr "Tashkilotni tanlang"
+
+#: templates/back/staff/staff_create.html:405
+#: templates/back/staff/staff_update.html:439
+msgid "Asosiy ma`lumotlari"
+msgstr "Asosiy ma’lumotlari"
+
+#: templates/back/staff/staff_create.html:437
+#: templates/back/staff/staff_update.html:474
+msgid "Bosh direktor"
+msgstr "Bosh direktor"
+
+#: templates/back/staff/staff_create.html:446
+#: templates/back/staff/staff_update.html:485
+msgid "Rahbar"
+msgstr "Rahbar"
+
+#: templates/back/staff/staff_department_list.html:11
+msgid "Hududiy boshqarma rahbarlari"
+msgstr "Hududiy boshqarma rahbarlari"
+
+#: templates/back/staff/staff_department_list.html:89
+#: templates/back/staff/staff_organization_list.html:89
+msgid "ish joyi"
+msgstr "ish joyi"
+
+#: templates/back/staff/staff_organization_list.html:11
+msgid "Tashkilot rahbarlari"
+msgstr "Tashkilot rahbarlari"
+
+#: templates/back/staff/staff_update.html:11
+msgid "Xodimlar"
+msgstr "Xodimlar"
+
+#: templates/back/staff/staff_update.html:13
+msgid "Xodimni tahrirlash"
+msgstr "Xodimni tahrirlash"
+
+#: templates/back/static_page/static_page_create.html:11
+#: templates/back/static_page/static_page_list.html:11
+#: templates/back/static_page/static_page_update.html:11
+msgid "Barcha sahifalar"
+msgstr "Barcha sahifalar"
+
+#: templates/back/static_page/static_page_create.html:13
+msgid "Yangi sahifa"
+msgstr "Yangi sahifa"
+
+#: templates/back/static_page/static_page_update.html:13
+msgid "Sahifani tahrirlash"
+msgstr "Sahifani tahrirlash"
+
+#: templates/back/tender/tender_create.html:13
+msgid "Yangi tender"
+msgstr "Yangi tender"
+
+#: templates/back/tender/tender_create.html:89
+#: templates/back/tender/tender_create.html:124
+#: templates/back/tender/tender_create.html:158
+#: templates/back/tender/tender_update.html:89
+#: templates/back/tender/tender_update.html:124
+#: templates/back/tender/tender_update.html:158
+msgid "Tender nomini kiriting"
+msgstr "Tender nomini kiriting"
+
+#: templates/back/tender/tender_create.html:94
+#: templates/back/tender/tender_create.html:129
+#: templates/back/tender/tender_create.html:163
+#: templates/back/tender/tender_update.html:94
+#: templates/back/tender/tender_update.html:129
+#: templates/back/tender/tender_update.html:163
+msgid "Tashkilotchi"
+msgstr "Tashkilotchi"
+
+#: templates/back/tender/tender_create.html:99
+#: templates/back/tender/tender_create.html:133
+#: templates/back/tender/tender_create.html:167
+#: templates/back/tender/tender_update.html:99
+#: templates/back/tender/tender_update.html:133
+#: templates/back/tender/tender_update.html:167
+msgid "Tashkilotchi nomi"
+msgstr "Tashkilotchi nomi"
+
+#: templates/back/tender/tender_create.html:181
+#: templates/back/tender/tender_update.html:181
+msgid "Raqam"
+msgstr "Raqam"
+
+#: templates/back/tender/tender_create.html:191
+#: templates/back/tender/tender_update.html:191
+msgid "Raqamni kiriting"
+msgstr "Raqamni kiriting"
+
+#: templates/back/tender/tender_create.html:268
+#: templates/back/tender/tender_update.html:277
+msgid "Turni tanlang"
+msgstr "Turni tanlang"
+
+#: templates/back/tender/tender_update.html:13
+msgid "Tenderni tahrirlash"
+msgstr "Tenderni tahrirlash"
+
+#: templates/back/territorial/region/region_create.html:11
+#: templates/back/territorial/region/region_list.html:11
+#: templates/back/territorial/region/region_update.html:11
+msgid "Barcha viloyatlar"
+msgstr "Barcha viloyatlar"
+
+#: templates/back/territorial/region/region_create.html:13
+msgid "Yangi viloyat"
+msgstr "Yangi viloyat"
+
+#: templates/back/territorial/region/region_create.html:89
+#: templates/back/territorial/region/region_create.html:112
+#: templates/back/territorial/region/region_create.html:136
+#: templates/back/territorial/region/region_update.html:89
+#: templates/back/territorial/region/region_update.html:112
+#: templates/back/territorial/region/region_update.html:136
+msgid "Viloyat nomini kiriting"
+msgstr "Viloyat nomini kiriting"
+
+#: templates/back/territorial/region/region_create.html:187
+#: templates/back/territorial/region/region_update.html:191
+msgid "Viloyat xaritasi"
+msgstr "Viloyat xaritasi"
+
+#: templates/back/territorial/region/region_list.html:88
+msgid "raqam"
+msgstr "raqam"
+
+#: templates/back/territorial/region/region_update.html:13
+msgid "Viloyatni tahrirlash"
+msgstr "Viloyatni tahrirlash"
+
+#: templates/back/typo/typo_list.html:12
+#: templates/back/typo/typo_update.html:12
+msgid "Barcha qayd etilganlar xatolar"
+msgstr "Barcha qayd etilganlar xatolar"
+
+#: templates/back/typo/typo_list.html:85
+msgid "sahifa"
+msgstr "sahifa"
+
+#: templates/back/typo/typo_update.html:56
+msgid "Izoh"
+msgstr "Izoh"
+
+#: templates/back/typo/typo_update.html:67
+msgid "Sahifa"
+msgstr "Sahifa"
+
+#: templates/back/typo/typo_update.html:96
+msgid "To`girlangan"
+msgstr "To‘g‘rilangan"
+
+#: templates/back/useful_link/useful_link_create.html:6
+#: templates/back/useful_link/useful_link_list.html:6
+#: templates/back/useful_link/useful_link_update.html:6
+msgid "Foydali havolalar"
+msgstr "Foydali havolalar"
+
+#: templates/back/useful_link/useful_link_create.html:86
+#: templates/back/useful_link/useful_link_create.html:121
+#: templates/back/useful_link/useful_link_create.html:154
+#: templates/back/useful_link/useful_link_update.html:86
+#: templates/back/useful_link/useful_link_update.html:121
+#: templates/back/useful_link/useful_link_update.html:154
+msgid "Havola nomini kiriting"
+msgstr "Havola nomini kiriting"
+
+#: templates/back/useful_link/useful_link_create.html:180
+#: templates/back/useful_link/useful_link_update.html:181
+msgid "Havolani kiriting"
+msgstr "Havolani kiriting"
+
+#: templates/back/user/user_create.html:11
+#: templates/back/user/user_list.html:11
+#: templates/back/user/user_update.html:11
+msgid "Barcha foydalanuvchilar"
+msgstr "Barcha foydalanuvchilar"
+
+#: templates/back/user/user_create.html:13
+msgid "Yangi foydalanuvchi"
+msgstr "Yangi foydalanuvchi"
+
+#: templates/back/user/user_create.html:76
+#: templates/back/user/user_update.html:75
+msgid "Foydalanuvchi ma'lumotlari"
+msgstr "Foydalanuvchi ma’lumotlari"
+
+#: templates/back/user/user_create.html:85
+#: templates/back/user/user_create.html:90
+#: templates/back/user/user_update.html:84
+#: templates/back/user/user_update.html:90
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+#: templates/back/user/user_create.html:113
+#: templates/back/user/user_create.html:119
+#: templates/back/user/user_update.html:114
+#: templates/back/user/user_update.html:120
+msgid "Telefon"
+msgstr "Telefon"
+
+#: templates/back/user/user_create.html:128
+#: templates/back/user/user_create.html:135
+#: templates/back/user/user_update.html:129
+msgid "Parol"
+msgstr "Parol"
+
+#: templates/back/user/user_create.html:168
+#: templates/back/user/user_update.html:170
+msgid "Admin"
+msgstr "Admin"
+
+#: templates/back/user/user_list.html:60
+msgid "username"
+msgstr "foydalanuvchi nomi"
+
+#: templates/back/user/user_list.html:63
+msgid "telefon"
+msgstr "telefon"
+
+#: templates/back/user/user_list.html:64
+msgid "admin"
+msgstr "admin"
+
+#: templates/back/user/user_update.html:13
+msgid "Foydalanuvchini tahrirlash"
+msgstr "Foydalanuvchini tahrirlash"
+
+#: templates/back/vacancy/vacancy_create.html:6
+#: templates/back/vacancy/vacancy_list.html:7
+#: templates/back/vacancy/vacancy_update.html:6
+msgid "Ish o'rinlari"
+msgstr "Ish o‘rinlari"
+
+#: templates/back/vacancy/vacancy_create.html:11
+#: templates/back/vacancy/vacancy_update.html:11
+msgid "Barcha ish o'rinlari"
+msgstr "Barcha ish o‘rinlar"
+
+#: templates/back/vacancy/vacancy_create.html:13
+msgid "Yangi ish o'rin"
+msgstr "Yangi ish o‘rin"
+
+#: templates/back/vacancy/vacancy_create.html:90
+#: templates/back/vacancy/vacancy_create.html:162
+#: templates/back/vacancy/vacancy_create.html:233
+#: templates/back/vacancy/vacancy_update.html:90
+#: templates/back/vacancy/vacancy_update.html:162
+#: templates/back/vacancy/vacancy_update.html:233
+msgid "Vakansiya nomini kiriting"
+msgstr "Vakansiya nomini kiriting"
+
+#: templates/back/vacancy/vacancy_create.html:99
+#: templates/back/vacancy/vacancy_create.html:170
+#: templates/back/vacancy/vacancy_create.html:241
+#: templates/back/vacancy/vacancy_update.html:99
+#: templates/back/vacancy/vacancy_update.html:170
+#: templates/back/vacancy/vacancy_update.html:241
+msgid "Vakansiya haqida yozing"
+msgstr "Vakansiya haqida yozing"
+
+#: templates/back/vacancy/vacancy_create.html:122
+#: templates/back/vacancy/vacancy_create.html:193
+#: templates/back/vacancy/vacancy_create.html:264
+#: templates/back/vacancy/vacancy_update.html:122
+#: templates/back/vacancy/vacancy_update.html:193
+#: templates/back/vacancy/vacancy_update.html:264
+msgid "Vazifalar haqida yozing"
+msgstr "Vazifalar haqida yozing"
+
+#: templates/back/vacancy/vacancy_create.html:355
+#: templates/back/vacancy/vacancy_update.html:357
+msgid "Ta'lim turi"
+msgstr "Ta’lim turi"
+
+#: templates/back/vacancy/vacancy_create.html:362
+#: templates/back/vacancy/vacancy_update.html:364
+msgid "Ta'lim turini tanlang"
+msgstr "Ta’lim turini tanlang"
+
+#: templates/back/vacancy/vacancy_create.html:375
+#: templates/back/vacancy/vacancy_update.html:380
+msgid "Bandlik turi"
+msgstr "Bandlik turi"
+
+#: templates/back/vacancy/vacancy_create.html:382
+#: templates/back/vacancy/vacancy_update.html:387
+msgid "Bandlik turini tanlang"
+msgstr "Bandlik turini tanlang"
+
+#: templates/back/vacancy/vacancy_list.html:12
+msgid "Barcha ish o'rinlar"
+msgstr "Barcha ish o‘rinlar"
+
+#: templates/back/vacancy/vacancy_list.html:90
+msgid "bandlik turi"
+msgstr "bandlik turi"
+
+#: templates/back/vacancy/vacancy_list.html:91
+msgid "ta'lim"
+msgstr "ta’lim"
+
+#: templates/back/vacancy/vacancy_update.html:13
+msgid "Ish o'rnini tahrirlash"
+msgstr "Ish o‘rnini tahrirlash"
+
+#~ msgid "Found typo?"
+#~ msgstr "Xato topdingizmi?"
+
+#~ msgid "Your comment (optional)"
+#~ msgstr "Izohingiz (ixtiyoriy)"
+
+#~ msgid "Sorry, Your typo request not sent"
+#~ msgstr "Uzr, xatoni tuzatish so‘rovingiz yuborilmadi"
+
+#~ msgid "Send"
+#~ msgstr "Yuborildi"
+
+#~ msgid "Typo reporting"
+#~ msgstr "Xato haqida ma’lum qilish"
+
+#~ msgid "Your typo request is sent successfully"
+#~ msgstr "Xatoni tuzatish uchun so‘rovingiz yuborilmadi"
+
+#~ msgid "Rangi (ingliz tilida)"
+#~ msgstr "Rangi (ingliz tilida)"
+
+#~ msgid "User yo`q"
+#~ msgstr "Foydalanuvchi yo‘q"
+
+#~ msgid "Barcha so‘rovnoma"
+#~ msgstr "Barcha so‘rovnoma"
+
+#~ msgid "Imtiyozlar"
+#~ msgstr "Imtiyozlar"
+
+#~ msgid "Yangi bo`lim"
+#~ msgstr "Yangi bo‘lim"
+
+#~ msgid "Yangi imtiyoz"
+#~ msgstr "Yangi imtiyoz"
+
+#~ msgid "Bo`lim"
+#~ msgstr "Bo‘lim"
+
+#~ msgid "Teg"
+#~ msgstr "Teg"
+
+#~ msgid "Tegni tanlang"
+#~ msgstr "Tegni tanlang"
+
+#~ msgid "Barcha teglar"
+#~ msgstr "Barcha teglar"
+
+#~ msgid "Yangi teg"
+#~ msgstr "Yangi teg"
+
+#~ msgid "Imtoyozlar"
+#~ msgstr "Imtiyozlar"
+
+#~ msgid "Barcha imtoyozlar"
+#~ msgstr "Barcha imtiyozlar"
+
+#~ msgid "Imtiyozni tahrirlash"
+#~ msgstr "Imtiyozni tahrirlash"
+
+#~ msgid "Loyihalar"
+#~ msgstr "Loyihalar"
+
+#~ msgid "Barcha loyihalar"
+#~ msgstr "Barcha loyihalar"
+
+#~ msgid "Yangi loyiha"
+#~ msgstr "Yangi loyiha"
+
+#~ msgid "Loyihani tahrirlash"
+#~ msgstr "Loyihani tahrirlash"
+
+#~ msgid "Barcha muvaffaqiyat tarixlari"
+#~ msgstr "Barcha muvaffaqiyat tarixlari"
+
+#~ msgid "Yangi tarix"
+#~ msgstr "Yangi tarix"
+
+#~ msgid "Barcha ish o‘rinlari"
+#~ msgstr "Barcha ish o‘rinlari"
+
+#~ msgid "Vazifalar"
+#~ msgstr "Vazifalar"

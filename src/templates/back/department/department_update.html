@@ -1,0 +1,422 @@
+{% extends 'back/_base.html' %}
+{% load static i18n templatetags %}
+{% block mainbread %}
+    <ul class="nav navbar-nav bookmark-icons">
+        <div class="d-flex main-bread">
+            <h5 class="content-header-title float-left pr-1 mb-0">{% trans 'Hududiy boshqarmalar' %}</h5>
+            <div class="breadcrumb-wrapper">
+                <ol class="breadcrumb p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'index-admin' %}"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="{% url 'about:department-list' %}">{% trans 'Barcha boshqarmalar' %}</a>
+                    </li>
+                    <li class="breadcrumb-item active">{% trans 'Boshqarmani tahrirlash' %}
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </ul>
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue-ctk-date-time-picker.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue2-editor.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/katex.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/monokai-sublime.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.snow.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.imageUploader.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/main-editor.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/vendors/css/ui/prism.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/css/plugins/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond-plugin-image-preview.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/forms/select/select2.min.css' %}">
+{% endblock %}
+
+{% block body %}
+    {% include 'back/parts/menu.html' %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content" id="app">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- app invoice View Page -->
+                <form action="{% url 'about:department-update' department.id %}" method="post">{% csrf_token %}
+                    <section class="invoice-edit-wrapper">
+                        <div class="row">
+                            <!-- invoice view page -->
+                            <div class="col-xl-8 col-md-8 col-12">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="uzbek-tab" data-toggle="pill" href="#uzbek"
+                                           aria-expanded="true"><i class="flag-icon flag-icon-uz mr-50"></i>
+                                            O‘zbekcha</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="russian-tab" data-toggle="pill" href="#russian"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-ru mr-50"></i> Русский
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="english-tab" data-toggle="pill" href="#english"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-gb mr-50"></i> English
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content main-editor">
+                                    <div class="tab-pane active" id="uzbek" role="tabpanel" aria-labelledby="home-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[UZ] Boshqarma
+                                                    nomi</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" v-model="title_uz"
+                                                                       class="form-control" required
+                                                                       placeholder="Boshqarma nomini kiriting"
+                                                                       name="title_uz">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="card-header">
+                                            <h4 class="card-title" style="text-transform: inherit;">Manzil</h4>
+                                        </div>
+                                            <div class="card-content">
+                                            <div class="card-body pb-0 mx-25">
+                                                <div class="row invoice-info">
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <fieldset class="invoice-address form-group">
+                                                            <textarea rows="6" v-model="address_uz"
+                                                                      class="form-control" required
+                                                                      placeholder="Manzilni kiriting"
+                                                                      name="address_uz"></textarea>
+                                                        </fieldset>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="russian" role="tabpanel" aria-labelledby="russian-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[RU] Название
+                                                    отдела</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <!-- invoice address and contact -->
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" v-model="title_ru"
+                                                                       class="form-control"
+                                                                       placeholder="Название отдела"
+                                                                       name="title_ru">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-header">
+                                            <h4 class="card-title" style="text-transform: inherit;">Адрес</h4>
+                                        </div>
+                                            <div class="card-content">
+                                            <div class="card-body pb-0 mx-25">
+                                                <div class="row invoice-info">
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <fieldset class="invoice-address form-group">
+                                                            <textarea rows="6" v-model="address_ru"
+                                                                      class="form-control"
+                                                                      placeholder="Введите адрес"
+                                                                      name="address_ru"></textarea>
+                                                        </fieldset>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="english" role="tabpanel" aria-labelledby="english-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[EN] Name of
+                                                    Department</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <!-- invoice address and contact -->
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" v-model="title_en"
+                                                                       class="form-control"
+                                                                       placeholder="Name of Department" name="title_en">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-header">
+                                            <h4 class="card-title" style="text-transform: inherit;">Address</h4>
+                                        </div>
+                                            <div class="card-content">
+                                            <div class="card-body pb-0 mx-25">
+                                                <div class="row invoice-info">
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <fieldset class="invoice-address form-group">
+                                                            <textarea rows="6" v-model="address_en"
+                                                                      class="form-control"
+                                                                      placeholder="Enter address"
+                                                                      name="address_en"></textarea>
+                                                        </fieldset>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body mx-25">
+                                            <div id="map" style="height: 500px"></div>
+                                            <input type="hidden" name="lat" v-model="latitude">
+                                            <input type="hidden" name="long" v-model="longitude">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- invoice action  -->
+                            <div class="col-xl-4 col-md-4 col-12 mt-4">
+                                <div class="card invoice-action-wrapper shadow-none border">
+                                    <div class="card-body">
+                                        <div class="invoice-action-btn mb-1">
+                                            <button type="submit" class="btn btn-primary btn-block invoice-send-btn">
+                                                <i class="bx bxs-save"></i>
+                                                <span>{% trans 'Saqlash' %}</span>
+                                            </button>
+                                        </div>
+                                        <div class="invoice-action-btn mb-1">
+                                            <div class="save">
+                                                <a href="{% url 'about:department-list' %}" class="btn btn-light-danger btn-block">
+                                                    <span class="text-nowrap">{% trans 'O‘chirish' %}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">{% trans 'Xudud' %}</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body bolimlar">
+                                            <div class="form-group">
+                                            {% get_regions as regions %}
+                                                <select class="form-control ishjoyi" name="region" required>
+
+                                                    {% for region in regions %}
+                                                        <option value="{{ region.id }}"
+                                                                {% if department.region == region %}
+                                                                selected
+                                                                {% endif %}>
+                                                        {{ region.title }}</option>
+                                                    {% endfor %}
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body mx-25">
+                                            <!-- invoice address and contact -->
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Vebsayt' %}</label>
+                                                        <input type="url" class="form-control"
+                                                               name="link"
+                                                               v-model="link"
+                                                               required
+                                                               placeholder="{% trans 'Vebsayt' %}">
+                                                    </fieldset>
+
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Email' %}</label>
+                                                        <input type="text" class="form-control" name="email"
+                                                               value="{{ department.email }}"
+                                                               required
+                                                               placeholder="{% trans 'Email' %}">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">{% trans 'Telefon raqam' %}</label>
+                                                        <input type="text" class="form-control" name="phone_number"
+                                                               value="{{ department.phone_number }}"
+                                                               required
+                                                               placeholder="{% trans 'Telefon raqam' %}">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Facebook</label>
+                                                        <input type="text" class="form-control" name="facebook"
+                                                               value="{{ department.facebook }}"
+                                                               placeholder="Facebook">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Instagram</label>
+                                                        <input type="text" class="form-control" name="instagram"
+                                                               value="{{ department.instagram }}"
+                                                               placeholder="Instagram">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Twitter</label>
+                                                        <input type="text" class="form-control" name="twitter"
+                                                               value="{{ department.twitter }}"
+                                                               placeholder="Twitter">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Telegram</label>
+                                                        <input type="text" class="form-control" name="telegram"
+                                                               value="{{ department.telegram }}"
+                                                               placeholder="Telegram">
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'back/app-assets/vendors/js/filepond-plugin-image-preview.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/filepond.js' %}"></script>
+    <script src="{% static 'back/app-assets/js/vue.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/vue-ctk-date-time-picker.umd.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/katex.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/highlight.min.js' %}"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+    <!-- END: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/js/scripts/forms/select/form-select2.min.js' %}"></script>
+
+    <!-- END: MAP-->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=98a78dc9-4088-4f17-b67f-8092e99bf6d7"
+            type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                title_uz: '{{ department.title_uz|escapejs }}',
+                title_ru: '{{ department.title_ru|escapejs }}',
+                title_en: '{{ department.title_en|escapejs }}',
+                address_uz: '{{ department.address_uz|escapejs }}',
+                address_ru: '{{ department.address_ru|escapejs }}',
+                address_en: '{{ department.address_en|escapejs }}',
+                latitude: '{{ department.lat|escapejs }}',
+                longitude: '{{ department.long|escapejs }}',
+
+                link: '{{ department.link|escapejs }}',
+                message: 'Hello!',
+                value: null,
+                myFiles: null,
+                videotrue: false
+            },
+
+            mounted() {
+                ymaps.ready(this.mapInit);
+            },
+            methods: {
+                mapInit() {
+                    const map = new ymaps.Map('map', {
+                        center: [this.latitude, this.longitude],
+                        zoom: 8,
+                        controls: ['smallMapDefaultSet'],
+                        behaviors: ["drag", "dblClickZoom", "rightMouseButtonMagnifier", "multiTouch"]
+                    })
+
+                    const selector = new ymaps.GeoObject({
+                        // The geometry description.
+                        geometry: {
+                            type: "Point",
+                            coordinates: [this.latitude, this.longitude]
+                        },
+                        // Properties.
+                        properties: {
+                            // The placemark content.
+                            iconContent: 'Tanlandi'
+                        }
+                    }, {
+                        /**
+                         * Options.
+                         * The placemark's icon will stretch to fit its contents.
+                         */
+                        preset: 'islands#blackStretchyIcon',
+                    })
+
+                    map.events.add('click', (e) => {
+                        let coords = e.get('coords')
+                        selector.geometry.setCoordinates(coords)
+                        this.latitude = coords[0]
+                        this.longitude = coords[1]
+                    });
+
+                    map.geoObjects.add(selector);
+                },
+            }
+        });
+        $(document).ready(function () {
+            $('.xudud').select2({
+                width: '100%',
+                placeholder: 'Ish joyini tanlang'
+            });
+
+        });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'back/_base.html' %}
+{% load permission_tags %}
+{% load static i18n %}
+{% block mainbread %}
+    <ul class="nav navbar-nav bookmark-icons">
+        <div class="d-flex main-bread">
+            <h5 class="content-header-title float-left pr-1 mb-0">{% trans 'Profil' %}</h5>
+            <div class="breadcrumb-wrapper">
+                <ol class="breadcrumb p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'index-admin' %}"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active"><a href="#">{% trans 'Tahrirlash' %}</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </ul>
+{% endblock %}
+{% block body %}
+    {% if user|has_role:"admin" %}
+    {% include 'back/parts/menu.html' %}
+    {% endif %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content" id="app">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- app invoice View Page -->
+                {% if messages %}
+                    <div class="alert alert-success alert-dismissible mb-2" role="alert">
+                        {% for message in messages %}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <div class="d-flex align-items-center">
+                                <i class="bx bx-like"></i>
+                                <span>
+                                  {{ message }}
+                                </span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <form action="{% url 'profile' %}" method="post">{% csrf_token %}
+                    <section class="invoice-edit-wrapper">
+                        <div class="row">
+                            <!-- invoice view page -->
+                            <div class="col-xl-8 col-md-8 col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title"
+                                            style="text-transform: inherit;">{% trans 'Foydalanuvchi' %}</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body pb-1 mx-25">
+                                            <!-- invoice address and contact -->
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="form-group">
+                                                        <input type="text" autocomplete="off" required
+                                                               class="form-control" value="{{ request.user.username }}"
+                                                               placeholder="Username" name="username">
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="form-group">
+                                                        <label>{% trans 'Amaldagi parol' %}</label>
+                                                        <input type="password" required
+                                                               class="form-control" autocomplete="off"
+                                                               placeholder="{% trans 'Amaldagi parol' %}"
+                                                               name="old_password">
+                                                    </fieldset>
+                                                    {% if error_old %}
+                                                        <div class="mt-0"
+                                                             style="color:red">{% trans 'Amaldagi parol xato kiritilgan' %}
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="form-group">
+                                                        <label>{% trans 'Yangi parol' %}</label>
+                                                        <input type="password" autocomplete="off"
+                                                               class="form-control" required
+                                                               placeholder="{% trans 'Yangi parolni kiriting' %}" name="new_password">
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="form-group">
+                                                        <label>{% trans 'Tasdiqlash' %}</label>
+                                                        <input type="password" autocomplete="off"
+                                                               class="form-control" required
+                                                               placeholder="{% trans 'Yangi parolni qaytadan kiriting' %}"
+                                                               name="confirm_pass">
+                                                    </fieldset>
+                                                    {% if error_confirm %}
+                                                        <div style="color: red">{% trans 'Tasdiqlovchi parol xato kiritilgan' %}</div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- invoice action  -->
+                            <div class="col-xl-4 col-md-4 col-12">
+                                <div class="card invoice-action-wrapper shadow-none border">
+                                    <div class="card-body">
+                                        <div class="invoice-action-btn mb-1">
+                                            <button type="submit" class="btn btn-primary btn-block invoice-send-btn">
+                                                <i class="bx bxs-save"></i>
+                                                <span>{% trans 'Yangilash' %}</span>
+                                            </button>
+                                        </div>
+                                        <div class="invoice-action-btn mb-1">
+                                            <div class="save">
+                                                <a href="{% url 'index-admin' %}"
+                                                   class="btn btn-light-danger btn-block">
+                                                    <span class="text-nowrap">{% trans 'O‘chirish' %}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

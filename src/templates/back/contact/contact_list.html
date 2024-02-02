@@ -1,0 +1,204 @@
+{% extends 'back/_base.html' %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block mainbread %}
+    <ul class="nav navbar-nav bookmark-icons">
+        <div class="d-flex main-bread">
+            <h5 class="content-header-title float-left pr-1 mb-0">{% trans 'Barcha murojaatlar' %}</h5>
+            <div class="breadcrumb-wrapper">
+                <ol class="breadcrumb p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'index-admin' %}"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active"><a href="#">{% trans 'Murojaatlar' %}</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </ul>
+{% endblock %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/tables/datatable/datatables.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/css/main-list.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/tables/datatable/extensions/dataTables.checkboxes.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/tables/datatable/responsive.bootstrap.min.css' %}">
+{% endblock %}
+
+{% block body %}
+    {% include 'back/parts/menu.html' %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-12 mb-2 mt-1">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0 main-list-heading">
+                                    <li class="main-searchh">
+                                        {% if request.GET.q %}
+                                            <fieldset class="position-relative">
+                                                <form action="" method="GET">
+                                                    <input type="text" name="q" class="form-control single-daterange"
+                                                           placeholder="{% trans 'Izlash' %}" value="{{ request.GET.q }}"/>
+                                                    <div class="form-control-position">
+                                                        <a href="{% url 'contact:contact-list' %}"><i
+                                                                class="bx bx-x font-medium-2"></i></a>
+                                                    </div>
+                                                </form>
+
+                                            </fieldset>
+                                        {% else %}
+                                            <fieldset class="has-icon-left">
+                                                <form action="" method="GET">
+                                                    <input type="text" name="q" class="form-control single-daterange"
+                                                           placeholder="{% trans 'Izlash' %}" value="{{ request.GET.q }}"/>
+                                                    <div class="form-control-position">
+                                                        <i class="bx bx-search font-medium-2"></i>
+                                                    </div>
+                                                </form>
+
+                                            </fieldset>
+                                        {% endif %}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- table Transactions start -->
+                <section id="table-transactions">
+                    <div class="card">
+                        <!-- datatable start -->
+                        <div class="table-responsive">
+                            <table id="table-extended-transactions" class="table mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="pr-2">№</th>
+                                    <th class="pl-0">{% trans 'ID' %}</th>
+                                    <th class="">{% trans "jo'natuvchi" %}</th>
+                                    <th>{% trans 'sana' %}</th>
+                                    <th>{% trans 'turi' %}</th>
+                                    <th class="text-center">{% trans 'status' %}</th>
+                                    <th class="text-right">{% trans 'amallar' %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for contact in objects %}
+                                    <tr>
+                                        <td class="pr-2">{{ forloop.counter0 | add:objects.start_index }}</td>
+                                        <td class="pl-0"><a href="{% url 'contact:contact-update' contact.id %}">{{ contact.id_number }}</a></td>
+                                        <td>{{ contact.sender_name | truncatechars:"100" }}</td>
+                                        <td>{{ contact.created_at }}</td>
+                                        <td>{{ contact.type }}</td>
+                                        <td class="text-center">
+
+                                            {% if contact.status == 0 %}
+                                            <div class="badge badge-warning mr-1 mb-1">{% trans 'Jarayonda' %}</div>
+                                            {% elif contact.status == 1 %}
+                                            <div class="badge badge-danger mb-1">{% trans "Ko'rildi" %}</div>
+                                            {% elif contact.status == 2 %}
+                                            <div class="badge badge-danger mb-1">{% trans "Rad etildi" %}</div>
+                                            {% endif %}
+
+                                        </td>
+                                        <td class="text-right amallar">
+                                            <div class="dropdown ">
+                                            <span class="bx bx-dots-vertical-rounded font-medium-3 dropdown-toggle nav-hide-arrow cursor-pointer"
+                                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                  role="menu"></span>
+                                                <div class="dropdown-menu dropdown-menu-right ">
+                                                    <a class="dropdown-item" href="{% url 'contact:contact-update' contact.id %}"><i
+                                                            class="bx bx-edit-alt mr-1"></i>
+                                                        {% trans 'ko`rish' %}</a>
+                                                    <a class="dropdown-item removeButton" data-id="{{ contact.id }}"
+                                                       href="{% url 'contact:contact-delete' contact.id %}"><i
+                                                            class="bx bx-trash mr-1"></i>
+                                                        {% trans 'o‘chirish' %}</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                            {% if objects.has_other_pages %}
+
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination mt-2 ml-2">
+                                        {% if objects.has_previous %}
+                                            <li class="page-item previous"><a class="page-link"
+                                                                              href="?page={{ objects.previous_page_number }}">
+                                                <i class="bx bx-chevron-left"></i>
+                                            </a></li>
+                                        {% else %}
+
+                                            <li class="page-item previous disabled"><a class="page-link" href="">
+                                                <i class="bx bx-chevron-left"></i>
+                                            </a></li>
+                                        {% endif %}
+                                        {% for n in objects.paginator.page_range %}
+                                            {% if objects.number == n %}
+                                                <li class="page-item active" aria-current="page"><a class="page-link"
+                                                                                                    href="#">{{ n }}</a>
+                                                </li>
+                                            {% else %}
+                                                <li class="page-item"><a class="page-link"
+                                                                         href="?page={{ n }}">{{ n }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% if objects.has_next %}
+
+                                            <li class="page-item next"><a class="page-link"
+                                                                          href="?page={{ objects.next_page_number }}">
+                                                <i class="bx bx-chevron-right"></i>
+                                            </a></li>
+                                        {% else %}
+                                            <li class="page-item next disabled"><a class="page-link" href="#">
+                                                <i class="bx bx-chevron-right"></i>
+                                            </a></li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            {% endif %}
+
+                        </div>
+                        <!-- datatable ends -->
+                    </div>
+                </section>
+                <!-- table Transactions end -->
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+
+{% block js %}
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/vendors/js/tables/datatable/datatables.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/tables/datatable/datatables.checkboxes.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/tables/datatable/responsive.bootstrap.min.js' %}"></script>
+    <!-- END: Page Vendor JS-->
+    <!-- BEGIN: Page JS-->
+    <script src="{% static 'back/app-assets/js/scripts/pages/app-invoice.js' %}"></script>
+    <!-- END: Page JS-->
+    {#    <script>#}
+    {#        $(document).ready(function () {#}
+    {#            $('#table-extended-transactions').DataTable();#}
+    {#        });#}
+    {#    </script>#}
+
+{% endblock %}

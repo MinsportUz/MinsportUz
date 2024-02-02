@@ -1,0 +1,442 @@
+{% extends 'back/_base.html' %}
+{% load static i18n %}
+{% block mainbread %}
+    <ul class="nav navbar-nav bookmark-icons">
+        <div class="d-flex main-bread">
+            <h5 class="content-header-title float-left pr-1 mb-0">{% trans 'Bloglar' %}</h5>
+            <div class="breadcrumb-wrapper">
+                <ol class="breadcrumb p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'index-admin' %}"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="{% url 'blog_author-list' %}">{% trans 'Barcha mualliflar' %}</a>
+                    </li>
+                    <li class="breadcrumb-item active">{% trans 'Yangi muallif' %}
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </ul>
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue-ctk-date-time-picker.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/vue2-editor.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/katex.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/monokai-sublime.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.snow.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/quill.imageUploader.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'back/app-assets/css/main-editor.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'back/app-assets/vendors/css/ui/prism.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/css/plugins/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond.min.css' %}">
+    <link rel="stylesheet" href="{% static 'back/app-assets/vendors/css/filepond-plugin-image-preview.min.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'back/app-assets/vendors/css/forms/select/select2.min.css' %}">
+{% endblock %}
+
+{% block body %}
+    {% include 'back/parts/menu.html' %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content" id="app">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- app invoice View Page -->
+                <form action="{% url 'blog_author-create' %}" method="post" enctype="multipart/form-data"> {% csrf_token %}
+                    <section class="invoice-edit-wrapper">
+                        <div class="row">
+                            <!-- invoice view page -->
+                            <div class="col-xl-8 col-md-8 col-12">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="uzbek-tab" data-toggle="pill" href="#uzbek"
+                                           aria-expanded="true"><i class="flag-icon flag-icon-uz mr-50"></i>
+                                            O‘zbekcha</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="russian-tab" data-toggle="pill" href="#russian"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-ru mr-50"></i> Русский
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="english-tab" data-toggle="pill" href="#english"
+                                           aria-expanded="false"><i class="flag-icon flag-icon-gb mr-50"></i> English
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content main-editor">
+                                    <div class="tab-pane active" id="uzbek" role="tabpanel" aria-labelledby="home-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[UZ] Blogger Ism
+                                                    Familiyasi</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" v-model="postnameuz"
+                                                                       class="form-control" required
+                                                                       placeholder="Ism Familiya" name="name_uz">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 mb-2">
+                                                            <div class="form-group">
+                                                                <label>Kasbi yoki lavozimi</label>
+                                                                <input type="text" class="form-control" name="bio_uz"
+                                                                       placeholder="Blogger">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 mb-2">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">Blogger haqida</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="3"
+                                                                          name="description_uz"
+                                                                          placeholder="Blogger haqida qisqacha"></textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="russian" role="tabpanel" aria-labelledby="russian-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[RU] Имя Фамилия
+                                                    блогера</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" v-model="postnameru"
+                                                                       class="form-control"
+                                                                       placeholder="Имя и Фамилия" name="name_ru">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 mb-2">
+                                                            <div class="form-group">
+                                                                <label>Био</label>
+                                                                <input type="text" class="form-control" name="bio_ru"
+                                                                       placeholder="Blogger">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 mb-2">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">О блогере</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          rows="3"
+                                                                          name="description_ru"
+                                                                          placeholder="Коротка о блогере"></textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="english" role="tabpanel" aria-labelledby="english-tab"
+                                         aria-expanded="false">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title" style="text-transform: inherit;">[EN] First
+                                                    Second
+                                                    name of blogger</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body pb-0 mx-25">
+                                                    <div class="row invoice-info">
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <fieldset class="invoice-address form-group">
+                                                                <input type="text" v-model="postnameen"
+                                                                       class="form-control"
+                                                                       placeholder="First and Second name"
+                                                                       name="name_en">
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 mb-2">
+                                                            <div class="form-group">
+                                                                <label>Bio</label>
+                                                                <input type="text" class="form-control" name="bio_en"
+                                                                       placeholder="Bio">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 mb-2">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInput">About blogger</label>
+                                                                <textarea class="form-control" id="basicTextarea"
+                                                                          name="description_en" rows="3"
+                                                                          placeholder="About blogger"></textarea>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body mx-25">
+                                            <!-- invoice address and contact -->
+                                            <div class="row invoice-info">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Facebook</label>
+                                                        <input type="text" class="form-control" name="facebook"
+                                                               placeholder="Facebook">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Instagram</label>
+                                                        <input type="text" class="form-control" name="instagram"
+                                                               placeholder="Instagram">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Twitter</label>
+                                                        <input type="text" class="form-control" name="twitter"
+                                                               placeholder="Twitter">
+                                                    </fieldset>
+                                                    <fieldset class="invoice-address form-group">
+                                                        <label for="basicInput">Telegram</label>
+                                                        <input type="text" class="form-control" name="telegram"
+                                                               placeholder="Telegram">
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- invoice action  -->
+                            <div class="col-xl-4 col-md-4 col-12 pt-4">
+                                <div class="card invoice-action-wrapper shadow-none border">
+                                    <div class="card-body">
+                                        <div class="invoice-action-btn mb-1">
+                                            <button type="submit" class="btn btn-primary btn-block invoice-send-btn">
+                                                <i class="bx bxs-save"></i>
+                                                <span>{% trans 'Saqlash' %}</span>
+                                            </button>
+                                        </div>
+                                        <div class="invoice-action-btn mb-1">
+                                            <div class="save ">
+                                                <a href="{% url 'blog_author-list' %}" class="btn btn-light-danger btn-block">
+                                                    <span class="text-nowrap">{% trans 'O‘chirish' %}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">{% trans 'Asosiy rasm' %}</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <input type="file" name="image" required>
+                                            {#                                    <file-pond#}
+                                            {#                                        name="test"#}
+                                            {#                                        ref="pond"#}
+                                            {#                                        class-name="my-pond"#}
+                                            {#                                        label-idle="Faylni bu yerga tashlang..."#}
+                                            {#                                        allow-multiple="false"#}
+                                            {#                                        accepted-file-types="image/jpeg, image/png"#}
+                                            {#                                        v-bind:files="myFiles"#}
+                                            {#                                        v-on:init="handleFilePondInit"/>#}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'back/app-assets/vendors/js/filepond-plugin-image-preview.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/filepond.js' %}"></script>
+    <script src="{% static 'back/app-assets/js/vue.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/vue-ctk-date-time-picker.umd.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/katex.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/highlight.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/quill.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/quill.imageUploader.min.js' %}"></script>
+    <script src="{% static 'back/app-assets/vendors/js/vue-filepond.min.js' %}"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+    <!-- END: Page Vendor JS-->
+    <script src="{% static 'back/app-assets/js/scripts/forms/select/form-select2.min.js' %}"></script>
+
+    <script type="text/javascript">
+        Vue.component('vue-ctk-date-time-picker', window['vue-ctk-date-time-picker']);
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                FilePond: vueFilePond.default(FilePondPluginImagePreview)
+            },
+            data: {
+                postnameuz: '',
+                postnameru: '',
+                postnameen: '',
+                message: 'Hello!',
+                value: null,
+                myFiles: null,
+                videotrue: false
+            },
+            methods: {
+                handleFilePondInit: function () {
+                    console.log('FilePond has initialized');
+
+                    // example of instance method call on pond reference
+                    this.$refs.pond.getFiles();
+                }
+            },
+        });
+        Quill.register("modules/imageUploader", ImageUploader);
+        var quill = new Quill('#editor-container', {
+            modules: {
+                formula: true,
+                syntax: true,
+                toolbar: '#toolbar-container',
+                imageUploader: {
+                    upload: file => {
+                        return new Promise((resolve, reject) => {
+                            const formData = new FormData();
+                            formData.append("image", file);
+
+                            fetch(
+                                "https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22",
+                                {
+                                    method: "POST",
+                                    body: formData
+                                }
+                            )
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result);
+                                    resolve(result.data.url);
+                                })
+                                .catch(error => {
+                                    reject("Yuklashda xatolik");
+                                    console.error("Xato:", error);
+                                });
+                        });
+                    }
+                }
+            },
+
+            placeholder: 'Maqola haqida batafsil...',
+            theme: 'snow'
+        });
+        var quill = new Quill('#russian-editor', {
+            modules: {
+                formula: true,
+                syntax: true,
+                toolbar: '#toolbar-russian-container',
+                imageUploader: {
+                    upload: file => {
+                        return new Promise((resolve, reject) => {
+                            const formData = new FormData();
+                            formData.append("image", file);
+
+                            fetch(
+                                "https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22",
+                                {
+                                    method: "POST",
+                                    body: formData
+                                }
+                            )
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result);
+                                    resolve(result.data.url);
+                                })
+                                .catch(error => {
+                                    reject("Ошибка при загрузке");
+                                    console.error("Ошибка:", error);
+                                });
+                        });
+                    }
+                }
+            },
+
+            placeholder: 'Подробно...',
+            theme: 'snow'
+        });
+        var quill = new Quill('#english-editor', {
+            modules: {
+                formula: true,
+                syntax: true,
+                toolbar: '#toolbar-english-container',
+                imageUploader: {
+                    upload: file => {
+                        return new Promise((resolve, reject) => {
+                            const formData = new FormData();
+                            formData.append("image", file);
+
+                            fetch(
+                                "https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22",
+                                {
+                                    method: "POST",
+                                    body: formData
+                                }
+                            )
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result);
+                                    resolve(result.data.url);
+                                })
+                                .catch(error => {
+                                    reject("Upload failed");
+                                    console.error("Error:", error);
+                                });
+                        });
+                    }
+                }
+            },
+
+            placeholder: 'More about this post...',
+            theme: 'snow'
+        });
+        $(document).ready(function () {
+            $('.multiple-tags').select2({
+                width: '100%',
+                tags: true,
+                placeholder: 'Kalit so‘zlarni kiriting'
+            });
+
+        });
+    </script>
+
+{% endblock %}

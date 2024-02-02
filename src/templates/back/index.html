@@ -1,0 +1,338 @@
+{% extends 'back/_base.html' %}
+{% load static i18n templatetags %}
+{% load permission_tags %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+
+    {% if user|has_role:"admin" %}
+        {% include 'back/parts/menu.html' %}
+    {% endif %}
+
+
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+        {% if user|has_role:"admin" %}
+        <div class="row">
+
+            <div class="col-12 mt-1 mb-2">
+                <h4>{% trans 'Statistika' %}</h4>
+                <hr>
+            </div>
+
+
+
+            <div class="col-xl-2 col-md-6 col-sm-12">
+                            <div class="card text-center">
+                                <a href="{% url 'news:news-list' %}">
+                                    <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="badge-circle badge-circle-lg badge-circle-light-danger mx-auto my-1">
+                                            <i class="bx bx-news font-medium-5"></i>
+                                        </div>
+                                        <p class="text-muted mb-0 line-ellipsis">{% trans 'Yangiliklar'%}</p>
+                                        <h2 class="mb-0">{{ news_count }}</h2>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+
+            <div class="col-xl-2 col-md-6 col-sm-12">
+                            <div class="card text-center">
+                                <a href="{% url 'tender:tender-list' %}">
+
+                                    <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="badge-circle badge-circle-lg badge-circle-light-info mx-auto my-1">
+                                            <i class="bx bxs-pencil font-medium-5"></i>
+                                        </div>
+                                        <p class="text-muted mb-0 line-ellipsis">{% trans 'Tenderlar' %}</p>
+                                        <h2 class="mb-0">{{ tender_count }}</h2>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+            <div class="col-xl-2 col-md-6 col-sm-12">
+                            <div class="card text-center">
+                                <a href="{% url 'gallery:photo-list' %}">
+                                    <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="badge-circle badge-circle-lg badge-circle-light-warning mx-auto my-1">
+                                            <i class="bx bxs-book-open font-medium-5"></i>
+                                        </div>
+                                        <p class="text-muted mb-0 line-ellipsis">{% trans 'Media' %}</p>
+                                        <h2 class="mb-0">{{ media_count }}</h2>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+            </div>
+
+            <div class="col-xl-2 col-md-6 col-sm-12">
+                <div class="card text-center">
+                    <a href="{% url 'event:event-list' %}">
+                        <div class="card-content">
+                        <div class="card-body">
+                            <div class="badge-circle badge-circle-lg badge-circle-light-primary mx-auto my-1">
+                                <i class="bx bx-calendar-event font-medium-5"></i>
+                            </div>
+                            <p class="text-muted mb-0 line-ellipsis">{% trans 'Tadbirlar' %}</p>
+                            <h2 class="mb-0">{{ event_count }}</h2>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-6 col-sm-12">
+                <div class="card text-center">
+                    <a href="{% url 'vacancy:vacancy-list' %}">
+                        <div class="card-content">
+                        <div class="card-body">
+                            <div class="badge-circle badge-circle-lg badge-circle-light-warning mx-auto my-1">
+                                <i class="bx bx-briefcase font-medium-5"></i>
+                            </div>
+                            <p class="text-muted mb-0 line-ellipsis">{% trans 'Vakansiyalar' %}</p>
+                            <h2 class="mb-0">{{ vacancy_count }}</h2>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-6 col-sm-12">
+                <div class="card text-center">
+                    <a href="{% url 'about:staff-list' %}">
+                        <div class="card-content">
+                        <div class="card-body">
+                            <div class="badge-circle badge-circle-lg badge-circle-light-success mx-auto my-1">
+                                <i class="bx bx-user font-medium-5"></i>
+                            </div>
+                            <p class="text-muted mb-0 line-ellipsis">{% trans 'Hodimlar' %}</p>
+                            <h2 class="mb-0">{{ staff_count }}</h2>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        {% endif %}
+
+
+
+        <div class="row widgets-text-chart">
+        <div class="col-12 mt-1 mb-2">
+                <h4>{% trans "So'nggi yangiliklar" %}</h4>
+
+                <hr>
+            </div>
+
+
+
+            <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card widget-todo">
+                                        <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+                                            <h4 class="card-title d-flex">
+                                                <i class="bx bx-news font-medium-5 pl-25 pr-75"></i>{% trans 'Yangiliklar' %}</h4>
+                                            <ul class="list-inline d-flex mb-0">
+
+                                                <div class="heading-elements">
+                                                     <a href="{% url 'news:news-list' %}">
+                                                        <button type="button" class="btn btn-sm btn-light-danger">{% trans 'Barcha' %}</button>
+                                                     </a>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                        {% if user|has_role:"admin" %}
+                                        <div class="card-body px-0 py-0">
+                                            <ul class="list-group list-group-flush">
+                                                {% for news in latest_news %}
+
+                                                    <li class="list-group-item list-group-item-action border-0 d-flex align-items-center justify-content-between">
+                                                <div class="list-left d-flex">
+
+                                                    <div class="list-content">
+                                                        <a href="#">
+                                                        <span class="list-title">{{ news.title|safe|truncatechars:135 }}</span>
+                                                            </a>
+                                                        <small class="text-muted d-block">{{ news.created_at|date:"d-F, H:i" }}</small>
+                                                    </div>
+
+                                                </div>
+                                                        <a href="{% url 'news:news-update' news.id %}">
+                                                        <div class="list-icon mr-0">
+
+                                                                <div class="avatar bg-rgba-danger m-0 p-25">
+                                                                    <div class="avatar-content">
+                                                                        <i class="bx bx-edit-alt text-danger font-medium-5 "></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                            </li>
+
+
+                                                {% endfor %}
+
+                                            </ul>
+                                        </div>
+
+                                    {% else %}
+                                        <div class="card-content">
+                                    <div class="card-body">
+                                        <ul class="widget-timeline mb-0">
+                                            {% for news in latest_news %}
+                                            <li class="timeline-items timeline-icon-primary active pb-0">
+                                                <div class="timeline-time">{{ news.created_at|date:"F, d" }}</div>
+
+                                                <h5 class="timeline-title">
+                                                    <a href="{% url 'news:news-update' news.id %}">
+                                                    {{ news.title|safe|truncatechars:135 }}
+                                                    </a>
+                                                </h5>
+
+                                                <p class="timeline-text">{{ news.publish_date|date:"H:i" }}</p>
+                                                <div class="timeline-content">
+                                                    <i class="bx bx-folder text-black font-medium-3"></i>
+                                                    <h6 class="timeline-title ml-1">{{ news.category|safe }}</h6>
+{#                                                    <img src="{% static 'app-assets/images/icon/pdf.png' %}" alt="document" height="23" width="19" class="mr-50">New Order.pdf#}
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                     {% endif %}
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+            {% if user|has_role:"admin" %}
+            <div class="col-lg-4">
+                            <div class="card widget-notification">
+                                <div class="card-header border-bottom">
+                                    <h4 class="card-title d-flex align-items-center">
+                                        <i class="bx bx-edit font-medium-4 mr-1"></i>{% trans 'Tadbirlar' %}</h4>
+                                    <div class="heading-elements">
+                                        <a href="{% url 'event:event-list' %}">
+                                            <button type="button" class="btn btn-sm btn-light-primary">{% trans 'Barcha' %}</button>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body p-0">
+                                        <ul class="list-group list-group-flush">
+                                            {% for item in latest_events %}
+
+                                                <li class="list-group-item list-group-item-action border-0 d-flex align-items-center justify-content-between">
+                                                <div class="list-left d-flex">
+
+                                                    <div class="list-content">
+                                                        <a href="{% url 'event:event-update' item.id %}">
+                                                        <span class="list-title">{{ item.title|safe|truncatechars:50 }}</span>
+                                                        </a>
+                                                        <small class="text-muted d-block">{{ item.created_at|date:"d-F, H:i" }}</small>
+                                                    </div>
+                                                </div>
+                                                    <a href="{% url 'event:event-update' item.id %}">
+                                                        <div class="list-icon mr-0">
+                                                        <div class="avatar bg-rgba-primary m-0 p-25">
+                                                            <div class="avatar-content">
+                                                                <i class="bx bx-edit-alt text-primary font-medium-5"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </a>
+                                            </li>
+                                            {% endfor %}
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        {% else %}
+
+
+            <div class="col-lg-4">
+                            <div class="card widget-notification">
+                                <div class="card-header border-bottom">
+                                    <h4 class="card-title d-flex align-items-center">
+                                        <i class="bx bx-edit font-medium-4 mr-1"></i>{% trans 'Ommabop' %}</h4>
+                                    <div class="heading-elements">
+                                        <a href="{% url 'news:news-list' %}">
+                                            <button type="button" class="btn btn-sm btn-light-primary">{% trans 'Barcha' %}</button>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body p-0">
+                                        <ul class="list-group list-group-flush">
+                                            {% for item in popular_news %}
+
+                                                <li class="list-group-item list-group-item-action border-0 d-flex align-items-center justify-content-between">
+                                                <div class="list-left d-flex">
+
+                                                    <div class="list-content">
+                                                        <a href="{% url 'news:news-update' item.id %}">
+                                                        <span class="list-title">{{ item.title|safe|truncatechars:50 }}</span>
+                                                        </a>
+                                                        <small class="text-muted d-block">{{ item.created_at|date:"d-F, H:i" }}</small>
+                                                    </div>
+                                                </div>
+                                                        <div class="list-icon mr-0">
+                                                        <div class="card-title d-flex">
+                                                            <i class="bx bx-show font-medium-2"></i>
+                                                            <h6>{{ item.views }}</h6>
+
+                                                        </div>
+                                                    </div>
+                                            </li>
+                                            {% endfor %}
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        {% endif %}
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
