@@ -80,6 +80,7 @@ class TenderNotices(models.Model):
 
     class Meta:
         db_table = 'tender_notices'
+        ordering = ['-number']
 
     def __str__(self):
         return str(self.title)

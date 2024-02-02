@@ -61,24 +61,15 @@ class AdmTenderNoticesView(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated, ]
 
     def get_queryset(self):
-        # lang = self.request.query_params.get('lang', 'uz')
-        # activate(lang)
         queryset = self.queryset
         if hasattr(self.queryset.model, 'title'):
             queryset = self.queryset.exclude(title__exact='')
 
         return queryset
 
-    def update(self, request, *args, **kwargs):
-        instance = self.get_object()
-        instance.updated_at = timezone.now()
-        tender.TenderNoticesPhotos.objects.filter(tender=instance.id).delete()
-        instance.save()
-        return super().update(request, *args, **kwargs)
-
 
 class TenderNoticesView(viewsets.ModelViewSet):
-    queryset = tender.TenderNotices.objects.filter(is_published=True).order_by('-id')
+    queryset = tender.TenderNotices.objects.filter(is_published=True).order_by('number')
     serializer_class = serializers.TenderNoticesSerializer
     pagination_class = pagination.CustomPagination
     http_method_names = ['get', ]

@@ -58,19 +58,13 @@ class AdmTenderNoticesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = tender.TenderNotices
-        fields = ['id', 'title', 'address', 'land_area', 'size', 'status', 'region', 'district', 'built_year',
+        fields = ['id', 'built_year', 'created_at', 'title', 'address', 'land_area', 'size', 'status'
                   'title_uz', 'title_ru', 'title_en', 'address_uz', 'address_ru', 'address_en', 'land_area_uz',
-                  'land_area_ru', 'land_area_en', 'size_uz', 'size_ru', 'size_en', 'status_uz', 'status_ru',
-                  'status_en', 'is_published', 'created_at', 'updated_at']
+                  'land_area_ru', 'land_area_en', 'size_uz', 'size_ru', 'size_en', 'status_uz', 'status_ru', 'number',
+                  'status_en', 'is_published', ]
 
     def to_representation(self, instance):
         response = super().to_representation(instance)
-        response['region_title_uz'] = instance.region.title_uz
-        response['region_title_ru'] = instance.region.title_ru
-        response['region_title_en'] = instance.region.title_en
-        response['district_title_uz'] = instance.district.title_uz
-        response['district_title_ru'] = instance.district.title_ru
-        response['district_title_en'] = instance.district.title_en
         response['photos'] = AdmTenderNoticesPhotosSerializer(
             tender.TenderNoticesPhotos.objects.filter(tender=instance.id), many=True).data
         return response
@@ -80,13 +74,11 @@ class TenderNoticesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = tender.TenderNotices
-        fields = ['id', 'title', 'address', 'land_area', 'size', 'status', 'region', 'district', 'built_year',
-                  'is_published', 'created_at', 'updated_at']
+        fields = ['id', 'title', 'address', 'land_area', 'size', 'status', 'built_year',
+                  'is_published']
 
     def to_representation(self, instance):
         response = super().to_representation(instance)
-        response['region_title'] = instance.region.title
-        response['district_title'] = instance.district.title
         response['photos'] = AdmTenderNoticesPhotosSerializer(
             tender.TenderNoticesPhotos.objects.filter(tender=instance.id), many=True).data
         return response
