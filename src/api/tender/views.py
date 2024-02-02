@@ -1,10 +1,8 @@
-from django.utils import timezone
 from rest_framework import viewsets
 from . import serializers
 from admin_panel.model import tender
 from api import pagination
 from rest_framework.permissions import IsAuthenticated
-from django.utils.translation import activate
 
 
 class CustomModalViewSet(viewsets.ModelViewSet):
@@ -24,18 +22,10 @@ class TenderListView(CustomModalViewSet):
     http_method_names = ['get']
 
 
-class AdmTenderTypeView(viewsets.ModelViewSet):
-    queryset = tender.Type.objects.all()
-    serializer_class = serializers.AdmTypeSerializer
-    pagination_class = None
-    http_method_names = ['get']
-
-
 class AdmTenderView(viewsets.ModelViewSet):
     queryset = tender.Tender.objects.all().order_by('-date')
     serializer_class = serializers.AdmTenderSerializer
     pagination_class = pagination.CustomPagination
-    # http_method_names = ['get', 'post', 'put', 'delete']
     permission_classes = [IsAuthenticated, ]
 
     def get_queryset(self):
@@ -57,7 +47,6 @@ class AdmTenderNoticesView(viewsets.ModelViewSet):
     queryset = tender.TenderNotices.objects.all().order_by('-id')
     serializer_class = serializers.AdmTenderNoticesSerializer
     pagination_class = pagination.CustomPagination
-    # http_method_names = ['get', 'post', 'put', 'delete']
     permission_classes = [IsAuthenticated, ]
 
     def get_queryset(self):
@@ -86,7 +75,6 @@ class AdmTenderNoticesPhotosView(viewsets.ModelViewSet):
     queryset = tender.TenderNoticesPhotos.objects.all().order_by('-id')
     serializer_class = serializers.AdmTenderNoticesPhotosSerializer
     pagination_class = None
-    # http_method_names = ['get', 'post', 'put', 'delete']
     permission_classes = [IsAuthenticated, ]
 
     def get_queryset(self):
