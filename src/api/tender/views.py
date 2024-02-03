@@ -1,8 +1,11 @@
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
+from django.utils.translation import activate
+
 from . import serializers
+
 from admin_panel.model import tender
 from api import pagination
-from rest_framework.permissions import IsAuthenticated
 
 
 class CustomModalViewSet(viewsets.ModelViewSet):
@@ -50,6 +53,8 @@ class AdmTenderNoticesView(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated, ]
 
     def get_queryset(self):
+        accept_language = self.request.META.get('HTTP_ACCEPT_LANGUAGE')
+        activate(accept_language)
         queryset = self.queryset
         if hasattr(self.queryset.model, 'title'):
             queryset = self.queryset.exclude(title__exact='')
